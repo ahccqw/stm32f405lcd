@@ -51,6 +51,168 @@ void Rtc_Init(void)
 }
 
 /*************************
+函数名称：Rtc_WakeUp(u16 count)
+函数功能：Rtc唤醒中断
+返回值:无
+形参：无
+作者：me
+版本：1.0 
+*************************/
+void Rtc_WakeUp(u16 count)
+{
+	//唤醒失能
+	RTC_WakeUpCmd(DISABLE);
+	//等待标志位
+	while(RTC_GetFlagStatus(RTC_FLAG_WUTF) == RESET);//RESET为忙，忙完后跳出
+	//选择时钟源，设置重装载值
+	RTC_WakeUpClockConfig(RTC_WakeUpClock_CK_SPRE_16bits);
+	RTC_SetWakeUpCounter(count - 1);
+	//配置exti
+	EXTI_InitTypeDef EXTI_InitStruct;
+	EXTI_InitStruct.EXTI_Line = EXTI_Line22;
+	EXTI_InitStruct.EXTI_LineCmd = ENABLE;
+	EXTI_InitStruct.EXTI_Mode = EXTI_Mode_Interrupt;
+	EXTI_InitStruct.EXTI_Trigger = EXTI_Trigger_Rising;
+	EXTI_Init(&EXTI_InitStruct);
+	//NVIC
+	NVIC_InitTypeDef NVIC_InitStruct;
+	NVIC_InitStruct.NVIC_IRQChannel = RTC_WKUP_IRQn;
+	NVIC_InitStruct.NVIC_IRQChannelCmd = ENABLE;
+	NVIC_InitStruct.NVIC_IRQChannelPreemptionPriority = 9;
+	NVIC_InitStruct.NVIC_IRQChannelSubPriority = 0;
+	NVIC_Init(&NVIC_InitStruct);
+	//使能中断，使能唤醒
+	RTC_ITConfig(RTC_IT_WUT,ENABLE);
+	RTC_WakeUpCmd(ENABLE);
+	
+	//清除标志位
+	RTC_ClearITPendingBit(RTC_IT_WUT);
+	EXTI_ClearITPendingBit(EXTI_Line22);
+}
+
+void RTC_WKUP_IRQHandler(void)
+{
+	
+	if(RTC_GetITStatus(RTC_IT_WUT))
+	{
+		//清中断标志位
+		RTC_ClearITPendingBit(RTC_IT_WUT);
+		EXTI_ClearITPendingBit(EXTI_Line22);
+		
+		Rtc_GetValue();
+	}
+}
+
+
+/*************************
+函数名称：Rtc_Alarm(RTC_STRUCT rtc_alarma)
+函数功能：Rtc闹钟A
+返回值:无
+形参：无
+作者：me
+版本：1.0 
+*************************/
+void Rtc_AlarmA(RTC_STRUCT rtc_alarma)
+{
+	//Alarm失能
+	RTC_AlarmCmd(RTC_Alarm_A,DISABLE);
+	//等待标志位为：RESET空闲
+	while(RTC_GetFlagStatus(RTC_FLAG_ALRAWF) == RESET);
+	//设置掩码
+	RTC_AlarmTypeDef RTC_AlarmStruct = {0};
+	if(rtc_alarma.day == 0xff && rtc_alarma.weekday == 0xff)
+	{
+		RTC_AlarmStruct.RTC_AlarmMask |= RTC_AlarmMask_DateWeekDay; //这里的RTC_AlarmMask_DateWeekDay，代表的是日期和星期的意思，因为没有选择哪个为掩码
+	}
+	else
+	{
+		
+		if(rtc_alarma.day == 0xff)
+		{
+			RTC_AlarmStruct.RTC_AlarmDateWeekDaySel = RTC_AlarmDateWeekDaySel_WeekDay;
+			RTC_AlarmStruct.RTC_AlarmDateWeekDay = rtc_alarma.weekday;
+		}
+		else if(rtc_alarma.weekday == 0xff)
+		{
+			RTC_AlarmStruct.RTC_AlarmDateWeekDaySel = RTC_AlarmDateWeekDaySel_Date;
+			RTC_AlarmStruct.RTC_AlarmDateWeekDay = rtc_alarma.day;
+		}
+	}
+	if(rtc_alarma.hour == 0xff)
+	{
+		RTC_AlarmStruct.RTC_AlarmMask |= RTC_AlarmMask_Hours;
+	}
+	if(rtc_alarma.min == 0xff)
+	{
+		RTC_AlarmStruct.RTC_AlarmMask |= RTC_AlarmMask_Minutes;
+	}
+	if(rtc_alarma.second == 0xff)
+	{
+		RTC_AlarmStruct.RTC_AlarmMask |= RTC_AlarmMask_Seconds;
+	}
+	
+	if(rtc_alarma.day == 0xff && rtc_alarma.hour == 0xff &&  rtc_alarma.min == 0xff && rtc_alarma.second == 0xff)
+	{
+		RTC_AlarmStruct.RTC_AlarmMask = RTC_AlarmMask_All;
+	}
+	//设置触发时间
+	RTC_AlarmStruct.RTC_AlarmTime.RTC_Hours = rtc_alarma.hour;
+	RTC_AlarmStruct.RTC_AlarmTime.RTC_Minutes = rtc_alarma.min;
+	RTC_AlarmStruct.RTC_AlarmTime.RTC_Seconds = rtc_alarma.second;
+	RTC_SetAlarm(RTC_Format_BIN,RTC_Alarm_A,&RTC_AlarmStruct);
+	//EXTI中断
+	EXTI_InitTypeDef EXTI_InitStruct;
+	EXTI_InitStruct.EXTI_Line = EXTI_Line17;
+	EXTI_InitStruct.EXTI_LineCmd = ENABLE;
+	EXTI_InitStruct.EXTI_Mode = EXTI_Mode_Interrupt;
+	EXTI_InitStruct.EXTI_Trigger = EXTI_Trigger_Rising;
+	EXTI_Init(&EXTI_InitStruct);
+	//NVIC
+	NVIC_InitTypeDef NVIC_InitStruct;
+	NVIC_InitStruct.NVIC_IRQChannel = RTC_Alarm_IRQn;
+	NVIC_InitStruct.NVIC_IRQChannelCmd = ENABLE;
+	NVIC_InitStruct.NVIC_IRQChannelPreemptionPriority = 3;
+	NVIC_InitStruct.NVIC_IRQChannelSubPriority = 0;
+	NVIC_Init(&NVIC_InitStruct);
+	
+	//清标志位
+	RTC_ClearITPendingBit(RTC_IT_ALRA);
+	EXTI_ClearITPendingBit(EXTI_Line17);
+	//中断使能，Alarm使能
+	RTC_ITConfig(RTC_IT_ALRA,ENABLE);
+	RTC_AlarmCmd(RTC_Alarm_A,ENABLE);
+}
+
+u8 AlarmA_flag = 0;
+void RTC_Alarm_IRQHandler(void)
+{
+	
+	if(RTC_GetITStatus(RTC_IT_ALRA))
+	{
+		//清中断标志位
+		RTC_ClearITPendingBit(RTC_IT_ALRA);
+		EXTI_ClearITPendingBit(EXTI_Line17);
+		
+		AlarmA_flag = 1;
+	}
+}
+
+/*************************
+函数名称：Rtc_AlarmBeep(void)
+函数功能：Rtc闹铃
+返回值:无
+形参：无
+作者：me
+版本：1.0 
+*************************/
+void Rtc_AlarmBeep(void)
+{
+	BEEP_OVERTURN;
+	Delay_Ms(300);
+}
+
+
+/*************************
 函数名称：Rtc_SetDate(u8 year,u8 month,u8 day,u8 weekday)
 函数功能：Rtc设置日期
 返回值:无
@@ -100,20 +262,22 @@ void Rtc_SetTime(u8 hour,u8 min,u8 second)
 *************************/
 void Rtc_GetValue(void)
 {
-	RTC_DateTypeDef RTC_DateStruct = {0};	
-	RTC_GetDate(RTC_Format_BIN,&RTC_DateStruct);
-
-	RTC_TimeTypeDef RTC_TimeStruct = {0};
-	RTC_GetTime(RTC_Format_BIN,&RTC_TimeStruct);
-
-	rtc.year    = RTC_DateStruct.RTC_Year;
-	rtc.month   = RTC_DateStruct.RTC_Month;
-	rtc.day     = RTC_DateStruct.RTC_Date;
-	rtc.weekday = RTC_DateStruct.RTC_WeekDay;
+	u8 time[32] = {0};
+	u8 date[64] = {0};
 	
-	rtc.hour    = RTC_TimeStruct.RTC_Hours;
-	rtc.min     = RTC_TimeStruct.RTC_Minutes;
-	rtc.second  = RTC_TimeStruct.RTC_Seconds;
+	RTC_DateTypeDef RTC_DateStruct = {0};
+	RTC_TimeTypeDef RTC_TimeStruct = {0};
+	
+	RTC_GetTime(RTC_Format_BIN,&RTC_TimeStruct);
+	RTC_GetDate(RTC_Format_BIN,&RTC_DateStruct);
+		
+	
+	
+	sprintf((char *)time,"time: %02d:%02d:%02d", RTC_TimeStruct.RTC_Hours,RTC_TimeStruct.RTC_Minutes,RTC_TimeStruct.RTC_Seconds);	
+	sprintf((char *)date,"data: 20%02d-%02d-%02d Week:%d", RTC_DateStruct.RTC_Year,RTC_DateStruct.RTC_Month,RTC_DateStruct.RTC_Date,RTC_DateStruct.RTC_WeekDay);	
+	
+	Lcd_Display_Str(5,200,BLUE,WHITE,24,time);
+	Lcd_Display_Str(5,224,BLUE,WHITE,24,date);	
 	
 	printf("data: 20%02d-%02d-%02d Weekday:%d\r\n",RTC_DateStruct.RTC_Year,RTC_DateStruct.RTC_Month,RTC_DateStruct.RTC_Date,RTC_DateStruct.RTC_WeekDay);
 	printf("time: %02d:%02d:%02d\r\n",RTC_TimeStruct.RTC_Hours,RTC_TimeStruct.RTC_Minutes,RTC_TimeStruct.RTC_Seconds);
