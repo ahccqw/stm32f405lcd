@@ -59,3 +59,4 @@
 .\objects\delay.o: .\HARDWARE\inc\infrared_tp.h
 .\objects\delay.o: .\HARDWARE\inc\lcd.h
 .\objects\delay.o: .\USER\inc\rtc.h
+.\objects\delay.o: .\HARDWARE\inc\touch.h

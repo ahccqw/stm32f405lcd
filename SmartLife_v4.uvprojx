@@ -502,6 +502,11 @@
               <FileType>1</FileType>
               <FilePath>.\HARDWARE\src\lcd.c</FilePath>
             </File>
+            <File>
+              <FileName>touch.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\HARDWARE\src\touch.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

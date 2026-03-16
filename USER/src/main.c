@@ -18,14 +18,15 @@ int main()
 	Rtc_Init();
 	Rtc_WakeUp(1);
 	
+	Touch_Init();
 
 	u16 value[2] = {0};
 	ADC1_Init();
 	ADC1_DMA2_Stream0_CH0_Init(2,value);
 	
 	
-	RTC_STRUCT rtc_alarma = {.weekday=0xff,.day=0xff,.hour=20,.min=18,.second=0};
-	Rtc_AlarmA(rtc_alarma);
+//	RTC_STRUCT rtc_alarma = {.weekday=0xff,.day=0xff,.hour=20,.min=18,.second=0};
+//	Rtc_AlarmA(rtc_alarma);
 
 	
 

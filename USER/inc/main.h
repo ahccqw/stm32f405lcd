@@ -28,7 +28,7 @@
 #include "infrared_tp.h"
 #include "lcd.h"
 #include "rtc.h"
-
+#include "touch.h"
 
 #endif
 

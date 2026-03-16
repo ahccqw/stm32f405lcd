@@ -59,3 +59,4 @@
 .\objects\sterilize.o: .\HARDWARE\inc\infrared_tp.h
 .\objects\sterilize.o: .\HARDWARE\inc\lcd.h
 .\objects\sterilize.o: .\USER\inc\rtc.h
+.\objects\sterilize.o: .\HARDWARE\inc\touch.h

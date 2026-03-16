@@ -59,3 +59,4 @@
 .\objects\ws2812s.o: .\HARDWARE\inc\infrared_tp.h
 .\objects\ws2812s.o: .\HARDWARE\inc\lcd.h
 .\objects\ws2812s.o: .\USER\inc\rtc.h
+.\objects\ws2812s.o: .\HARDWARE\inc\touch.h

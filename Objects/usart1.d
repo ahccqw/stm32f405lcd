@@ -59,3 +59,4 @@
 .\objects\usart1.o: .\HARDWARE\inc\infrared_tp.h
 .\objects\usart1.o: .\HARDWARE\inc\lcd.h
 .\objects\usart1.o: .\USER\inc\rtc.h
+.\objects\usart1.o: .\HARDWARE\inc\touch.h
