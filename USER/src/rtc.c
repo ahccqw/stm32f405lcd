@@ -279,8 +279,8 @@ void Rtc_GetValue(void)
 	Lcd_Display_Str(5,200,BLUE,WHITE,24,time);
 	Lcd_Display_Str(5,224,BLUE,WHITE,24,date);	
 	
-	printf("data: 20%02d-%02d-%02d Weekday:%d\r\n",RTC_DateStruct.RTC_Year,RTC_DateStruct.RTC_Month,RTC_DateStruct.RTC_Date,RTC_DateStruct.RTC_WeekDay);
-	printf("time: %02d:%02d:%02d\r\n",RTC_TimeStruct.RTC_Hours,RTC_TimeStruct.RTC_Minutes,RTC_TimeStruct.RTC_Seconds);
+//	printf("data: 20%02d-%02d-%02d Weekday:%d\r\n",RTC_DateStruct.RTC_Year,RTC_DateStruct.RTC_Month,RTC_DateStruct.RTC_Date,RTC_DateStruct.RTC_WeekDay);
+//	printf("time: %02d:%02d:%02d\r\n",RTC_TimeStruct.RTC_Hours,RTC_TimeStruct.RTC_Minutes,RTC_TimeStruct.RTC_Seconds);
 }
 
 /*************************

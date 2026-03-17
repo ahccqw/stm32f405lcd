@@ -60,3 +60,4 @@
 .\objects\motor.o: .\HARDWARE\inc\lcd.h
 .\objects\motor.o: .\USER\inc\rtc.h
 .\objects\motor.o: .\HARDWARE\inc\touch.h
+.\objects\motor.o: .\HARDWARE\inc\sd_driver.h

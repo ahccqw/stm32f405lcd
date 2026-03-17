@@ -60,3 +60,4 @@
 .\objects\tphmsensor.o: .\HARDWARE\inc\lcd.h
 .\objects\tphmsensor.o: .\USER\inc\rtc.h
 .\objects\tphmsensor.o: .\HARDWARE\inc\touch.h
+.\objects\tphmsensor.o: .\HARDWARE\inc\sd_driver.h

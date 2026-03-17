@@ -60,3 +60,4 @@
 .\objects\systick.o: .\HARDWARE\inc\lcd.h
 .\objects\systick.o: .\USER\inc\rtc.h
 .\objects\systick.o: .\HARDWARE\inc\touch.h
+.\objects\systick.o: .\HARDWARE\inc\sd_driver.h

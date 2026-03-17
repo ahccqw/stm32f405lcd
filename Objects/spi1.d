@@ -60,3 +60,4 @@
 .\objects\spi1.o: .\HARDWARE\inc\lcd.h
 .\objects\spi1.o: .\USER\inc\rtc.h
 .\objects\spi1.o: .\HARDWARE\inc\touch.h
+.\objects\spi1.o: .\HARDWARE\inc\sd_driver.h

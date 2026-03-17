@@ -29,6 +29,7 @@
 #include "lcd.h"
 #include "rtc.h"
 #include "touch.h"
+#include "sd_driver.h"
 
 #endif
 

@@ -60,3 +60,4 @@
 .\objects\time6.o: .\HARDWARE\inc\lcd.h
 .\objects\time6.o: .\USER\inc\rtc.h
 .\objects\time6.o: .\HARDWARE\inc\touch.h
+.\objects\time6.o: .\HARDWARE\inc\sd_driver.h

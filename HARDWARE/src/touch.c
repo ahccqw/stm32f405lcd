@@ -1,5 +1,6 @@
 #include "touch.h"
 
+CST816_STRUCT cst;
 /*************************
 函数名称：Touch_IIc_Init(void)
 函数功能：IIc触摸初始化配置函数
@@ -55,11 +56,8 @@ void Touch_IIc_Init(void)
 void Touch_IIc_Start(void)
 {
 	TOUCH_IIC_SDA_H;
-	Delay_Us(us);
-	
 	TOUCH_IIC_SCL_H;
 	Delay_Us(us);
-	
 	TOUCH_IIC_SDA_L;
 	Delay_Us(us);
 	
@@ -78,11 +76,8 @@ void Touch_IIc_Start(void)
 void Touch_IIc_End(void)
 {
 	TOUCH_IIC_SDA_L;
-	Delay_Us(us);
-	
 	TOUCH_IIC_SCL_H;
 	Delay_Us(us);
-	
 	TOUCH_IIC_SDA_H;
 	Delay_Us(us);
 }
@@ -163,6 +158,7 @@ void Touch_IIc_Send_Byte(u8 data)
 	for(u8 i=0;i<8;i++)
 	{
 		TOUCH_IIC_SCL_L;
+		Delay_Us(us);
 		if(data & (0x80 >> i))
 		{
 			TOUCH_IIC_SDA_H;	
@@ -190,7 +186,7 @@ void Touch_IIc_Send_Byte(u8 data)
 u8 Touch_IIc_Res_Byte(void)
 {
 	u8 data;
-	IIC_SDA_H;     // ? 释放SDA，让传感器能驱动总线
+	TOUCH_IIC_SDA_H;     // ? 释放SDA，让传感器能驱动总线
 	for(u8 i=0;i<8;i++)
 	{
 		
@@ -204,6 +200,9 @@ u8 Touch_IIc_Res_Byte(void)
 		{
 			data |= 1;
 		}
+		Delay_Us(us);
+		
+		
 	}
 	
 	return data;
@@ -262,8 +261,9 @@ void Touch_Wr_Byte(u8 addr,u8 data)
 版本：1.0 
 		数据是从高位开始发
 *************************/
-void Touch_IIc_Re_Ct_Byte(u8 addr,u8 *data,u32 len)
+void Touch_IIc_Re_Ct_Byte(u8 addr,u8 *data,u8 len)
 {
+
 	Touch_IIc_Start();
 	Touch_IIc_Send_Byte(0X2A);
 	Touch_IIc_Rec_Ack();
@@ -272,19 +272,107 @@ void Touch_IIc_Re_Ct_Byte(u8 addr,u8 *data,u32 len)
 	Touch_IIc_Start();
 	Touch_IIc_Send_Byte(0X2B);
 	Touch_IIc_Rec_Ack();
+
+	len-=1;
 	while(len--)
 	{
+
 		*data = Touch_IIc_Res_Byte();
 		data++;
+		Touch_IIc_Send_Ack(0);
 	}
+	*data = Touch_IIc_Res_Byte();
+	Touch_IIc_Send_Ack(1);
+
 	Touch_IIc_End();
 }
 
+	//假设你要读取 3 个字节 (len = 3)：
+	//执行 len -= 1，此时 len 变为 2。
+	//进入 while(len--) 循环：
+	//第 1 次循环：读取第 1 个字节，发送 ACK。(len 变为 1)
+	//第 2 次循环：读取第 2 个字节，发送 ACK。(len 变为 0，循环结束)
+	//跳出循环，执行后续代码：
+	//读取 第 3 个字节（最后一个）。
+	//发送 NACK (Ack(1))。
 
 
+/*************************
+函数名称：Touch_Coordinates(void)
+函数功能：Touch发送触摸的位置
+返回值：无 
+形参：无
+作者：me
+版本：1.0 
+*************************/
+void Touch_Coordinates(void)
+{
+	u8 temp[4] = {0};
+	u8 flag = 0xff;
+	if(TP_INT == 0)
+	{
+		Touch_IIc_Re_Ct_Byte(0x01,&flag,1); 
+		cst.sta = flag;
+		if(flag == 0x05)
+		{
+		
+			Touch_IIc_Re_Ct_Byte(0x03,temp,4);
+			
+			cst.x = (temp[0] & 0x0f) << 8 | temp[1];
+			cst.y = (temp[2] & 0x0f) << 8 | temp[3];
+			printf("x:%d y:%d \r\n",cst.x,cst.y);
+			
+		}
+		
 
+	}
+}
 
+/*************************
+函数名称：Touch_Range(u16 xs,u16 ys,u16 xe,u16 ye)
+函数功能：Touch触发的范围
+返回值：无 
+形参：无
+作者：me
+版本：1.0 
+*************************/
+void Touch_Range(u16 xs,u16 ys,u16 xe,u16 ye)
+{
+	u8 flag = 0;
 
+	if((cst.x>xs && xe>cst.x) && (cst.y>ys && cst.y<ye) && (cst.sta == 0x05))
+	{
+		flag = !flag;
+		
+		
+		printf("flag:0x%02x\r\n",cst.sta);
+		
+		LED1_OVERTURN;
+		LED2_OVERTURN;
+		LED3_OVERTURN;
+		
+		cst.x = 0x0fff;
+		cst.y = 0x0fff;
+		cst.sta = 0xff;
+		
+		if(flag == 1)
+		{
+			Lcd_Clear(xs,ys,xe,ye,GREEN);
+		}
+		else if(flag == 0)
+		{
+			Lcd_Clear(xs,ys,xe,ye,BLUE);
+		}
+		
+		
+		
+		
+		
+	}
+			
+	
+	
+}
 
 
 

@@ -59,3 +59,4 @@
 .\objects\main.o: .\HARDWARE\inc\lcd.h
 .\objects\main.o: .\USER\inc\rtc.h
 .\objects\main.o: .\HARDWARE\inc\touch.h
+.\objects\main.o: .\HARDWARE\inc\sd_driver.h

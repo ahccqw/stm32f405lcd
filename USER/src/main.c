@@ -15,8 +15,8 @@ int main()
 	Time6_Intrerpute(1500);
 	Spi1_Init();
 	LCD_Init();
-	Rtc_Init();
-	Rtc_WakeUp(1);
+//	Rtc_Init();
+//	Rtc_WakeUp(1);
 	
 	Touch_Init();
 
@@ -28,35 +28,68 @@ int main()
 //	RTC_STRUCT rtc_alarma = {.weekday=0xff,.day=0xff,.hour=20,.min=18,.second=0};
 //	Rtc_AlarmA(rtc_alarma);
 
+		while(SD_Initialize())
+	{
+			printf("请插入SD卡\r\n");
+	}
+	printf("SD卡初始化成功\r\n");
 	
-
-
-	u8 key;
+	u8 buf[10] = {'1','2','3','4'};
+	u8 test[10] = {0};
+	u32 sector_count = 0;
+	float sd_size = 0;
+	sector_count = SD_GetSectorCount();
+	sd_size = sector_count * 512.0f / 1024.0f / 1024.0f / 1024.0f;
+	printf("SD_SIZE: %.2fGB\r\n",sd_size);
+	
+	SD_WriteDisk(buf,0,1);
+	SD_ReadDisk(test,0,1);
+	
+	printf("test: %s\r\n",test);
+	
+//	u8 key;
 		
 	
 	while(1)
 	{	
 		
-		key = Key_Scan();
-		
-		
+		Touch_Coordinates();
 
+		Touch_Range(0,160,240,320);
+		
+		
+//		
+//		Delay_Ms(300);
 		
 		
 		
-		if(key == 1)
-		{
-			AlarmA_flag = 0;
-		}	
 		
-		if(AlarmA_flag == 1)
-		{
-				Rtc_AlarmBeep();
-		}
-		if(AlarmA_flag == 0)
-		{
-				GPIO_ResetBits(GPIOD,GPIO_Pin_15);
-		}
+		
+		
+		
+		
+		
+//		
+//		key = Key_Scan();
+//		
+//		
+
+//		
+//		
+//		
+//		if(key == 1)
+//		{
+//			AlarmA_flag = 0;
+//		}	
+//		
+//		if(AlarmA_flag == 1)
+//		{
+//				Rtc_AlarmBeep();
+//		}
+//		if(AlarmA_flag == 0)
+//		{
+//				GPIO_ResetBits(GPIOD,GPIO_Pin_15);
+//		}
 		
 
 		

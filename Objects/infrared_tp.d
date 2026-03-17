@@ -60,3 +60,4 @@
 .\objects\infrared_tp.o: .\HARDWARE\inc\lcd.h
 .\objects\infrared_tp.o: .\USER\inc\rtc.h
 .\objects\infrared_tp.o: .\HARDWARE\inc\touch.h
+.\objects\infrared_tp.o: .\HARDWARE\inc\sd_driver.h

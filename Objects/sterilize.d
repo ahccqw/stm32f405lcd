@@ -60,3 +60,4 @@
 .\objects\sterilize.o: .\HARDWARE\inc\lcd.h
 .\objects\sterilize.o: .\USER\inc\rtc.h
 .\objects\sterilize.o: .\HARDWARE\inc\touch.h
+.\objects\sterilize.o: .\HARDWARE\inc\sd_driver.h

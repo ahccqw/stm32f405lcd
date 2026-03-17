@@ -37,8 +37,8 @@ void Spi1_Init(void)
 	//SPI1初始化
 	SPI_InitTypeDef SPI_InitStruct;
 	SPI_InitStruct.SPI_BaudRatePrescaler = SPI_BaudRatePrescaler_4;//波特率预分频
-	SPI_InitStruct.SPI_CPHA = SPI_CPHA_1Edge;//第一个边沿采样
-	SPI_InitStruct.SPI_CPOL = SPI_CPOL_Low;//时钟极性空闲时为低电平
+	SPI_InitStruct.SPI_CPHA = SPI_CPHA_2Edge;//第二个边沿采样					ws25q64为1
+	SPI_InitStruct.SPI_CPOL = SPI_CPOL_High;//时钟极性空闲时为高电平		ws25q64为Low
 	SPI_InitStruct.SPI_DataSize = SPI_DataSize_8b;//8位数据帧
 	SPI_InitStruct.SPI_Direction = SPI_Direction_2Lines_FullDuplex;//全双工
 	SPI_InitStruct.SPI_FirstBit = SPI_FirstBit_MSB;//MSB先发

@@ -60,5 +60,6 @@
 .\objects\lcd.o: .\HARDWARE\inc\lcd.h
 .\objects\lcd.o: .\USER\inc\rtc.h
 .\objects\lcd.o: .\HARDWARE\inc\touch.h
+.\objects\lcd.o: .\HARDWARE\inc\sd_driver.h
 .\objects\lcd.o: .\HARDWARE\inc\pic.h
 .\objects\lcd.o: .\HARDWARE\inc\ikun.h
