@@ -22,15 +22,22 @@ Dialog DLL:      TCM.DLL V1.14.9.0
  
 <h2>Project:</h2>
 C:\Users\ahccqw\Desktop\SmartLife\SmartLife_v4.uvprojx
-Project File Date:  03/16/2026
+Project File Date:  03/17/2026
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 2 (build 183)', folder: 'D:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'SmartLife'
-compiling main.c...
+compiling touch.c...
+HARDWARE\src\touch.c(353): warning:  #177-D: variable "motor_state" was declared but never referenced
+  	static u8 motor_state = 0;
+HARDWARE\src\touch.c(354): warning:  #177-D: variable "servo_state" was declared but never referenced
+  	static u8 servo_state = 0;
+HARDWARE\src\touch.c(355): warning:  #177-D: variable "last_page" was declared but never referenced
+  	static u8 last_page = 0xFF;  // ??¼?ϴ?ҳ??
+HARDWARE\src\touch.c: 3 warnings, 0 errors
 linking...
-Program Size: Code=13544 RO-data=436 RW-data=72 ZI-data=1024  
-".\Objects\SmartLife_v4.axf" - 0 Error(s), 0 Warning(s).
+Program Size: Code=10692 RO-data=424 RW-data=76 ZI-data=1028  
+".\Objects\SmartLife_v4.axf" - 0 Error(s), 3 Warning(s).
 
 <h2>Collection of Component include folders:</h2>
   C:\Users\ahccqw\Desktop\SmartLife\RTE

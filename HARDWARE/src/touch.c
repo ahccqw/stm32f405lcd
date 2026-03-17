@@ -312,24 +312,33 @@ void Touch_Coordinates(void)
 	if(TP_INT == 0)
 	{
 		Touch_IIc_Re_Ct_Byte(0x01,&flag,1); 
-		cst.sta = flag;
-		if(flag == 0x05)
-		{
 		
+		if(flag != 0x00 && flag <= 0x05)
+		{
+			cst.sta = flag;
+			printf("sta: %d\r\n",cst.sta);
+			
 			Touch_IIc_Re_Ct_Byte(0x03,temp,4);
 			
 			cst.x = (temp[0] & 0x0f) << 8 | temp[1];
 			cst.y = (temp[2] & 0x0f) << 8 | temp[3];
 			printf("x:%d y:%d \r\n",cst.x,cst.y);
-			
+			printf("sta: %d\r\n",cst.sta);
 		}
-		
-
+		else
+		{
+			cst.sta = 0x00;
+		}
 	}
+	else
+	{
+		cst.sta = 0x00;
+	}
+	
 }
 
 /*************************
-函数名称：Touch_Range(u16 xs,u16 ys,u16 xe,u16 ye)
+函数名称：Touch_Range_funtion(u16 xs,u16 ys,u16 xe,u16 ye)
 函数功能：Touch触发的范围
 返回值：无 
 形参：无
@@ -338,40 +347,114 @@ void Touch_Coordinates(void)
 *************************/
 void Touch_Range(u16 xs,u16 ys,u16 xe,u16 ye)
 {
-	u8 flag = 0;
+	// 静态变量保存当前页面和LED状态，避免重复刷新
+	static u8 current_page = 0;
+	static u8 state = 0;
+	static u8 motor_state = 0;
+	static u8 servo_state = 0;
+	static u8 last_page = 0xFF;  // 记录上次页面
+	
+	// 触摸状态标志，防止一次触摸多次触发
+	static u8 touch_processed = 0;
 
-	if((cst.x>xs && xe>cst.x) && (cst.y>ys && cst.y<ye) && (cst.sta == 0x05))
+	u8 in_range = ((cst.x>xs && xe>cst.x) && (cst.y>ys && cst.y<ye));
+	
+	if(in_range && cst.sta != 0x00 && touch_processed == 0)
 	{
-		flag = !flag;
-		
-		
-		printf("flag:0x%02x\r\n",cst.sta);
-		
-		LED1_OVERTURN;
-		LED2_OVERTURN;
-		LED3_OVERTURN;
-		
-		cst.x = 0x0fff;
-		cst.y = 0x0fff;
-		cst.sta = 0xff;
-		
-		if(flag == 1)
-		{
-			Lcd_Clear(xs,ys,xe,ye,GREEN);
-		}
-		else if(flag == 0)
-		{
-			Lcd_Clear(xs,ys,xe,ye,BLUE);
-		}
-		
-		
-		
-		
-		
-	}
+		// 只有有效触摸且未处理过才响应
+		if((cst.x>xs && xe>cst.x) && (cst.y>ys && cst.y<ye) && (cst.sta == 0x03))
+		{	
+			touch_processed = 1;
 			
-	
-	
+			// 左滑 0x03
+			if(cst.sta == 0x03)
+			{
+					current_page = (current_page == 0) ? 3 : (current_page - 1);
+			}
+			// 右滑 0x04
+			else if(cst.sta == 0x04)
+			{
+					current_page = (current_page == 3) ? 0 : (current_page + 1);
+			}
+			// 单击 0x05
+			else if(cst.sta == 0x05)
+			{
+					state = !state;  // 切换状态
+			}
+			
+			// 清除触摸状态，防止重复触发
+			cst.sta = 0x00;
+			cst.x = 0xFFFF;
+			cst.y = 0xFFFF;		
+		}
+		
+		 // 无触摸时重置处理标志
+    if(TP_INT != 0)
+    {
+        touch_processed = 0;
+    }
+		
+		    // ================= 页面显示（只在页面变化时刷新）=================
+    static u8 last_page = 0xFF;  // 记录上次页面
+    
+    if(current_page != last_page)
+    {
+        Lcd_Clear(xs, ys, xe, ye, WHITE);  // 只在换页时清屏
+        last_page = current_page;
+    }
+		
+		
+		 // 根据当前页面显示内容
+    switch(current_page)
+    {
+        case 0:  // 页面0：白色背景
+            // 无需操作，清屏已是白色
+            break;
+            
+        case 1:  // 页面1：黑色背景 + LED控制
+            Lcd_Clear(xs, ys, xe, ye, BLACK);
+            last_page = current_page;
+            if(state)
+            {
+                LED1_ON; LED2_ON; LED3_ON;
+            }
+            else
+            {
+                LED1_OFF; LED2_OFF; LED3_OFF;
+            }
+            break;
+            
+        case 2:  // 页面2：黑色背景 + 直流电机
+            Lcd_Clear(xs, ys, xe, ye, BLACK);
+            last_page = current_page;
+            if(state)  // 复用led_state控制电机
+            {
+                Tim3_DcMotor_Init(500);
+            }
+            else
+            {
+                Tim3_DcMotor_Init(0);
+            }
+            break;
+            
+        case 3:  // 页面3：黑色背景 + 舵机
+            Lcd_Clear(xs, ys, xe, ye, BLACK);
+            last_page = current_page;
+            if(state)  // 复用led_state控制舵机
+            {
+                Tim2_ServoMotor_Init(500);
+            }
+            else
+            {
+                Tim2_ServoMotor_Init(1000);
+            }
+            break;
+            
+        default:
+            current_page = 0;
+            break;
+    }	
+	}
 }
 
 

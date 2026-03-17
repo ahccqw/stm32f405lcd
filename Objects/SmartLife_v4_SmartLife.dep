@@ -36,7 +36,7 @@ I (.\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_can.h)(0x53DBAFAE)
 I (.\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x53DBAFAE)
 I (.\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x53DBAFAE)
 I (.\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x53DBAFAE)
-F (.\USER\src\main.c)(0x69B91A37)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\CMSIS\Include -I .\USER\inc -I .\HARDWARE\inc -I .\STM32F4xx_StdPeriph_Driver\inc-I C:\Users\ahccqw\Desktop\SmartLife\RTE-I D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F405xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\USER\src\main.c)(0x69B94EA3)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\CMSIS\Include -I .\USER\inc -I .\HARDWARE\inc -I .\STM32F4xx_StdPeriph_Driver\inc-I C:\Users\ahccqw\Desktop\SmartLife\RTE-I D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F405xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (.\USER\inc\main.h)(0x69B902AD)
 I (.\CMSIS\stm32f4xx.h)(0x69A920A5)
 I (.\CMSIS\Include\core_cm4.h)(0x53C7D532)
@@ -1298,7 +1298,7 @@ I (.\HARDWARE\inc\touch.h)(0x69B8BFF8)
 I (.\HARDWARE\inc\sd_driver.h)(0x69B9160A)
 I (.\HARDWARE\inc\pic.h)(0x69B0E4BC)
 I (.\HARDWARE\inc\ikun.h)(0x69B23853)
-F (.\HARDWARE\src\touch.c)(0x69B90198)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\CMSIS\Include -I .\USER\inc -I .\HARDWARE\inc -I .\STM32F4xx_StdPeriph_Driver\inc-I C:\Users\ahccqw\Desktop\SmartLife\RTE-I D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F405xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o .\objects\touch.o --omf_browse .\objects\touch.crf --depend .\objects\touch.d)
+F (.\HARDWARE\src\touch.c)(0x69B94F3D)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\CMSIS\Include -I .\USER\inc -I .\HARDWARE\inc -I .\STM32F4xx_StdPeriph_Driver\inc-I C:\Users\ahccqw\Desktop\SmartLife\RTE-I D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F405xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o .\objects\touch.o --omf_browse .\objects\touch.crf --depend .\objects\touch.d)
 I (.\HARDWARE\inc\touch.h)(0x69B8BFF8)
 I (.\USER\inc\main.h)(0x69B902AD)
 I (.\CMSIS\stm32f4xx.h)(0x69A920A5)

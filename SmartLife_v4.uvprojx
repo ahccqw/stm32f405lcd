@@ -507,6 +507,11 @@
               <FileType>1</FileType>
               <FilePath>.\HARDWARE\src\touch.c</FilePath>
             </File>
+            <File>
+              <FileName>sd_driver.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\HARDWARE\src\sd_driver.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
