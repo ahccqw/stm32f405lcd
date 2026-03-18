@@ -61,3 +61,6 @@
 .\objects\infrared_tp.o: .\USER\inc\rtc.h
 .\objects\infrared_tp.o: .\HARDWARE\inc\touch.h
 .\objects\infrared_tp.o: .\HARDWARE\inc\sd_driver.h
+.\objects\infrared_tp.o: .\FATFS\inc\diskio.h
+.\objects\infrared_tp.o: .\FATFS\inc\ff.h
+.\objects\infrared_tp.o: .\FATFS\inc\ffconf.h

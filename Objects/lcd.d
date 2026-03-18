@@ -61,5 +61,8 @@
 .\objects\lcd.o: .\USER\inc\rtc.h
 .\objects\lcd.o: .\HARDWARE\inc\touch.h
 .\objects\lcd.o: .\HARDWARE\inc\sd_driver.h
+.\objects\lcd.o: .\FATFS\inc\diskio.h
+.\objects\lcd.o: .\FATFS\inc\ff.h
+.\objects\lcd.o: .\FATFS\inc\ffconf.h
 .\objects\lcd.o: .\HARDWARE\inc\pic.h
 .\objects\lcd.o: .\HARDWARE\inc\ikun.h

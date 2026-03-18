@@ -334,7 +334,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F40_41xxx,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>.\CMSIS;.\CMSIS\Include;.\USER\inc;.\HARDWARE\inc;.\STM32F4xx_StdPeriph_Driver\inc</IncludePath>
+              <IncludePath>.\CMSIS;.\CMSIS\Include;.\USER\inc;.\HARDWARE\inc;.\STM32F4xx_StdPeriph_Driver\inc;.\FATFS\inc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -686,6 +686,31 @@
               <FileName>stm32f4xx_wwdg.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\STM32F4xx_StdPeriph_Driver\src\stm32f4xx_wwdg.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>FATFS</GroupName>
+          <Files>
+            <File>
+              <FileName>diskio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FATFS\src\diskio.c</FilePath>
+            </File>
+            <File>
+              <FileName>ff.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FATFS\src\ff.c</FilePath>
+            </File>
+            <File>
+              <FileName>ffsystem.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FATFS\src\ffsystem.c</FilePath>
+            </File>
+            <File>
+              <FileName>ffunicode.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FATFS\src\ffunicode.c</FilePath>
             </File>
           </Files>
         </Group>

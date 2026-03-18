@@ -61,3 +61,6 @@
 .\objects\ws2812s.o: .\USER\inc\rtc.h
 .\objects\ws2812s.o: .\HARDWARE\inc\touch.h
 .\objects\ws2812s.o: .\HARDWARE\inc\sd_driver.h
+.\objects\ws2812s.o: .\FATFS\inc\diskio.h
+.\objects\ws2812s.o: .\FATFS\inc\ff.h
+.\objects\ws2812s.o: .\FATFS\inc\ffconf.h

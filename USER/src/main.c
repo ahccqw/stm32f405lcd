@@ -13,8 +13,10 @@ int main()
 	IIc_Init();
 	Rgb_Init();
 	Time6_Intrerpute(1500);
+	Tim2_ServoMotor_Init(0);
 	Spi1_Init();
 	LCD_Init();
+	
 //	Rtc_Init();
 //	Rtc_WakeUp(1);
 	
@@ -28,25 +30,98 @@ int main()
 //	RTC_STRUCT rtc_alarma = {.weekday=0xff,.day=0xff,.hour=20,.min=18,.second=0};
 //	Rtc_AlarmA(rtc_alarma);
 
-//		while(SD_Initialize())
-//	{
-//			printf("请插入SD卡\r\n");
-//	}
-//	printf("SD卡初始化成功\r\n");
-//	
-//	u8 buf[10] = {'1','2','3','4'};
-//	u8 test[10] = {0};
-//	
-//	u32 sector_count = 0;
-//	float sd_size = 0;
-//	sector_count = SD_GetSectorCount();
-//	sd_size = sector_count * 512.0f / 1024.0f / 1024.0f / 1024.0f;
-//	printf("SD_SIZE: %.2fGB\r\n",sd_size);
-//	
-//	SD_WriteDisk(buf,0,1);
-//	SD_ReadDisk(test,0,1);
-//	
-//	printf("test: %s\r\n",test);
+	
+	u8 ret = 0;
+	FATFS fs;
+	FIL fp;
+	UINT bw;
+	UINT br;
+	u8 write_buff[] = {"hello,world"};
+	u8 temp[20];
+	
+	
+	ret = f_mount (&fs,"0",1);
+	if(ret == FR_OK)
+	{
+		printf("卡片注册成功\r\n");	
+		ret = f_open (&fp,"0:/123.txt",FA_READ | FA_WRITE);
+		if(ret == FR_OK)
+		{
+			printf("打开文件成功\r\n");
+			
+			ret = f_write (&fp,write_buff,sizeof(write_buff),&bw);			
+			if(ret == FR_OK)
+			{
+				printf("写入成功,写入数据大小为: %d\r\n", bw);
+        
+        f_lseek(&fp, 0);  // 定位到文件开头    
+        ret = f_read(&fp, temp, sizeof(write_buff), &br);
+				
+         if(ret == FR_OK)
+				{
+						printf("读取成功,读取数据大小为: %d\r\n", br);
+						printf("写入内容为：%s\r\n", temp);
+				}
+				else
+				{
+						printf("读取失败，错误码: %d\r\n", ret);
+				}		
+				
+			}
+			 f_close(&fp);  // 只关闭一次
+			
+		}
+		else
+    {
+        printf("打开文件失败，错误码: %d\r\n", ret);
+    }
+		
+		
+		
+		
+		if(ret == FR_OK)
+		{		
+			ret = f_open (&fp,"0:/123.txt",FA_READ | FA_WRITE);
+			if(ret == FR_OK)
+			{
+				f_read (&fp,temp,sizeof(write_buff),&br);
+				if(ret == FR_OK)
+				{
+					f_close (&fp);
+					printf("读取成功,读取数据大小为: %d\r\n",br);
+					printf("写入数据位：%s\r\n",temp);
+					
+				}
+			}
+		}
+					
+	}
+
+	
+	else
+	{
+		printf("卡片注册失败\r\n");	
+	}
+		
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
 	
 //	u8 key;
 		
@@ -57,7 +132,9 @@ int main()
 		Touch_Coordinates();
 
 		Touch_Range(0,0,240,320);
-		Delay_Ms(50);
+		
+		
+//		Delay_Ms(50);
 	
 //		
 //		Delay_Ms(300);

@@ -104,6 +104,14 @@ void RTC_WKUP_IRQHandler(void)
 }
 
 
+
+
+
+
+
+
+
+
 /*************************
 函数名称：Rtc_Alarm(RTC_STRUCT rtc_alarma)
 函数功能：Rtc闹钟A
@@ -252,6 +260,8 @@ void Rtc_SetTime(u8 hour,u8 min,u8 second)
 	RTC_SetTime(RTC_Format_BIN,&RTC_TimeStruct);
 }
 
+RTC_DateTypeDef RTC_DateStruct;
+RTC_TimeTypeDef RTC_TimeStruct;
 /*************************
 函数名称：Rtc_GetValue(void)
 函数功能：Rtc获取实时日期和时间函数
@@ -276,8 +286,8 @@ void Rtc_GetValue(void)
 	sprintf((char *)time,"time: %02d:%02d:%02d", RTC_TimeStruct.RTC_Hours,RTC_TimeStruct.RTC_Minutes,RTC_TimeStruct.RTC_Seconds);	
 	sprintf((char *)date,"data: 20%02d-%02d-%02d Week:%d", RTC_DateStruct.RTC_Year,RTC_DateStruct.RTC_Month,RTC_DateStruct.RTC_Date,RTC_DateStruct.RTC_WeekDay);	
 	
-	Lcd_Display_Str(5,200,BLUE,WHITE,24,time);
-	Lcd_Display_Str(5,224,BLUE,WHITE,24,date);	
+//	Lcd_Display_Str(5,200,BLUE,WHITE,24,time);
+//	Lcd_Display_Str(5,224,BLUE,WHITE,24,date);	
 	
 //	printf("data: 20%02d-%02d-%02d Weekday:%d\r\n",RTC_DateStruct.RTC_Year,RTC_DateStruct.RTC_Month,RTC_DateStruct.RTC_Date,RTC_DateStruct.RTC_WeekDay);
 //	printf("time: %02d:%02d:%02d\r\n",RTC_TimeStruct.RTC_Hours,RTC_TimeStruct.RTC_Minutes,RTC_TimeStruct.RTC_Seconds);

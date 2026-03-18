@@ -16,6 +16,8 @@ typedef struct{
 
 extern u8 AlarmA_flag;
 
+extern RTC_DateTypeDef RTC_DateStruct;
+extern RTC_TimeTypeDef RTC_TimeStruct;
 
 
 void Rtc_Init(void);

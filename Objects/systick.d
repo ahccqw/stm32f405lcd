@@ -61,3 +61,6 @@
 .\objects\systick.o: .\USER\inc\rtc.h
 .\objects\systick.o: .\HARDWARE\inc\touch.h
 .\objects\systick.o: .\HARDWARE\inc\sd_driver.h
+.\objects\systick.o: .\FATFS\inc\diskio.h
+.\objects\systick.o: .\FATFS\inc\ff.h
+.\objects\systick.o: .\FATFS\inc\ffconf.h

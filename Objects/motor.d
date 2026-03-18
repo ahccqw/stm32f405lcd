@@ -61,3 +61,6 @@
 .\objects\motor.o: .\USER\inc\rtc.h
 .\objects\motor.o: .\HARDWARE\inc\touch.h
 .\objects\motor.o: .\HARDWARE\inc\sd_driver.h
+.\objects\motor.o: .\FATFS\inc\diskio.h
+.\objects\motor.o: .\FATFS\inc\ff.h
+.\objects\motor.o: .\FATFS\inc\ffconf.h

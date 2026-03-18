@@ -61,3 +61,6 @@
 .\objects\w25q64.o: .\USER\inc\rtc.h
 .\objects\w25q64.o: .\HARDWARE\inc\touch.h
 .\objects\w25q64.o: .\HARDWARE\inc\sd_driver.h
+.\objects\w25q64.o: .\FATFS\inc\diskio.h
+.\objects\w25q64.o: .\FATFS\inc\ff.h
+.\objects\w25q64.o: .\FATFS\inc\ffconf.h

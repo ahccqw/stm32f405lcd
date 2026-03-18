@@ -30,6 +30,8 @@
 #include "rtc.h"
 #include "touch.h"
 #include "sd_driver.h"
+#include "diskio.h"
+#include "ff.h"
 
 #endif
 

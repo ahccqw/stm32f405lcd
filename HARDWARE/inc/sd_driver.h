@@ -1,8 +1,8 @@
 #ifndef _SD_H_
 #define _SD_H_	
 
-#include "main.h"
- 						    	 
+#include "main.h"						    
+								
 // SD卡类型定义  
 #define SD_TYPE_ERR     0X00
 #define SD_TYPE_MMC     0X01

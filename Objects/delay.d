@@ -61,3 +61,6 @@
 .\objects\delay.o: .\USER\inc\rtc.h
 .\objects\delay.o: .\HARDWARE\inc\touch.h
 .\objects\delay.o: .\HARDWARE\inc\sd_driver.h
+.\objects\delay.o: .\FATFS\inc\diskio.h
+.\objects\delay.o: .\FATFS\inc\ff.h
+.\objects\delay.o: .\FATFS\inc\ffconf.h

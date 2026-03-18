@@ -61,3 +61,6 @@
 .\objects\led.o: .\USER\inc\rtc.h
 .\objects\led.o: .\HARDWARE\inc\touch.h
 .\objects\led.o: .\HARDWARE\inc\sd_driver.h
+.\objects\led.o: .\FATFS\inc\diskio.h
+.\objects\led.o: .\FATFS\inc\ff.h
+.\objects\led.o: .\FATFS\inc\ffconf.h

@@ -349,112 +349,106 @@ void Touch_Range(u16 xs,u16 ys,u16 xe,u16 ye)
 {
 	// 静态变量保存当前页面和LED状态，避免重复刷新
 	static u8 current_page = 0;
-	static u8 state = 0;
-	static u8 motor_state = 0;
-	static u8 servo_state = 0;
-	static u8 last_page = 0xFF;  // 记录上次页面
-	
-	// 触摸状态标志，防止一次触摸多次触发
-	static u8 touch_processed = 0;
+	static u8 state 			 = 0;
+	static u8 touch_processed = 0;// 触摸状态标志，防止一次触摸多次触发
+	static u8 last_page 			= 0xFF;//记录上次页面，用于判断是否要刷新页面
+	static u8 last_state			= 0xFF;//上一次的state，用于判断是否要触发功能
 
 	u8 in_range = ((cst.x>xs && xe>cst.x) && (cst.y>ys && cst.y<ye));
 	
-	if(in_range && cst.sta != 0x00 && touch_processed == 0)
+	if(in_range && (cst.sta != 0x00) && (touch_processed == 0))
 	{
-		// 只有有效触摸且未处理过才响应
-		if((cst.x>xs && xe>cst.x) && (cst.y>ys && cst.y<ye) && (cst.sta == 0x03))
-		{	
+		touch_processed = 1;
+
 			touch_processed = 1;
 			
-			// 左滑 0x03
-			if(cst.sta == 0x03)
+			switch(cst.sta)
 			{
-					current_page = (current_page == 0) ? 3 : (current_page - 1);
-			}
-			// 右滑 0x04
-			else if(cst.sta == 0x04)
-			{
-					current_page = (current_page == 3) ? 0 : (current_page + 1);
-			}
-			// 单击 0x05
-			else if(cst.sta == 0x05)
-			{
-					state = !state;  // 切换状态
-			}
-			
+				//左滑
+				case 0x03:current_page = (current_page == 0) ? 3 : (current_page - 1);break;//	条件 ? 	结果A : 结果B。
+				//右滑
+				case 0x04:current_page = (current_page == 3) ? 0 : (current_page + 1);break;
+				case 0x05:state = !state;break;
+				default:break;
+					
+			}		
 			// 清除触摸状态，防止重复触发
 			cst.sta = 0x00;
 			cst.x = 0xFFFF;
 			cst.y = 0xFFFF;		
-		}
-		
-		 // 无触摸时重置处理标志
+	}	
+		 // 手指抬起（中断脚为高）后，允许下一次触摸再次触发
     if(TP_INT != 0)
     {
         touch_processed = 0;
     }
 		
 		    // ================= 页面显示（只在页面变化时刷新）=================
-    static u8 last_page = 0xFF;  // 记录上次页面
-    
-    if(current_page != last_page)
+    if((current_page != last_page) || (state != last_state))
     {
-        Lcd_Clear(xs, ys, xe, ye, WHITE);  // 只在换页时清屏
-        last_page = current_page;
-    }
-		
-		
-		 // 根据当前页面显示内容
-    switch(current_page)
-    {
-        case 0:  // 页面0：白色背景
-            // 无需操作，清屏已是白色
-            break;
-            
-        case 1:  // 页面1：黑色背景 + LED控制
-            Lcd_Clear(xs, ys, xe, ye, BLACK);
-            last_page = current_page;
-            if(state)
-            {
-                LED1_ON; LED2_ON; LED3_ON;
-            }
-            else
-            {
-                LED1_OFF; LED2_OFF; LED3_OFF;
-            }
-            break;
-            
-        case 2:  // 页面2：黑色背景 + 直流电机
-            Lcd_Clear(xs, ys, xe, ye, BLACK);
-            last_page = current_page;
-            if(state)  // 复用led_state控制电机
-            {
-                Tim3_DcMotor_Init(500);
-            }
-            else
-            {
-                Tim3_DcMotor_Init(0);
-            }
-            break;
-            
-        case 3:  // 页面3：黑色背景 + 舵机
-            Lcd_Clear(xs, ys, xe, ye, BLACK);
-            last_page = current_page;
-            if(state)  // 复用led_state控制舵机
-            {
-                Tim2_ServoMotor_Init(500);
-            }
-            else
-            {
-                Tim2_ServoMotor_Init(1000);
-            }
-            break;
-            
-        default:
-            current_page = 0;
-            break;
-    }	
-	}
+        last_page = current_page;	
+				last_state = state;
+			 // 根据当前页面显示内容
+			switch(current_page)
+			{
+					case 0:  // 页面0：主页面
+							Lcd_Display_Photo(xs,ys,(u8 *)gImage_0page);
+							break;
+							
+					case 1:  // 页面1：黑色背景 + LED控制
+							Lcd_Clear(xs, ys, xe, ye, WHITE);
+							
+							if(state)
+							{		
+									Lcd_Display_Photo(60,80,(u8 *)gImage_11page);
+									LED1_ON; LED2_ON; LED3_ON;
+							}
+							else
+							{
+									Lcd_Display_Photo(60,80,(u8 *)gImage_1page);
+									LED1_OFF; LED2_OFF; LED3_OFF;
+							}
+							break;
+							
+					case 2:  // 页面2：黑色背景 + 直流电机
+							Lcd_Clear(xs, ys, xe, ye, WHITE);
+							
+							if(state)  // 复用led_state控制电机
+							{
+									Lcd_Display_Photo(60,80,(u8 *)gImage_22page);
+									Tim3_DcMotor_Init(800);
+
+							}
+							else
+							{
+									Lcd_Display_Photo(60,80,(u8 *)gImage_2page);
+									Tim3_DcMotor_Init(0);
+									Servo_motor_Control(120);
+							}
+							break;
+							
+					case 3:  // 页面3：黑色背景 + 舵机
+							Lcd_Clear(xs, ys, xe, ye, WHITE);
+							
+							if(state)  // 复用led_state控制舵机
+							{
+									Lcd_Display_Photo(60,80,(u8 *)gImage_33page);
+									Servo_motor_Control(30);   // 比如 30°，对应较小脉宽
+							}
+							else
+							{
+									Lcd_Display_Photo(60,80,(u8 *)gImage_3page);
+									Servo_motor_Control(120);
+							}
+							break;
+							
+					default:
+							current_page = 0;
+							last_page = 0xff;
+							break;
+			}	
+		}
+	
 }
 
 

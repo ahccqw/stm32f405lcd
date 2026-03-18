@@ -61,3 +61,6 @@
 .\objects\sterilize.o: .\USER\inc\rtc.h
 .\objects\sterilize.o: .\HARDWARE\inc\touch.h
 .\objects\sterilize.o: .\HARDWARE\inc\sd_driver.h
+.\objects\sterilize.o: .\FATFS\inc\diskio.h
+.\objects\sterilize.o: .\FATFS\inc\ff.h
+.\objects\sterilize.o: .\FATFS\inc\ffconf.h

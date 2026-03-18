@@ -61,3 +61,6 @@
 .\objects\tphmsensor.o: .\USER\inc\rtc.h
 .\objects\tphmsensor.o: .\HARDWARE\inc\touch.h
 .\objects\tphmsensor.o: .\HARDWARE\inc\sd_driver.h
+.\objects\tphmsensor.o: .\FATFS\inc\diskio.h
+.\objects\tphmsensor.o: .\FATFS\inc\ff.h
+.\objects\tphmsensor.o: .\FATFS\inc\ffconf.h

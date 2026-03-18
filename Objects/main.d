@@ -60,3 +60,6 @@
 .\objects\main.o: .\USER\inc\rtc.h
 .\objects\main.o: .\HARDWARE\inc\touch.h
 .\objects\main.o: .\HARDWARE\inc\sd_driver.h
+.\objects\main.o: .\FATFS\inc\diskio.h
+.\objects\main.o: .\FATFS\inc\ff.h
+.\objects\main.o: .\FATFS\inc\ffconf.h

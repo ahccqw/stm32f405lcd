@@ -61,3 +61,6 @@
 .\objects\spi1.o: .\USER\inc\rtc.h
 .\objects\spi1.o: .\HARDWARE\inc\touch.h
 .\objects\spi1.o: .\HARDWARE\inc\sd_driver.h
+.\objects\spi1.o: .\FATFS\inc\diskio.h
+.\objects\spi1.o: .\FATFS\inc\ff.h
+.\objects\spi1.o: .\FATFS\inc\ffconf.h

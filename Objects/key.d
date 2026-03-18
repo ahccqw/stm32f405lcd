@@ -61,3 +61,6 @@
 .\objects\key.o: .\USER\inc\rtc.h
 .\objects\key.o: .\HARDWARE\inc\touch.h
 .\objects\key.o: .\HARDWARE\inc\sd_driver.h
+.\objects\key.o: .\FATFS\inc\diskio.h
+.\objects\key.o: .\FATFS\inc\ff.h
+.\objects\key.o: .\FATFS\inc\ffconf.h

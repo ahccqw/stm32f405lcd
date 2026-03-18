@@ -61,3 +61,6 @@
 .\objects\adc1.o: .\USER\inc\rtc.h
 .\objects\adc1.o: .\HARDWARE\inc\touch.h
 .\objects\adc1.o: .\HARDWARE\inc\sd_driver.h
+.\objects\adc1.o: .\FATFS\inc\diskio.h
+.\objects\adc1.o: .\FATFS\inc\ff.h
+.\objects\adc1.o: .\FATFS\inc\ffconf.h

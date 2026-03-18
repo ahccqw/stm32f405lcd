@@ -61,3 +61,6 @@
 .\objects\time6.o: .\USER\inc\rtc.h
 .\objects\time6.o: .\HARDWARE\inc\touch.h
 .\objects\time6.o: .\HARDWARE\inc\sd_driver.h
+.\objects\time6.o: .\FATFS\inc\diskio.h
+.\objects\time6.o: .\FATFS\inc\ff.h
+.\objects\time6.o: .\FATFS\inc\ffconf.h

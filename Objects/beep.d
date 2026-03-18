@@ -61,3 +61,6 @@
 .\objects\beep.o: .\USER\inc\rtc.h
 .\objects\beep.o: .\HARDWARE\inc\touch.h
 .\objects\beep.o: .\HARDWARE\inc\sd_driver.h
+.\objects\beep.o: .\FATFS\inc\diskio.h
+.\objects\beep.o: .\FATFS\inc\ff.h
+.\objects\beep.o: .\FATFS\inc\ffconf.h
