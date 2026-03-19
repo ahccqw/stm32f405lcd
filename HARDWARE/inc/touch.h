@@ -23,7 +23,24 @@ typedef struct{
 	u16 x;
 	u16 y;
 	u8 sta;	//读取手指是否按下
+	
+	 // 新增：功能状态变量
+	u8 led_state;           // LED状态 0-关 1-开
+	u8 motor_state;         // 直流电机状态 0-关 1-开
+	u8 servo_state;         // 舵机状态 0-关 1-开
+	
+	u8 last_led_state;      // 上次LED状态
+	u8 last_motor_state;    // 上次电机状态
+	u8 last_servo_state;    // 上次舵机状态
+	
+	// 新增：页面状态变量
+	u8 current_page;        // 当前页面
+	u8 last_page;           // 上次页面
 }CST816_STRUCT;
+
+extern CST816_STRUCT cst;
+
+
 
 void Touch_IIc_Init(void);
 

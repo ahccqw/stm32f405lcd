@@ -167,3 +167,20 @@ u8 Usart1_RecByte()
 版本：1.0 
 函数说明:接收字符串
 *************************/
+void Usart1_RecStr(u8 *str)
+{
+	u8 data;
+	while(1)
+	{
+		data = Usart1_RecByte();//一个字节一个字节去接收
+		if(data == '\r' || data == '\n')
+		{
+			*(str+1) = 0;
+			*str = '\0';
+			return;
+		}
+		*str = data;
+		str++;		
+	}	
+}
+

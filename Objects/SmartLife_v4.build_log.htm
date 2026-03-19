@@ -22,15 +22,19 @@ Dialog DLL:      TCM.DLL V1.14.9.0
  
 <h2>Project:</h2>
 C:\Users\ahccqw\Desktop\SmartLife\SmartLife_v4.uvprojx
-Project File Date:  03/18/2026
+Project File Date:  03/19/2026
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 2 (build 183)', folder: 'D:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'SmartLife'
-compiling main.c...
+compiling usart3spre.c...
+compiling touch.c...
+HARDWARE\src\touch.c(359): warning:  #177-D: variable "touch_processed" was declared but never referenced
+  		 static u8	touch_processed = 1;
+HARDWARE\src\touch.c: 1 warning, 0 errors
 linking...
-Program Size: Code=10092 RO-data=407568 RW-data=84 ZI-data=4100  
-".\Objects\SmartLife_v4.axf" - 0 Error(s), 0 Warning(s).
+Program Size: Code=25256 RO-data=582952 RW-data=256 ZI-data=1230944  
+".\Objects\SmartLife_v4.axf" - 0 Error(s), 1 Warning(s).
 
 <h2>Collection of Component include folders:</h2>
   C:\Users\ahccqw\Desktop\SmartLife\RTE

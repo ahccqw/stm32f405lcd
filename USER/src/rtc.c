@@ -1,6 +1,6 @@
 #include "rtc.h"
 
-u8 time[] = __TIME__;//系统时间（以字符串的形式表示）
+u8 time1[] = __TIME__;//系统时间（以字符串的形式表示）
 u8 date[] = __DATE__;//系统日期                 
 
 RTC_STRUCT rtc;
@@ -307,11 +307,11 @@ void Rtc_Analysis_TimeDate(void)
 	u8 temp[4] = {0};
 	u8 array[12][4] = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
 	//解析小时 字符转十进制:- 48
-	rtc.hour = (time[0] - 48) * 10 + (time[1] - 48);
+	rtc.hour = (time1[0] - 48) * 10 + (time1[1] - 48);
 	//解析分钟
-	rtc.min = (time[3] - 48) * 10 + (time[4] - 48);
+	rtc.min = (time1[3] - 48) * 10 + (time1[4] - 48);
 	//解析秒
-	rtc.second = (time[6] - 48) * 10 + (time[7] - 48);
+	rtc.second = (time1[6] - 48) * 10 + (time1[7] - 48);
 	//解析年份
 	rtc.year = (date[9] - 48) * 10 + (date[10] - 48);
 	//解析月份

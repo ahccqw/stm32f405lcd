@@ -45,6 +45,7 @@
 .\objects\ws2812s.o: .\HARDWARE\inc\key.h
 .\objects\ws2812s.o: .\HARDWARE\inc\sterilize.h
 .\objects\ws2812s.o: .\HARDWARE\inc\usart1.h
+.\objects\ws2812s.o: .\HARDWARE\inc\usart3spre.h
 .\objects\ws2812s.o: .\HARDWARE\inc\spi1.h
 .\objects\ws2812s.o: .\HARDWARE\inc\w25q64.h
 .\objects\ws2812s.o: .\HARDWARE\inc\motor.h
@@ -64,3 +65,15 @@
 .\objects\ws2812s.o: .\FATFS\inc\diskio.h
 .\objects\ws2812s.o: .\FATFS\inc\ff.h
 .\objects\ws2812s.o: .\FATFS\inc\ffconf.h
+.\objects\ws2812s.o: .\VOICE\inc\wm8978.h
+.\objects\ws2812s.o: .\USER\inc\io_bit.h
+.\objects\ws2812s.o: .\VOICE\inc\wmiic.h
+.\objects\ws2812s.o: .\VOICE\inc\mymalloc.h
+.\objects\ws2812s.o: .\FATFS\inc\exfuns.h
+.\objects\ws2812s.o: .\VOICE\inc\audioplay.h
+.\objects\ws2812s.o: .\VOICE\inc\wavplay.h
+.\objects\ws2812s.o: .\VOICE\inc\audioplay.h
+.\objects\ws2812s.o: .\VOICE\inc\i2s.h
+.\objects\ws2812s.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\ws2812s.o: .\VOICE\inc\revert.h
+.\objects\ws2812s.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\time.h

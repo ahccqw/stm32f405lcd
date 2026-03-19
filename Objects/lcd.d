@@ -45,6 +45,7 @@
 .\objects\lcd.o: .\HARDWARE\inc\key.h
 .\objects\lcd.o: .\HARDWARE\inc\sterilize.h
 .\objects\lcd.o: .\HARDWARE\inc\usart1.h
+.\objects\lcd.o: .\HARDWARE\inc\usart3spre.h
 .\objects\lcd.o: .\HARDWARE\inc\spi1.h
 .\objects\lcd.o: .\HARDWARE\inc\w25q64.h
 .\objects\lcd.o: .\HARDWARE\inc\motor.h
@@ -64,5 +65,17 @@
 .\objects\lcd.o: .\FATFS\inc\diskio.h
 .\objects\lcd.o: .\FATFS\inc\ff.h
 .\objects\lcd.o: .\FATFS\inc\ffconf.h
+.\objects\lcd.o: .\VOICE\inc\wm8978.h
+.\objects\lcd.o: .\USER\inc\io_bit.h
+.\objects\lcd.o: .\VOICE\inc\wmiic.h
+.\objects\lcd.o: .\VOICE\inc\mymalloc.h
+.\objects\lcd.o: .\FATFS\inc\exfuns.h
+.\objects\lcd.o: .\VOICE\inc\audioplay.h
+.\objects\lcd.o: .\VOICE\inc\wavplay.h
+.\objects\lcd.o: .\VOICE\inc\audioplay.h
+.\objects\lcd.o: .\VOICE\inc\i2s.h
+.\objects\lcd.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\lcd.o: .\VOICE\inc\revert.h
+.\objects\lcd.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\time.h
 .\objects\lcd.o: .\HARDWARE\inc\pic.h
 .\objects\lcd.o: .\HARDWARE\inc\ikun.h

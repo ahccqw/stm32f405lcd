@@ -45,6 +45,7 @@
 .\objects\beep.o: .\HARDWARE\inc\key.h
 .\objects\beep.o: .\HARDWARE\inc\sterilize.h
 .\objects\beep.o: .\HARDWARE\inc\usart1.h
+.\objects\beep.o: .\HARDWARE\inc\usart3spre.h
 .\objects\beep.o: .\HARDWARE\inc\spi1.h
 .\objects\beep.o: .\HARDWARE\inc\w25q64.h
 .\objects\beep.o: .\HARDWARE\inc\motor.h
@@ -64,3 +65,15 @@
 .\objects\beep.o: .\FATFS\inc\diskio.h
 .\objects\beep.o: .\FATFS\inc\ff.h
 .\objects\beep.o: .\FATFS\inc\ffconf.h
+.\objects\beep.o: .\VOICE\inc\wm8978.h
+.\objects\beep.o: .\USER\inc\io_bit.h
+.\objects\beep.o: .\VOICE\inc\wmiic.h
+.\objects\beep.o: .\VOICE\inc\mymalloc.h
+.\objects\beep.o: .\FATFS\inc\exfuns.h
+.\objects\beep.o: .\VOICE\inc\audioplay.h
+.\objects\beep.o: .\VOICE\inc\wavplay.h
+.\objects\beep.o: .\VOICE\inc\audioplay.h
+.\objects\beep.o: .\VOICE\inc\i2s.h
+.\objects\beep.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\beep.o: .\VOICE\inc\revert.h
+.\objects\beep.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\time.h

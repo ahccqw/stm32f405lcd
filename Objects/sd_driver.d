@@ -45,6 +45,7 @@
 .\objects\sd_driver.o: .\HARDWARE\inc\key.h
 .\objects\sd_driver.o: .\HARDWARE\inc\sterilize.h
 .\objects\sd_driver.o: .\HARDWARE\inc\usart1.h
+.\objects\sd_driver.o: .\HARDWARE\inc\usart3spre.h
 .\objects\sd_driver.o: .\HARDWARE\inc\spi1.h
 .\objects\sd_driver.o: .\HARDWARE\inc\w25q64.h
 .\objects\sd_driver.o: .\HARDWARE\inc\motor.h
@@ -64,3 +65,15 @@
 .\objects\sd_driver.o: .\FATFS\inc\diskio.h
 .\objects\sd_driver.o: .\FATFS\inc\ff.h
 .\objects\sd_driver.o: .\FATFS\inc\ffconf.h
+.\objects\sd_driver.o: .\VOICE\inc\wm8978.h
+.\objects\sd_driver.o: .\USER\inc\io_bit.h
+.\objects\sd_driver.o: .\VOICE\inc\wmiic.h
+.\objects\sd_driver.o: .\VOICE\inc\mymalloc.h
+.\objects\sd_driver.o: .\FATFS\inc\exfuns.h
+.\objects\sd_driver.o: .\VOICE\inc\audioplay.h
+.\objects\sd_driver.o: .\VOICE\inc\wavplay.h
+.\objects\sd_driver.o: .\VOICE\inc\audioplay.h
+.\objects\sd_driver.o: .\VOICE\inc\i2s.h
+.\objects\sd_driver.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\sd_driver.o: .\VOICE\inc\revert.h
+.\objects\sd_driver.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\time.h

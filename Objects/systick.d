@@ -45,6 +45,7 @@
 .\objects\systick.o: .\HARDWARE\inc\key.h
 .\objects\systick.o: .\HARDWARE\inc\sterilize.h
 .\objects\systick.o: .\HARDWARE\inc\usart1.h
+.\objects\systick.o: .\HARDWARE\inc\usart3spre.h
 .\objects\systick.o: .\HARDWARE\inc\spi1.h
 .\objects\systick.o: .\HARDWARE\inc\w25q64.h
 .\objects\systick.o: .\HARDWARE\inc\motor.h
@@ -64,3 +65,15 @@
 .\objects\systick.o: .\FATFS\inc\diskio.h
 .\objects\systick.o: .\FATFS\inc\ff.h
 .\objects\systick.o: .\FATFS\inc\ffconf.h
+.\objects\systick.o: .\VOICE\inc\wm8978.h
+.\objects\systick.o: .\USER\inc\io_bit.h
+.\objects\systick.o: .\VOICE\inc\wmiic.h
+.\objects\systick.o: .\VOICE\inc\mymalloc.h
+.\objects\systick.o: .\FATFS\inc\exfuns.h
+.\objects\systick.o: .\VOICE\inc\audioplay.h
+.\objects\systick.o: .\VOICE\inc\wavplay.h
+.\objects\systick.o: .\VOICE\inc\audioplay.h
+.\objects\systick.o: .\VOICE\inc\i2s.h
+.\objects\systick.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\systick.o: .\VOICE\inc\revert.h
+.\objects\systick.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\time.h

@@ -45,6 +45,7 @@
 .\objects\touch.o: .\HARDWARE\inc\key.h
 .\objects\touch.o: .\HARDWARE\inc\sterilize.h
 .\objects\touch.o: .\HARDWARE\inc\usart1.h
+.\objects\touch.o: .\HARDWARE\inc\usart3spre.h
 .\objects\touch.o: .\HARDWARE\inc\spi1.h
 .\objects\touch.o: .\HARDWARE\inc\w25q64.h
 .\objects\touch.o: .\HARDWARE\inc\motor.h
@@ -64,3 +65,15 @@
 .\objects\touch.o: .\FATFS\inc\diskio.h
 .\objects\touch.o: .\FATFS\inc\ff.h
 .\objects\touch.o: .\FATFS\inc\ffconf.h
+.\objects\touch.o: .\VOICE\inc\wm8978.h
+.\objects\touch.o: .\USER\inc\io_bit.h
+.\objects\touch.o: .\VOICE\inc\wmiic.h
+.\objects\touch.o: .\VOICE\inc\mymalloc.h
+.\objects\touch.o: .\FATFS\inc\exfuns.h
+.\objects\touch.o: .\VOICE\inc\audioplay.h
+.\objects\touch.o: .\VOICE\inc\wavplay.h
+.\objects\touch.o: .\VOICE\inc\audioplay.h
+.\objects\touch.o: .\VOICE\inc\i2s.h
+.\objects\touch.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\touch.o: .\VOICE\inc\revert.h
+.\objects\touch.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\time.h

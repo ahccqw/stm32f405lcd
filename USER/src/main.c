@@ -13,10 +13,11 @@ int main()
 	IIc_Init();
 	Rgb_Init();
 	Time6_Intrerpute(1500);
-	Tim2_ServoMotor_Init(0);
 	Spi1_Init();
 	LCD_Init();
-	
+	Tim2_ServoMotor_Init(0);
+	Usart3_Init(115200);
+	Tim3_DcMotor_Init(0);
 //	Rtc_Init();
 //	Rtc_WakeUp(1);
 	
@@ -34,69 +35,27 @@ int main()
 	u8 ret = 0;
 	FATFS fs;
 	FIL fp;
-	UINT bw;
-	UINT br;
-	u8 write_buff[] = {"hello,world"};
-	u8 temp[20];
+	UINT bw,br;
+
+	WM8978_Init();				//初始化WM8978
+	WM8978_HPvol_Set(0, 0);		//耳机音量设置
+	WM8978_SPKvol_Set(0);		//喇叭音量设置
+	WM8978_ADDA_Cfg(1, 0);		//开启DAC
+	WM8978_Input_Cfg(0, 0, 0);	//关闭输入通道
+	WM8978_Output_Cfg(1, 0);	//开启DAC输出   
+	WM8978_I2S_Cfg(2, 0);		//飞利浦标准,16位数据长度
+	I2S2_Init(I2S_Standard_Phillips, I2S_Mode_MasterTx, I2S_CPOL_Low, I2S_DataFormat_16bextended);	//飞利浦标准,主机发送,时钟低电平有效,16位扩展帧长度
+	I2S2_SampleRate_Set(44100);	//设置采样率
+	I2S2_TX_DMA_Init(NULL, NULL, WAV_I2S_TX_DMA_BUFSIZE/2); 				//配置TX DMA
+	status_dev.volume = 60;	//初始保存音量 0~63
+	WM8978_SPKvol_Set(status_dev.volume);
 	
-	
+
 	ret = f_mount (&fs,"0",1);
 	if(ret == FR_OK)
 	{
-		printf("卡片注册成功\r\n");	
-		ret = f_open (&fp,"0:/123.txt",FA_READ | FA_WRITE);
-		if(ret == FR_OK)
-		{
-			printf("打开文件成功\r\n");
-			
-			ret = f_write (&fp,write_buff,sizeof(write_buff),&bw);			
-			if(ret == FR_OK)
-			{
-				printf("写入成功,写入数据大小为: %d\r\n", bw);
-        
-        f_lseek(&fp, 0);  // 定位到文件开头    
-        ret = f_read(&fp, temp, sizeof(write_buff), &br);
-				
-         if(ret == FR_OK)
-				{
-						printf("读取成功,读取数据大小为: %d\r\n", br);
-						printf("写入内容为：%s\r\n", temp);
-				}
-				else
-				{
-						printf("读取失败，错误码: %d\r\n", ret);
-				}		
-				
-			}
-			 f_close(&fp);  // 只关闭一次
-			
-		}
-		else
-    {
-        printf("打开文件失败，错误码: %d\r\n", ret);
-    }
-		
-		
-		
-		
-		if(ret == FR_OK)
-		{		
-			ret = f_open (&fp,"0:/123.txt",FA_READ | FA_WRITE);
-			if(ret == FR_OK)
-			{
-				f_read (&fp,temp,sizeof(write_buff),&br);
-				if(ret == FR_OK)
-				{
-					f_close (&fp);
-					printf("读取成功,读取数据大小为: %d\r\n",br);
-					printf("写入数据位：%s\r\n",temp);
-					
-				}
-			}
-		}
-					
+		printf("卡片注册成功\r\n");			
 	}
-
 	
 	else
 	{
@@ -104,7 +63,7 @@ int main()
 	}
 		
 
-
+//	Audio_PlaySong((u8 *)"0:/music/晴天.wav");
 
 	
 	
@@ -128,6 +87,8 @@ int main()
 	
 	while(1)
 	{	
+		
+		Voice_Control();
 		
 		Touch_Coordinates();
 

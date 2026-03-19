@@ -45,6 +45,7 @@
 .\objects\spi1.o: .\HARDWARE\inc\key.h
 .\objects\spi1.o: .\HARDWARE\inc\sterilize.h
 .\objects\spi1.o: .\HARDWARE\inc\usart1.h
+.\objects\spi1.o: .\HARDWARE\inc\usart3spre.h
 .\objects\spi1.o: .\HARDWARE\inc\spi1.h
 .\objects\spi1.o: .\HARDWARE\inc\w25q64.h
 .\objects\spi1.o: .\HARDWARE\inc\motor.h
@@ -64,3 +65,15 @@
 .\objects\spi1.o: .\FATFS\inc\diskio.h
 .\objects\spi1.o: .\FATFS\inc\ff.h
 .\objects\spi1.o: .\FATFS\inc\ffconf.h
+.\objects\spi1.o: .\VOICE\inc\wm8978.h
+.\objects\spi1.o: .\USER\inc\io_bit.h
+.\objects\spi1.o: .\VOICE\inc\wmiic.h
+.\objects\spi1.o: .\VOICE\inc\mymalloc.h
+.\objects\spi1.o: .\FATFS\inc\exfuns.h
+.\objects\spi1.o: .\VOICE\inc\audioplay.h
+.\objects\spi1.o: .\VOICE\inc\wavplay.h
+.\objects\spi1.o: .\VOICE\inc\audioplay.h
+.\objects\spi1.o: .\VOICE\inc\i2s.h
+.\objects\spi1.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\spi1.o: .\VOICE\inc\revert.h
+.\objects\spi1.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\time.h

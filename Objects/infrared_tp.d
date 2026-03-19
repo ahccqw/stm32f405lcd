@@ -45,6 +45,7 @@
 .\objects\infrared_tp.o: .\HARDWARE\inc\key.h
 .\objects\infrared_tp.o: .\HARDWARE\inc\sterilize.h
 .\objects\infrared_tp.o: .\HARDWARE\inc\usart1.h
+.\objects\infrared_tp.o: .\HARDWARE\inc\usart3spre.h
 .\objects\infrared_tp.o: .\HARDWARE\inc\spi1.h
 .\objects\infrared_tp.o: .\HARDWARE\inc\w25q64.h
 .\objects\infrared_tp.o: .\HARDWARE\inc\motor.h
@@ -64,3 +65,15 @@
 .\objects\infrared_tp.o: .\FATFS\inc\diskio.h
 .\objects\infrared_tp.o: .\FATFS\inc\ff.h
 .\objects\infrared_tp.o: .\FATFS\inc\ffconf.h
+.\objects\infrared_tp.o: .\VOICE\inc\wm8978.h
+.\objects\infrared_tp.o: .\USER\inc\io_bit.h
+.\objects\infrared_tp.o: .\VOICE\inc\wmiic.h
+.\objects\infrared_tp.o: .\VOICE\inc\mymalloc.h
+.\objects\infrared_tp.o: .\FATFS\inc\exfuns.h
+.\objects\infrared_tp.o: .\VOICE\inc\audioplay.h
+.\objects\infrared_tp.o: .\VOICE\inc\wavplay.h
+.\objects\infrared_tp.o: .\VOICE\inc\audioplay.h
+.\objects\infrared_tp.o: .\VOICE\inc\i2s.h
+.\objects\infrared_tp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\infrared_tp.o: .\VOICE\inc\revert.h
+.\objects\infrared_tp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\time.h

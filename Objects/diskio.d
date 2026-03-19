@@ -48,6 +48,7 @@
 .\objects\diskio.o: .\HARDWARE\inc\key.h
 .\objects\diskio.o: .\HARDWARE\inc\sterilize.h
 .\objects\diskio.o: .\HARDWARE\inc\usart1.h
+.\objects\diskio.o: .\HARDWARE\inc\usart3spre.h
 .\objects\diskio.o: .\HARDWARE\inc\spi1.h
 .\objects\diskio.o: .\HARDWARE\inc\w25q64.h
 .\objects\diskio.o: .\HARDWARE\inc\motor.h
@@ -64,3 +65,15 @@
 .\objects\diskio.o: .\USER\inc\rtc.h
 .\objects\diskio.o: .\HARDWARE\inc\touch.h
 .\objects\diskio.o: .\HARDWARE\inc\sd_driver.h
+.\objects\diskio.o: .\VOICE\inc\wm8978.h
+.\objects\diskio.o: .\USER\inc\io_bit.h
+.\objects\diskio.o: .\VOICE\inc\wmiic.h
+.\objects\diskio.o: .\VOICE\inc\mymalloc.h
+.\objects\diskio.o: .\FATFS\inc\exfuns.h
+.\objects\diskio.o: .\VOICE\inc\audioplay.h
+.\objects\diskio.o: .\VOICE\inc\wavplay.h
+.\objects\diskio.o: .\VOICE\inc\audioplay.h
+.\objects\diskio.o: .\VOICE\inc\i2s.h
+.\objects\diskio.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\diskio.o: .\VOICE\inc\revert.h
+.\objects\diskio.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\time.h

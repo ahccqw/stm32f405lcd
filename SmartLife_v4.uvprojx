@@ -334,7 +334,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F40_41xxx,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>.\CMSIS;.\CMSIS\Include;.\USER\inc;.\HARDWARE\inc;.\STM32F4xx_StdPeriph_Driver\inc;.\FATFS\inc</IncludePath>
+              <IncludePath>.\CMSIS;.\CMSIS\Include;.\USER\inc;.\HARDWARE\inc;.\STM32F4xx_StdPeriph_Driver\inc;.\FATFS\inc;.\VOICE\inc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -511,6 +511,11 @@
               <FileName>sd_driver.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\HARDWARE\src\sd_driver.c</FilePath>
+            </File>
+            <File>
+              <FileName>usart3spre.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\HARDWARE\src\usart3spre.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -711,6 +716,51 @@
               <FileName>ffunicode.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\FATFS\src\ffunicode.c</FilePath>
+            </File>
+            <File>
+              <FileName>exfuns.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FATFS\src\exfuns.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>VOICE</GroupName>
+          <Files>
+            <File>
+              <FileName>audioplay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\VOICE\src\audioplay.c</FilePath>
+            </File>
+            <File>
+              <FileName>i2s.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\VOICE\src\i2s.c</FilePath>
+            </File>
+            <File>
+              <FileName>mymalloc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\VOICE\src\mymalloc.c</FilePath>
+            </File>
+            <File>
+              <FileName>revert.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\VOICE\src\revert.c</FilePath>
+            </File>
+            <File>
+              <FileName>wavplay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\VOICE\src\wavplay.c</FilePath>
+            </File>
+            <File>
+              <FileName>wm8978.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\VOICE\src\wm8978.c</FilePath>
+            </File>
+            <File>
+              <FileName>wmiic.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\VOICE\src\wmiic.c</FilePath>
             </File>
           </Files>
         </Group>

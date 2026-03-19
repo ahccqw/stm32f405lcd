@@ -337,6 +337,7 @@ void Touch_Coordinates(void)
 	
 }
 
+
 /*************************
 函数名称：Touch_Range_funtion(u16 xs,u16 ys,u16 xe,u16 ye)
 函数功能：Touch触发的范围
@@ -347,28 +348,32 @@ void Touch_Coordinates(void)
 *************************/
 void Touch_Range(u16 xs,u16 ys,u16 xe,u16 ye)
 {
-	// 静态变量保存当前页面和LED状态，避免重复刷新
-	static u8 current_page = 0;
-	static u8 state 			 = 0;
-	static u8 touch_processed = 0;// 触摸状态标志，防止一次触摸多次触发
-	static u8 last_page 			= 0xFF;//记录上次页面，用于判断是否要刷新页面
-	static u8 last_state			= 0xFF;//上一次的state，用于判断是否要触发功能
-
+	static u8 first_run = 1;  // 首次运行标志 为了能运行 首页
+	
 	u8 in_range = ((cst.x>xs && xe>cst.x) && (cst.y>ys && cst.y<ye));
+	
+	static u8	touch_processed = 0;
 	
 	if(in_range && (cst.sta != 0x00) && (touch_processed == 0))
 	{
-		touch_processed = 1;
-
-			touch_processed = 1;
+		 static u8	touch_processed = 1;
 			
 			switch(cst.sta)
 			{
 				//左滑
-				case 0x03:current_page = (current_page == 0) ? 3 : (current_page - 1);break;//	条件 ? 	结果A : 结果B。
+				case 0x03:cst.current_page = (cst.current_page == 0) ? 3 : (cst.current_page - 1);break;//	条件 ? 	结果A : 结果B。
 				//右滑
-				case 0x04:current_page = (current_page == 3) ? 0 : (current_page + 1);break;
-				case 0x05:state = !state;break;
+				case 0x04:cst.current_page = (cst.current_page == 3) ? 0 : (cst.current_page + 1);break;
+				case 0x05:
+					switch(cst.current_page)
+					{
+							case 1: cst.led_state = !cst.led_state; break;
+							case 2: cst.motor_state = !cst.motor_state; break;
+							case 3: cst.servo_state = !cst.servo_state; break;
+							default: break;
+					}
+					break;
+					
 				default:break;
 					
 			}		
@@ -384,12 +389,17 @@ void Touch_Range(u16 xs,u16 ys,u16 xe,u16 ye)
     }
 		
 		    // ================= 页面显示（只在页面变化时刷新）=================
-    if((current_page != last_page) || (state != last_state))
+    if((first_run || cst.current_page != cst.last_page) ||    (cst.led_state != cst.last_led_state) || (cst.motor_state != cst.last_motor_state) || (cst.servo_state != cst.last_servo_state))
     {
-        last_page = current_page;	
-				last_state = state;
+				first_run = 0;//进来之后直接 赋0
+			
+        cst.last_page = cst.current_page;	
+        cst.last_led_state = cst.led_state;
+        cst.last_motor_state = cst.motor_state;
+        cst.last_servo_state = cst.servo_state;
 			 // 根据当前页面显示内容
-			switch(current_page)
+			
+			switch(cst.current_page)
 			{
 					case 0:  // 页面0：主页面
 							Lcd_Display_Photo(xs,ys,(u8 *)gImage_0page);
@@ -398,39 +408,46 @@ void Touch_Range(u16 xs,u16 ys,u16 xe,u16 ye)
 					case 1:  // 页面1：黑色背景 + LED控制
 							Lcd_Clear(xs, ys, xe, ye, WHITE);
 							
-							if(state)
+							if(cst.led_state)
 							{		
 									Lcd_Display_Photo(60,80,(u8 *)gImage_11page);
 									LED1_ON; LED2_ON; LED3_ON;
+									Rgb_Control(0xff,0xff,0xff);
+									Rgb_Control(0xff,0xff,0xff);
+									Rgb_Control(0xff,0xff,0xff);
+									Rgb_Control(0xff,0xff,0xff);
 							}
 							else
 							{
 									Lcd_Display_Photo(60,80,(u8 *)gImage_1page);
 									LED1_OFF; LED2_OFF; LED3_OFF;
+									Rgb_Control(0x00,0x00,0x00);
+									Rgb_Control(0x00,0x00,0x00);
+									Rgb_Control(0x00,0x00,0x00);
+									Rgb_Control(0x00,0x00,0x00);
 							}
 							break;
 							
 					case 2:  // 页面2：黑色背景 + 直流电机
 							Lcd_Clear(xs, ys, xe, ye, WHITE);
 							
-							if(state)  // 复用led_state控制电机
+							if(cst.motor_state)  // 复用led_state控制电机
 							{
 									Lcd_Display_Photo(60,80,(u8 *)gImage_22page);
-									Tim3_DcMotor_Init(800);
+									TIM_SetCompare3(TIM3,1000);
 
 							}
 							else
 							{
 									Lcd_Display_Photo(60,80,(u8 *)gImage_2page);
-									Tim3_DcMotor_Init(0);
-									Servo_motor_Control(120);
+									TIM_SetCompare3(TIM3,0);
 							}
 							break;
 							
 					case 3:  // 页面3：黑色背景 + 舵机
 							Lcd_Clear(xs, ys, xe, ye, WHITE);
 							
-							if(state)  // 复用led_state控制舵机
+							if(cst.servo_state)  // 复用led_state控制舵机
 							{
 									Lcd_Display_Photo(60,80,(u8 *)gImage_33page);
 									Servo_motor_Control(30);   // 比如 30°，对应较小脉宽
@@ -443,12 +460,11 @@ void Touch_Range(u16 xs,u16 ys,u16 xe,u16 ye)
 							break;
 							
 					default:
-							current_page = 0;
-							last_page = 0xff;
+							cst.current_page = 0;
+              cst.last_page = 0xff;
 							break;
 			}	
 		}
-	
 }
 
 

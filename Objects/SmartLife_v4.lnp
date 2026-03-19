@@ -24,6 +24,7 @@
 ".\objects\lcd.o"
 ".\objects\touch.o"
 ".\objects\sd_driver.o"
+".\objects\usart3spre.o"
 ".\objects\misc.o"
 ".\objects\stm32f4xx_adc.o"
 ".\objects\stm32f4xx_can.o"
@@ -62,6 +63,14 @@
 ".\objects\ff.o"
 ".\objects\ffsystem.o"
 ".\objects\ffunicode.o"
+".\objects\exfuns.o"
+".\objects\audioplay.o"
+".\objects\i2s.o"
+".\objects\mymalloc.o"
+".\objects\revert.o"
+".\objects\wavplay.o"
+".\objects\wm8978.o"
+".\objects\wmiic.o"
 --library_type=microlib --ro-base 0x08000000 --entry 0x08000000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list ".\Listings\SmartLife_v4.map" -o .\Objects\SmartLife_v4.axf
