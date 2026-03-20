@@ -17,6 +17,7 @@ int main()
 	LCD_Init();
 	Tim2_ServoMotor_Init(0);
 	Usart3_Init(115200);
+	Wifi_Tcp_Init();
 	Tim3_DcMotor_Init(0);
 //	Rtc_Init();
 //	Rtc_WakeUp(1);
@@ -88,11 +89,11 @@ int main()
 	while(1)
 	{	
 		
-		Voice_Control();
-		
-		Touch_Coordinates();
+//		Voice_Control();
+//		
+//		Touch_Coordinates();
 
-		Touch_Range(0,0,240,320);
+//		Touch_Range(0,0,240,320);
 		
 		
 //		Delay_Ms(50);

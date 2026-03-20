@@ -46,6 +46,7 @@
 .\objects\touch.o: .\HARDWARE\inc\sterilize.h
 .\objects\touch.o: .\HARDWARE\inc\usart1.h
 .\objects\touch.o: .\HARDWARE\inc\usart3spre.h
+.\objects\touch.o: .\HARDWARE\inc\usart2wifi.h
 .\objects\touch.o: .\HARDWARE\inc\spi1.h
 .\objects\touch.o: .\HARDWARE\inc\w25q64.h
 .\objects\touch.o: .\HARDWARE\inc\motor.h

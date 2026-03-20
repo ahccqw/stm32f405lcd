@@ -15,6 +15,8 @@
 #include "sterilize.h"
 #include "usart1.h"
 #include "usart3spre.h"
+#include "usart2wifi.h"
+
 #include "spi1.h"
 #include "w25q64.h"
 #include "motor.h"
@@ -39,6 +41,8 @@
 #include "mymalloc.h"
 #include "exfuns.h"
 #include "audioplay.h"
+
+
 
 #endif
 

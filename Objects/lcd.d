@@ -46,6 +46,7 @@
 .\objects\lcd.o: .\HARDWARE\inc\sterilize.h
 .\objects\lcd.o: .\HARDWARE\inc\usart1.h
 .\objects\lcd.o: .\HARDWARE\inc\usart3spre.h
+.\objects\lcd.o: .\HARDWARE\inc\usart2wifi.h
 .\objects\lcd.o: .\HARDWARE\inc\spi1.h
 .\objects\lcd.o: .\HARDWARE\inc\w25q64.h
 .\objects\lcd.o: .\HARDWARE\inc\motor.h

@@ -62,28 +62,31 @@ void Usart1_Init(u32 baud)
 *************************/
 void USART1_IRQHandler(void)
 {
-	u8 data = 0;
+//	u8 data = 0;
 	static u32 addr = 0;
 	if(USART_GetITStatus(USART1, USART_IT_RXNE))//如果接收到了数据	0中断未触发 1触发
 	{
 		USART_ClearITPendingBit(USART1,USART_IT_RXNE);//清除接收中断标志位
-//		u1.buff[u1.len++] = USART_ReceiveData(USART1);
+		u1.buff[u1.len++] = USART_ReceiveData(USART1);
 		
-		Re_flag = 1;
-		data = USART_ReceiveData(USART1);
-		w25_Wr_Ct(addr++,&data,1);
+//		Re_flag = 1;
+//		data = USART_ReceiveData(USART1);
+//		w25_Wr_Ct(addr++,&data,1);
 		
 	}
 	if(USART_GetITStatus(USART1, USART_IT_IDLE))
 	{
 		USART1->SR;//清标志位
 		USART1->DR;//清标志位
-		if(addr >= 0x001D3374)
-		{	
-			Re_flag = 0;
-			Re_End_flag = 0;
-			addr = 0;
-		}
+//		if(addr >= 0x001D3374)
+//		{	
+//			Re_flag = 0;
+//			Re_End_flag = 0;
+//			addr = 0;
+//		}
+		
+		USART2_SendString((char *)u1.buff);
+		
 //		u1.buff[u1.len] = '\0';
 //		printf("%s", u1.buff);  // 打印接收到的数据
 //		u1.len = 0;

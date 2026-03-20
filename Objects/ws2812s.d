@@ -46,6 +46,7 @@
 .\objects\ws2812s.o: .\HARDWARE\inc\sterilize.h
 .\objects\ws2812s.o: .\HARDWARE\inc\usart1.h
 .\objects\ws2812s.o: .\HARDWARE\inc\usart3spre.h
+.\objects\ws2812s.o: .\HARDWARE\inc\usart2wifi.h
 .\objects\ws2812s.o: .\HARDWARE\inc\spi1.h
 .\objects\ws2812s.o: .\HARDWARE\inc\w25q64.h
 .\objects\ws2812s.o: .\HARDWARE\inc\motor.h

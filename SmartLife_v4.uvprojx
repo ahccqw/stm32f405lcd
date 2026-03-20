@@ -517,6 +517,11 @@
               <FileType>1</FileType>
               <FilePath>.\HARDWARE\src\usart3spre.c</FilePath>
             </File>
+            <File>
+              <FileName>usart2wifi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\HARDWARE\src\usart2wifi.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

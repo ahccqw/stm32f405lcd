@@ -46,6 +46,7 @@
 .\objects\infrared_tp.o: .\HARDWARE\inc\sterilize.h
 .\objects\infrared_tp.o: .\HARDWARE\inc\usart1.h
 .\objects\infrared_tp.o: .\HARDWARE\inc\usart3spre.h
+.\objects\infrared_tp.o: .\HARDWARE\inc\usart2wifi.h
 .\objects\infrared_tp.o: .\HARDWARE\inc\spi1.h
 .\objects\infrared_tp.o: .\HARDWARE\inc\w25q64.h
 .\objects\infrared_tp.o: .\HARDWARE\inc\motor.h

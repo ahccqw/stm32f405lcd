@@ -45,6 +45,7 @@
 .\objects\main.o: .\HARDWARE\inc\sterilize.h
 .\objects\main.o: .\HARDWARE\inc\usart1.h
 .\objects\main.o: .\HARDWARE\inc\usart3spre.h
+.\objects\main.o: .\HARDWARE\inc\usart2wifi.h
 .\objects\main.o: .\HARDWARE\inc\spi1.h
 .\objects\main.o: .\HARDWARE\inc\w25q64.h
 .\objects\main.o: .\HARDWARE\inc\motor.h

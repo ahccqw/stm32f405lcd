@@ -126,7 +126,7 @@ void Audio_MusicPlay(void)
 		printf("MUSIC文件夹错误!\r\n");
 		Delay_Ms(200);				  			  
 	} 									  
-	totwavnum = Audio_GetTnum("0:/MUSIC");  //得到总有效文件数
+	totwavnum = Audio_GetTnum((u8 *)"0:/MUSIC");  //得到总有效文件数
   	while(totwavnum == NULL)				//音乐文件总数为0		
  	{	    
 		printf("没有音乐文件!\r\n");
