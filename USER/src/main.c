@@ -17,7 +17,9 @@ int main()
 	LCD_Init();
 	Tim2_ServoMotor_Init(0);
 	Usart3_Init(115200);
-	Wifi_Tcp_Init();
+	
+//	Wifi_Tcp_Init();
+	
 	Tim3_DcMotor_Init(0);
 //	Rtc_Init();
 //	Rtc_WakeUp(1);
@@ -88,15 +90,45 @@ int main()
 	
 	while(1)
 	{	
+	
 		
-//		Voice_Control();
+//		Lcd_Display_Photo(0,0,(u8 *)gImage_4page);
+//		//上一首歌
+//		Lcd_Clear(34,143,77,188,BLUE);
+//		//暂停
+//		Lcd_Clear(99,143,143,188,BLUE);
+//		//下一首歌
+//		Lcd_Clear(162,143,208,188,BLUE);
+//		Delay_Ms(2000);
 //		
-//		Touch_Coordinates();
+//		
+//		
+//		
+//		
+//		Lcd_Display_Photo(0,0,(u8 *)gImage_00page);
+//			//舵机
+//		Lcd_Clear(6,123,60,230,BLUE);
+//			//风扇
+//		Lcd_Clear(66,123,120,230,BLUE);
+//			//LED
+//		Lcd_Clear(125,123,177,230,BLUE);
+//			//MUSIC
+//		Lcd_Clear(184,123,235,230,BLUE);
+//		Delay_Ms(1000);
 
-//		Touch_Range(0,0,240,320);
 		
 		
-//		Delay_Ms(50);
+		
+		
+		
+		Voice_Control();
+		
+		Touch_Coordinates();
+
+		Touch_Range(0,0,240,320);
+		
+		
+
 	
 //		
 //		Delay_Ms(300);

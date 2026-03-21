@@ -24,7 +24,7 @@ typedef struct{
 	u16 y;
 	u8 sta;	//读取手指是否按下
 	
-	 // 新增：功能状态变量
+	 //功能状态变量
 	u8 led_state;           // LED状态 0-关 1-开
 	u8 motor_state;         // 直流电机状态 0-关 1-开
 	u8 servo_state;         // 舵机状态 0-关 1-开
@@ -33,9 +33,23 @@ typedef struct{
 	u8 last_motor_state;    // 上次电机状态
 	u8 last_servo_state;    // 上次舵机状态
 	
-	// 新增：页面状态变量
+	//页面状态变量
 	u8 current_page;        // 当前页面
 	u8 last_page;           // 上次页面
+	
+	//音乐
+	u8 previous_song_state;
+	u8 song_pause_state;
+	u8 next_song_state;
+	
+	u8 last_previous_song_state;
+	u8 last_song_pause_state;
+	u8 last_next_song_state;
+	
+	
+	//触发对应范围的标志位 
+	u8 rang_flag;
+	
 }CST816_STRUCT;
 
 extern CST816_STRUCT cst;

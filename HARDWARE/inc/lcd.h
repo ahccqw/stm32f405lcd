@@ -28,10 +28,11 @@
 //extern const unsigned char gImage_car4[153608];
 //extern const unsigned char ikun[][288];
 
-extern const unsigned char gImage_0page[153608];
+extern const unsigned char gImage_00page[153608];
 extern const unsigned char gImage_1page[38408];
 extern const unsigned char gImage_2page[38408];
 extern const unsigned char gImage_3page[38408];
+extern const unsigned char gImage_4page[153608];
 
 extern const unsigned char gImage_11page[38408];
 extern const unsigned char gImage_22page[36728];

@@ -349,31 +349,72 @@ void Touch_Coordinates(void)
 void Touch_Range(u16 xs,u16 ys,u16 xe,u16 ye)
 {
 	static u8 first_run = 1;  // 首次运行标志 为了能运行 首页
+	static u8	touch_processed = 0;//触摸一次进一次
 	
+	//触发的范围标志位
 	u8 in_range = ((cst.x>xs && xe>cst.x) && (cst.y>ys && cst.y<ye));
 	
-	static u8	touch_processed = 0;
+
+	
+
 	
 	if(in_range && (cst.sta != 0x00) && (touch_processed == 0))
 	{
-		 static u8	touch_processed = 1;
+		 touch_processed = 1;
+		
+		if(((cst.x>6 && 60>cst.x) && (cst.y>123 && cst.y<230)))	cst.rang_flag = 1;		
+		else if(((cst.x>66 && 120>cst.x) && (cst.y>123 && cst.y<230))) cst.rang_flag = 2;
+		else if(((cst.x>125 && 177>cst.x) && (cst.y>123 && cst.y<230))) cst.rang_flag = 3;
+		else if(((cst.x>184 && 235>cst.x) && (cst.y>123 && cst.y<230))) cst.rang_flag = 4;
+		
+		//上一首歌		暂停		下一首歌
+		if(((cst.x>34 && 77>cst.x) && (cst.y>143 && cst.y<188))) cst.rang_flag = 5;
+		else if(((cst.x>99 && 143>cst.x) && (cst.y>143 && cst.y<188))) cst.rang_flag = 6;
+		else if(((cst.x>162 && 208>cst.x) && (cst.y>143 && cst.y<188))) cst.rang_flag = 7;
 			
 			switch(cst.sta)
 			{
 				//左滑
-				case 0x03:cst.current_page = (cst.current_page == 0) ? 3 : (cst.current_page - 1);break;//	条件 ? 	结果A : 结果B。
+				case 0x03:
+						cst.current_page = 0;
+					break;//	条件 ? 	结果A : 结果B。
 				//右滑
-				case 0x04:cst.current_page = (cst.current_page == 3) ? 0 : (cst.current_page + 1);break;
+				case 0x04:
+						cst.current_page = 0;
+					break;
+				//单击
 				case 0x05:
 					switch(cst.current_page)
 					{
-							case 1: cst.led_state = !cst.led_state; break;
-							case 2: cst.motor_state = !cst.motor_state; break;
-							case 3: cst.servo_state = !cst.servo_state; break;
+						case 0:
+							switch(cst.rang_flag)
+							{
+								case 1:cst.current_page = 3;break;
+								case 2:cst.current_page = 2;break;
+								case 3:cst.current_page = 1;break;
+								case 4:cst.current_page = 4;break;						
+							}	
+							break;
+						case 1: cst.led_state = !cst.led_state; break;
+						case 2: cst.motor_state = !cst.motor_state; break;
+						case 3: cst.servo_state = !cst.servo_state; break;
+						case 4: 
+							switch(cst.rang_flag)
+							{
+								case 5:cst.previous_song_state = !cst.previous_song_state;break;
+								case 6:cst.song_pause_state = !cst.song_pause_state;break;
+								case 7:cst.next_song_state = !cst.next_song_state;break;
+							}		
+							break;
 							default: break;
 					}
 					break;
-					
+				//下滑
+				case 0x01:if(cst.current_page == 4)	cst.next_song_state = !cst.next_song_state;	printf("下一首歌");break; 		
+				//上滑
+				case 0x02:if(cst.current_page == 4)	cst.previous_song_state = !cst.previous_song_state;	printf("上一首歌");break;			
+				
+				
 				default:break;
 					
 			}		
@@ -389,7 +430,8 @@ void Touch_Range(u16 xs,u16 ys,u16 xe,u16 ye)
     }
 		
 		    // ================= 页面显示（只在页面变化时刷新）=================
-    if((first_run || cst.current_page != cst.last_page) ||    (cst.led_state != cst.last_led_state) || (cst.motor_state != cst.last_motor_state) || (cst.servo_state != cst.last_servo_state))
+    if((first_run || cst.current_page != cst.last_page) ||    (cst.led_state != cst.last_led_state) || (cst.motor_state != cst.last_motor_state) || 
+			(cst.servo_state != cst.last_servo_state))
     {
 				first_run = 0;//进来之后直接 赋0
 			
@@ -397,12 +439,16 @@ void Touch_Range(u16 xs,u16 ys,u16 xe,u16 ye)
         cst.last_led_state = cst.led_state;
         cst.last_motor_state = cst.motor_state;
         cst.last_servo_state = cst.servo_state;
+			
+				cst.last_previous_song_state = cst.previous_song_state;
+				cst.last_song_pause_state = cst.song_pause_state;
+				cst.last_next_song_state = cst.next_song_state;
 			 // 根据当前页面显示内容
 			
 			switch(cst.current_page)
 			{
 					case 0:  // 页面0：主页面
-							Lcd_Display_Photo(xs,ys,(u8 *)gImage_0page);
+							Lcd_Display_Photo(xs,ys,(u8 *)gImage_00page);
 							break;
 							
 					case 1:  // 页面1：黑色背景 + LED控制
@@ -458,10 +504,27 @@ void Touch_Range(u16 xs,u16 ys,u16 xe,u16 ye)
 									Servo_motor_Control(120);
 							}
 							break;
+					case 4:  // 页面4：音乐界面
+							Lcd_Display_Photo(xs,ys,(u8 *)gImage_4page);
+							
+							if(cst.rang_flag == 5)  // 复用led_state控制舵机
+							{
+								printf("上一首歌");
+							}
+							else if(cst.rang_flag == 6)
+							{
+								printf("暂停");
+							}
+							else if(cst.rang_flag == 7)
+							{
+								printf("下一首歌");
+							}
+							break;
 							
 					default:
 							cst.current_page = 0;
               cst.last_page = 0xff;
+							cst.rang_flag = 0;
 							break;
 			}	
 		}

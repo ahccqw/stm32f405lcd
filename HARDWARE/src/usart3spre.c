@@ -111,7 +111,7 @@ void Voice_Control(void)
 					cst.current_page = 0;  // 切换到电机页面显示
 					Touch_Range(0,0,240,320);
 					//播放语音反馈
-					Audio_PlaySong((u8 *)"0:/voice/迎.wav");
+					Audio_PlaySong((u8 *)"0:/voice/迎新.wav");
 			break;
 		
 			case 0x01:
@@ -121,7 +121,7 @@ void Voice_Control(void)
 					TIM_SetCompare3(TIM3,1000);
 					Touch_Range(0,0,240,320);
 					//语言反馈
-					Audio_PlaySong((u8 *)"0:/voice/开风扇.wav");
+					Audio_PlaySong((u8 *)"0:/voice/风扇开.wav");
 					
 			break;
 			
@@ -132,7 +132,7 @@ void Voice_Control(void)
 					TIM_SetCompare3(TIM3,0);
 					Touch_Range(0,0,240,320);
 					//语言反馈
-					Audio_PlaySong((u8 *)"0:/voice/关风扇.wav");
+					Audio_PlaySong((u8 *)"0:/voice/风扇关.wav");
 					break;
 			case 0x10:
 					//开灯
@@ -145,7 +145,7 @@ void Voice_Control(void)
 					Rgb_Control(0xff,0xff,0xff);
 					Touch_Range(0,0,240,320);
 					//语言反馈
-					Audio_PlaySong((u8 *)"0:/voice/开灯.wav");
+					Audio_PlaySong((u8 *)"0:/voice/灯全开.wav");
 			break;
 			
 			case 0x11:
@@ -159,31 +159,64 @@ void Voice_Control(void)
 					Rgb_Control(0x00,0x00,0x00);
 					Touch_Range(0,0,240,320);
 					//语言反馈
-					Audio_PlaySong((u8 *)"0:/voice/关灯.wav");
+					Audio_PlaySong((u8 *)"0:/voice/灯全关.wav");
 			break;
 			
-			case 0x07:
-					//打开空调		开舵机
+			case 0x1D:
+					//打开吹风		开舵机
 					cst.servo_state = 1;
 					cst.current_page = 3;  // 切换到舵机页面显示
 					Servo_motor_Control(30);
 					Touch_Range(0,0,240,320);
 					//语言反馈
-					Audio_PlaySong((u8 *)"0:/voice/开舵机.wav");
+					Audio_PlaySong((u8 *)"0:/voice/吹风开.wav");
 			break;
 						
-			case 0x08:
-					//关闭空调		关闭舵机
+			case 0x1E:
+					//关闭吹风	关闭舵机
 					cst.servo_state = 0;
 					cst.current_page = 3;  // 切换到舵机页面显示
 					Servo_motor_Control(120);
 					Touch_Range(0,0,240,320);
 					//语言反馈
-					Audio_PlaySong((u8 *)"0:/voice/关舵机.wav");
+					Audio_PlaySong((u8 *)"0:/voice/吹风关.wav");
 			break;
-		
-		
-		
+			
+			case 0x0c:
+					//升高温度		上一首歌	
+					cst.rang_flag = 5;	
+					cst.current_page = 4;  // 切换到音乐页面显示
+					Touch_Range(0,0,240,320);
+					//语言反馈
+					Audio_PlaySong((u8 *)"0:/voice/切换上一首歌.wav");
+			break;
+			
+			case 0x07:
+					//打开空调		播放歌曲
+					cst.rang_flag = 6;	
+					cst.current_page = 4;  // 切换到音乐页面显示
+					Touch_Range(0,0,240,320);
+					//语言反馈
+					Audio_PlaySong((u8 *)"0:/voice/播放歌曲.wav");
+			break;
+			
+			case 0x08:
+					//关闭空调		暂停歌曲
+					cst.rang_flag = 6;	
+					cst.current_page = 4;  // 切换到音乐页面显示
+					Touch_Range(0,0,240,320);
+					//语言反馈
+					Audio_PlaySong((u8 *)"0:/voice/暂停.wav");
+			break;
+			
+			case 0x0D:
+					//降低温度		下一首歌
+					cst.rang_flag = 7;	
+					cst.current_page = 4;  // 切换到音乐页面显示
+					Touch_Range(0,0,240,320);
+					//语言反馈
+					Audio_PlaySong((u8 *)"0:/voice/切换下一首歌.wav");
+			break;			
 		}
 	}
 	
