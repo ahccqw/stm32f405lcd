@@ -60,6 +60,7 @@
 .\objects\usart2wifi.o: .\HARDWARE\inc\tphmsensor.h
 .\objects\usart2wifi.o: .\HARDWARE\inc\infrared_tp.h
 .\objects\usart2wifi.o: .\HARDWARE\inc\lcd.h
+.\objects\usart2wifi.o: .\HARDWARE\inc\music_ct.h
 .\objects\usart2wifi.o: .\USER\inc\rtc.h
 .\objects\usart2wifi.o: .\HARDWARE\inc\touch.h
 .\objects\usart2wifi.o: .\HARDWARE\inc\sd_driver.h

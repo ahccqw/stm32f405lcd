@@ -60,6 +60,7 @@
 .\objects\w25q64.o: .\HARDWARE\inc\tphmsensor.h
 .\objects\w25q64.o: .\HARDWARE\inc\infrared_tp.h
 .\objects\w25q64.o: .\HARDWARE\inc\lcd.h
+.\objects\w25q64.o: .\HARDWARE\inc\music_ct.h
 .\objects\w25q64.o: .\USER\inc\rtc.h
 .\objects\w25q64.o: .\HARDWARE\inc\touch.h
 .\objects\w25q64.o: .\HARDWARE\inc\sd_driver.h

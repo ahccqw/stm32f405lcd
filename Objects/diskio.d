@@ -3,7 +3,7 @@
 .\objects\diskio.o: .\FATFS\inc\ff.h
 .\objects\diskio.o: .\FATFS\inc\ffconf.h
 .\objects\diskio.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-.\objects\diskio.o: .\HARDWARE\inc\sd_driver.h
+.\objects\diskio.o: .\USER\inc\rtc.h
 .\objects\diskio.o: .\USER\inc\main.h
 .\objects\diskio.o: .\CMSIS\stm32f4xx.h
 .\objects\diskio.o: .\CMSIS\Include\core_cm4.h
@@ -63,9 +63,11 @@
 .\objects\diskio.o: .\HARDWARE\inc\tphmsensor.h
 .\objects\diskio.o: .\HARDWARE\inc\infrared_tp.h
 .\objects\diskio.o: .\HARDWARE\inc\lcd.h
+.\objects\diskio.o: .\HARDWARE\inc\music_ct.h
 .\objects\diskio.o: .\USER\inc\rtc.h
 .\objects\diskio.o: .\HARDWARE\inc\touch.h
 .\objects\diskio.o: .\HARDWARE\inc\sd_driver.h
+.\objects\diskio.o: .\FATFS\inc\diskio.h
 .\objects\diskio.o: .\VOICE\inc\wm8978.h
 .\objects\diskio.o: .\USER\inc\io_bit.h
 .\objects\diskio.o: .\VOICE\inc\wmiic.h

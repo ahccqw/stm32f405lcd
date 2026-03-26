@@ -60,6 +60,7 @@
 .\objects\ws2812s.o: .\HARDWARE\inc\tphmsensor.h
 .\objects\ws2812s.o: .\HARDWARE\inc\infrared_tp.h
 .\objects\ws2812s.o: .\HARDWARE\inc\lcd.h
+.\objects\ws2812s.o: .\HARDWARE\inc\music_ct.h
 .\objects\ws2812s.o: .\USER\inc\rtc.h
 .\objects\ws2812s.o: .\HARDWARE\inc\touch.h
 .\objects\ws2812s.o: .\HARDWARE\inc\sd_driver.h

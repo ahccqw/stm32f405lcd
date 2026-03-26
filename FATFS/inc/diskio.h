@@ -8,12 +8,8 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-
 #include "ff.h"			/* Obtains integer types */
-	
-	
-	
-	
+#include "rtc.h"
 /* Status of Disk Functions */
 typedef BYTE	DSTATUS;
 

@@ -30,6 +30,7 @@
 #include "tphmsensor.h"
 #include "infrared_tp.h"
 #include "lcd.h"
+#include "music_ct.h"
 #include "rtc.h"
 #include "touch.h"
 #include "sd_driver.h"

@@ -7,19 +7,15 @@
 /* storage control modules to the FatFs module with a defined API.       */
 /*-----------------------------------------------------------------------*/
 
-//#include "ff.h"			/* Obtains integer types */
-#include "diskio.h"		/* Declarations of disk functions */
 
-#include "sd_driver.h"
-#include "rtc.h"
+#include "diskio.h"		/* Declarations of disk functions */
 
 /* Definitions of physical drive number for each drive */
 //#define DEV_RAM		0	/* Example: Map Ramdisk to physical drive 0 */
 //#define DEV_MMC		1	/* Example: Map MMC/SD card to physical drive 1 */
 //#define DEV_USB		2	/* Example: Map USB MSD to physical drive 2 */
 
-#define DEV_SD		0
-
+#define DEV_SD		0    //0：最后作为盘符
 /*-----------------------------------------------------------------------*/
 /* Get Drive Status                                                      */
 /*-----------------------------------------------------------------------*/
@@ -33,11 +29,10 @@ DSTATUS disk_status (
 
 	switch (pdrv) {
 	case DEV_SD :
-		//result = RAM_disk_status();
+//		result = RAM_disk_status();
 
 		// translate the reslut code here
-
-		return stat;
+		return 0;
 	}
 	return STA_NOINIT;
 }
@@ -59,8 +54,8 @@ DSTATUS disk_initialize (
 	case DEV_SD :
 		stat = SD_Initialize();
 		return stat;
-	// translate the reslut code here// translate the reslut code here
-}
+		// translate the reslut code here
+	}
 	return STA_NOINIT;
 }
 
@@ -81,13 +76,8 @@ DRESULT disk_read (
 	int result;
 
 	switch (pdrv) {
-	case DEV_SD :
-		// translate the arguments here
-
-		res = SD_ReadDisk(buff, sector, count);
-
-		// translate the reslut code here
-
+	case DEV_SD:
+		res = SD_ReadDisk(buff,sector,count);
 		return res;
 	}
 
@@ -113,14 +103,12 @@ DRESULT disk_write (
 	int result;
 
 	switch (pdrv) {
-	case DEV_SD :
-		// translate the arguments here
-		res = SD_WriteDisk((u8 *)buff, sector, count);
+	case DEV_SD:
+		res = SD_WriteDisk((u8*)buff,sector,count);
 		while(res != 0)
 		{
-			res = SD_WriteDisk((u8 *)buff, sector, count);
+			res = SD_WriteDisk((u8*)buff,sector,count);
 		}
-		// translate the reslut code here
 		return res;
 	}
 
@@ -144,7 +132,7 @@ DRESULT disk_ioctl (
 	int result;
 
 	switch (pdrv) {
-	case DEV_SD :
+	case DEV_SD:
 		switch(cmd)
 		{
 			case CTRL_SYNC:
@@ -155,7 +143,7 @@ DRESULT disk_ioctl (
 				res = RES_OK;
 				break;
 			case GET_BLOCK_SIZE:
-				*(DWORD*)buff = 4096;
+				*(WORD*)buff = 4096;
 				res = RES_OK;
 				break;
 			case GET_SECTOR_COUNT:
@@ -163,22 +151,24 @@ DRESULT disk_ioctl (
 				res = RES_OK;
 				break;
 			default:
-				res=RES_PARERR;
-				break;	
+				res = RES_PARERR;
+				break;
 		}
 		return res;
 	}
+
 	return RES_PARERR;
 }
 
 
+
 DWORD get_fattime (void)
-{
+{		
 	DWORD date = 0;
 	
 	Rtc_GetValue();
-	date = 
-	((
+	date =
+	( (
 	(RTC_DateStruct.RTC_Year+20) << 25) |
 	(RTC_DateStruct.RTC_Month << 21 ) |
 	(RTC_DateStruct.RTC_Date << 16 ) |
@@ -188,3 +178,7 @@ DWORD get_fattime (void)
 	);
 	return date;
 }
+
+
+
+

@@ -61,6 +61,7 @@
 .\objects\revert.o: .\HARDWARE\inc\tphmsensor.h
 .\objects\revert.o: .\HARDWARE\inc\infrared_tp.h
 .\objects\revert.o: .\HARDWARE\inc\lcd.h
+.\objects\revert.o: .\HARDWARE\inc\music_ct.h
 .\objects\revert.o: .\USER\inc\rtc.h
 .\objects\revert.o: .\HARDWARE\inc\touch.h
 .\objects\revert.o: .\HARDWARE\inc\sd_driver.h

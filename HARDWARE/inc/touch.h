@@ -28,10 +28,17 @@ typedef struct{
 	u8 led_state;           // LED状态 0-关 1-开
 	u8 motor_state;         // 直流电机状态 0-关 1-开
 	u8 servo_state;         // 舵机状态 0-关 1-开
+	u8  rgb_state;          // RGB开关状态 0-关 1-开
+	u8 Germicidal_state;
+	
 	
 	u8 last_led_state;      // 上次LED状态
 	u8 last_motor_state;    // 上次电机状态
 	u8 last_servo_state;    // 上次舵机状态
+	u8 last_rgb_upload_state;  // 上次上传的RGB开关状态
+	u8 last_germicidal_upload;
+	
+	u8 first_upload;
 	
 	//页面状态变量
 	u8 current_page;        // 当前页面
@@ -39,16 +46,30 @@ typedef struct{
 	
 	//音乐
 	u8 previous_song_state;
-	u8 song_pause_state;
+	u8 song_start_flag;
 	u8 next_song_state;
 	
 	u8 last_previous_song_state;
-	u8 last_song_pause_state;
+	u8 last_song_start_flag;
 	u8 last_next_song_state;
-	
 	
 	//触发对应范围的标志位 
 	u8 rang_flag;
+	
+ // ===== 新增：上传用的上次状态 =====
+	u8 last_led_upload;
+	u8 last_motor_upload;
+	u8 last_servo_upload;
+
+	// ===== 新增：有变化待上传标志 =====
+	u8 need_upload;
+	
+	// ===== 记录数值 =====
+	u32 rgb_value;          // 当前RGB值
+	u16 motor_value;
+	u32 last_rgb_upload;    // 上次上传的RGB值
+	
+	
 	
 }CST816_STRUCT;
 
@@ -73,5 +94,7 @@ void Touch_IIc_Re_Ct_Byte(u8 addr,u8 *data,u8 len);
 
 void Touch_Coordinates(void);
 void Touch_Range(u16 xs,u16 ys,u16 xe,u16 ye);
+
+void Device_State_Update(void);
 #endif
 

@@ -63,6 +63,7 @@
 .\objects\wm8978.o: .\HARDWARE\inc\tphmsensor.h
 .\objects\wm8978.o: .\HARDWARE\inc\infrared_tp.h
 .\objects\wm8978.o: .\HARDWARE\inc\lcd.h
+.\objects\wm8978.o: .\HARDWARE\inc\music_ct.h
 .\objects\wm8978.o: .\USER\inc\rtc.h
 .\objects\wm8978.o: .\HARDWARE\inc\touch.h
 .\objects\wm8978.o: .\HARDWARE\inc\sd_driver.h

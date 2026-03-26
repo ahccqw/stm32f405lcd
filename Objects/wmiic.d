@@ -62,6 +62,7 @@
 .\objects\wmiic.o: .\HARDWARE\inc\tphmsensor.h
 .\objects\wmiic.o: .\HARDWARE\inc\infrared_tp.h
 .\objects\wmiic.o: .\HARDWARE\inc\lcd.h
+.\objects\wmiic.o: .\HARDWARE\inc\music_ct.h
 .\objects\wmiic.o: .\USER\inc\rtc.h
 .\objects\wmiic.o: .\HARDWARE\inc\touch.h
 .\objects\wmiic.o: .\HARDWARE\inc\sd_driver.h

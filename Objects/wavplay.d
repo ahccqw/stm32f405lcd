@@ -65,6 +65,7 @@
 .\objects\wavplay.o: .\HARDWARE\inc\tphmsensor.h
 .\objects\wavplay.o: .\HARDWARE\inc\infrared_tp.h
 .\objects\wavplay.o: .\HARDWARE\inc\lcd.h
+.\objects\wavplay.o: .\HARDWARE\inc\music_ct.h
 .\objects\wavplay.o: .\USER\inc\rtc.h
 .\objects\wavplay.o: .\HARDWARE\inc\touch.h
 .\objects\wavplay.o: .\HARDWARE\inc\sd_driver.h

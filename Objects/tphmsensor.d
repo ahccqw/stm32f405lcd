@@ -60,6 +60,7 @@
 .\objects\tphmsensor.o: .\HARDWARE\inc\tphmsensor.h
 .\objects\tphmsensor.o: .\HARDWARE\inc\infrared_tp.h
 .\objects\tphmsensor.o: .\HARDWARE\inc\lcd.h
+.\objects\tphmsensor.o: .\HARDWARE\inc\music_ct.h
 .\objects\tphmsensor.o: .\USER\inc\rtc.h
 .\objects\tphmsensor.o: .\HARDWARE\inc\touch.h
 .\objects\tphmsensor.o: .\HARDWARE\inc\sd_driver.h

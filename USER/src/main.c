@@ -12,15 +12,17 @@ int main()
 	Usart1_Init(256000);
 	IIc_Init();
 	Rgb_Init();
-	Time6_Intrerpute(1500);
-	Spi1_Init();
+	Time6_Intrerpute(1000);	
+	W25q64_Init();
 	LCD_Init();
-	Tim2_ServoMotor_Init(0);
-	Usart3_Init(115200);
-	
-//	Wifi_Tcp_Init();
-	
+	Tim2_ServoMotor_Init(0);	
 	Tim3_DcMotor_Init(0);
+	Usart3_Init(115200);	
+	Wifi_Tcp_Init();
+
+
+
+	Sterilize_Init();
 //	Rtc_Init();
 //	Rtc_WakeUp(1);
 	
@@ -31,14 +33,13 @@ int main()
 	ADC1_DMA2_Stream0_CH0_Init(2,value);
 	
 	
+	
 //	RTC_STRUCT rtc_alarma = {.weekday=0xff,.day=0xff,.hour=20,.min=18,.second=0};
 //	Rtc_AlarmA(rtc_alarma);
 
 	
 	u8 ret = 0;
 	FATFS fs;
-	FIL fp;
-	UINT bw,br;
 
 	WM8978_Init();				//初始化WM8978
 	WM8978_HPvol_Set(0, 0);		//耳机音量设置
@@ -50,7 +51,7 @@ int main()
 	I2S2_Init(I2S_Standard_Phillips, I2S_Mode_MasterTx, I2S_CPOL_Low, I2S_DataFormat_16bextended);	//飞利浦标准,主机发送,时钟低电平有效,16位扩展帧长度
 	I2S2_SampleRate_Set(44100);	//设置采样率
 	I2S2_TX_DMA_Init(NULL, NULL, WAV_I2S_TX_DMA_BUFSIZE/2); 				//配置TX DMA
-	status_dev.volume = 60;	//初始保存音量 0~63
+	status_dev.volume = 63;	//初始保存音量 0~63
 	WM8978_SPKvol_Set(status_dev.volume);
 	
 
@@ -64,8 +65,14 @@ int main()
 	{
 		printf("卡片注册失败\r\n");	
 	}
-		
+	SysTick_Intrerput_Init(1);	
 
+	
+	
+	
+	
+
+	
 //	Audio_PlaySong((u8 *)"0:/music/晴天.wav");
 
 	
@@ -85,88 +92,19 @@ int main()
 	
 
 	
-//	u8 key;
-		
-	
-	while(1)
-	{	
-	
-		
-//		Lcd_Display_Photo(0,0,(u8 *)gImage_4page);
-//		//上一首歌
-//		Lcd_Clear(34,143,77,188,BLUE);
-//		//暂停
-//		Lcd_Clear(99,143,143,188,BLUE);
-//		//下一首歌
-//		Lcd_Clear(162,143,208,188,BLUE);
-//		Delay_Ms(2000);
-//		
-//		
-//		
-//		
-//		
-//		Lcd_Display_Photo(0,0,(u8 *)gImage_00page);
-//			//舵机
-//		Lcd_Clear(6,123,60,230,BLUE);
-//			//风扇
-//		Lcd_Clear(66,123,120,230,BLUE);
-//			//LED
-//		Lcd_Clear(125,123,177,230,BLUE);
-//			//MUSIC
-//		Lcd_Clear(184,123,235,230,BLUE);
-//		Delay_Ms(1000);
-
-		
-		
-		
-		
-		
-		Voice_Control();
-		
-		Touch_Coordinates();
-
-		Touch_Range(0,0,240,320);
-		
-		
 
 	
-//		
-//		Delay_Ms(300);
-		
-		
-		
-		
-		
-		
-		
-		
-		
-//		
-//		key = Key_Scan();
-//		
-//		
-
-//		
-//		
-//		
-//		if(key == 1)
-//		{
-//			AlarmA_flag = 0;
-//		}	
-//		
-//		if(AlarmA_flag == 1)
-//		{
-//				Rtc_AlarmBeep();
-//		}
-//		if(AlarmA_flag == 0)
-//		{
-//				GPIO_ResetBits(GPIOD,GPIO_Pin_15);
-//		}
-		
-
-		
-		
-	
-	}	
+   while(1)
+  {
+      Voice_Control();
+      Wifi_Control();
+      Touch_Coordinates();
+      Touch_Range(0, 0, 240, 320);
+      Wifi_Send_Message();
+      Status_Upload();
+      music_ct();   // 放最后，阻塞时中断仍处理触摸
+  }
+ 
+ 
 }
 

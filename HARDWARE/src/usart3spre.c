@@ -100,126 +100,116 @@ void USART3_IRQHandler(void)
 *************************/
 void Voice_Control(void)
 {
-	//判断U3是否接收数据完成
-	if(u3.flag == 1)
-	{
-		u3.flag = 0;
-		switch(u3.buff[1])
-		{
-			case 0x35:
-					//唤醒词	小凌小凌 	需要做什么
-					cst.current_page = 0;  // 切换到电机页面显示
-					Touch_Range(0,0,240,320);
-					//播放语音反馈
-					Audio_PlaySong((u8 *)"0:/voice/迎新.wav");
-			break;
-		
-			case 0x01:
-					//打开风扇		需要做什么
-					cst.motor_state = 1;
-					cst.current_page = 2;  // 切换到电机页面显示
-					TIM_SetCompare3(TIM3,1000);
-					Touch_Range(0,0,240,320);
-					//语言反馈
-					Audio_PlaySong((u8 *)"0:/voice/风扇开.wav");
-					
-			break;
-			
-			case 0x02:
-					//关闭风扇
-					cst.motor_state = 0;
-					cst.current_page = 2;  // 切换到电机页面显示
-					TIM_SetCompare3(TIM3,0);
-					Touch_Range(0,0,240,320);
-					//语言反馈
-					Audio_PlaySong((u8 *)"0:/voice/风扇关.wav");
-					break;
-			case 0x10:
-					//开灯
-					cst.led_state = 1;
-					cst.current_page = 1;  // 切换到LED页面显示
-					LED1_ON; LED2_ON; LED3_ON;
-					Rgb_Control(0xff,0xff,0xff);
-					Rgb_Control(0xff,0xff,0xff);
-					Rgb_Control(0xff,0xff,0xff);
-					Rgb_Control(0xff,0xff,0xff);
-					Touch_Range(0,0,240,320);
-					//语言反馈
-					Audio_PlaySong((u8 *)"0:/voice/灯全开.wav");
-			break;
-			
-			case 0x11:
-					//关灯
-					cst.led_state = 0;
-					cst.current_page = 1;  // 切换到LED页面显示
-					LED1_OFF; LED2_OFF; LED3_OFF;
-					Rgb_Control(0x00,0x00,0x00);
-					Rgb_Control(0x00,0x00,0x00);
-					Rgb_Control(0x00,0x00,0x00);
-					Rgb_Control(0x00,0x00,0x00);
-					Touch_Range(0,0,240,320);
-					//语言反馈
-					Audio_PlaySong((u8 *)"0:/voice/灯全关.wav");
-			break;
-			
-			case 0x1D:
-					//打开吹风		开舵机
-					cst.servo_state = 1;
-					cst.current_page = 3;  // 切换到舵机页面显示
-					Servo_motor_Control(30);
-					Touch_Range(0,0,240,320);
-					//语言反馈
-					Audio_PlaySong((u8 *)"0:/voice/吹风开.wav");
-			break;
-						
-			case 0x1E:
-					//关闭吹风	关闭舵机
-					cst.servo_state = 0;
-					cst.current_page = 3;  // 切换到舵机页面显示
-					Servo_motor_Control(120);
-					Touch_Range(0,0,240,320);
-					//语言反馈
-					Audio_PlaySong((u8 *)"0:/voice/吹风关.wav");
-			break;
-			
-			case 0x0c:
-					//升高温度		上一首歌	
-					cst.rang_flag = 5;	
-					cst.current_page = 4;  // 切换到音乐页面显示
-					Touch_Range(0,0,240,320);
-					//语言反馈
-					Audio_PlaySong((u8 *)"0:/voice/切换上一首歌.wav");
-			break;
-			
-			case 0x07:
-					//打开空调		播放歌曲
-					cst.rang_flag = 6;	
-					cst.current_page = 4;  // 切换到音乐页面显示
-					Touch_Range(0,0,240,320);
-					//语言反馈
-					Audio_PlaySong((u8 *)"0:/voice/播放歌曲.wav");
-			break;
-			
-			case 0x08:
-					//关闭空调		暂停歌曲
-					cst.rang_flag = 6;	
-					cst.current_page = 4;  // 切换到音乐页面显示
-					Touch_Range(0,0,240,320);
-					//语言反馈
-					Audio_PlaySong((u8 *)"0:/voice/暂停.wav");
-			break;
-			
-			case 0x0D:
-					//降低温度		下一首歌
-					cst.rang_flag = 7;	
-					cst.current_page = 4;  // 切换到音乐页面显示
-					Touch_Range(0,0,240,320);
-					//语言反馈
-					Audio_PlaySong((u8 *)"0:/voice/切换下一首歌.wav");
-			break;			
-		}
-	}
-	
+    if(u3.flag == 1)
+    {
+        u3.flag = 0;
+        u3_music_processed = 0;   /* 每次新语音帧到来，允许中断重新处理 */
+ 
+        switch(u3.buff[1])
+        {
+            case 0x35:
+                /* 唤醒词：小凌小凌 */
+                cst.current_page = 0;
+                Touch_Range(0, 0, 240, 320);
+                Audio_PlaySong((u8 *)"0:/voice/迎新.wav");
+                break;
+ 
+            case 0x01:
+                /* 打开风扇 */
+                cst.motor_state = 1;
+                cst.current_page = 2;
+                cst.motor_value  = 1000;
+                TIM_SetCompare3(TIM3, 1000);
+                Touch_Range(0, 0, 240, 320);
+                Audio_PlaySong((u8 *)"0:/voice/风扇开.wav");
+                break;
+ 
+            case 0x02:
+                /* 关闭风扇 */
+                cst.motor_state  = 0;
+                cst.motor_value  = 0;
+                cst.current_page = 2;
+                TIM_SetCompare3(TIM3, 0);
+                Touch_Range(0, 0, 240, 320);
+                Audio_PlaySong((u8 *)"0:/voice/风扇关.wav");
+                break;
+ 
+            case 0x10:
+                /* 开灯 */
+                cst.led_state    = 1;
+                cst.current_page = 1;
+                LED1_ON; LED2_ON; LED3_ON;
+                Touch_Range(0, 0, 240, 320);
+                Audio_PlaySong((u8 *)"0:/voice/灯全开.wav");
+                break;
+ 
+            case 0x11:
+                /* 关灯 */
+                cst.led_state    = 0;
+                cst.current_page = 1;
+                LED1_OFF; LED2_OFF; LED3_OFF;
+                Touch_Range(0, 0, 240, 320);
+                Audio_PlaySong((u8 *)"0:/voice/灯全关.wav");
+                break;
+ 
+            case 0x1D:
+                /* 打开吹风 / 开舵机 */
+                cst.servo_state  = 1;
+                cst.current_page = 3;
+                Servo_motor_Control(30);
+                Touch_Range(0, 0, 240, 320);
+                Audio_PlaySong((u8 *)"0:/voice/吹风开.wav");
+                break;
+ 
+            case 0x1E:
+                /* 关闭吹风 / 关舵机 */
+                cst.servo_state  = 0;
+                cst.current_page = 3;
+                Servo_motor_Control(120);
+                Touch_Range(0, 0, 240, 320);
+                Audio_PlaySong((u8 *)"0:/voice/吹风关.wav");
+                break;
+ 
+            case 0x0c:
+                /* 上一首歌（语音"升高温度"复用） */
+                status_dev.PlayState = PLAY_PREVIOUS;
+                music_start          = 1;
+                cst.current_page     = 4;
+                Touch_Range(0, 0, 240, 320);
+                Audio_PlaySong((u8 *)"0:/voice/切换上一首歌.wav");
+                break;
+ 
+            case 0x07:
+                /* 播放歌曲（语音"打开空调"复用） */
+                music_start          = 1;
+                cst.current_page     = 4;
+                Touch_Range(0, 0, 240, 320);
+                Audio_PlaySong((u8 *)"0:/voice/播放歌曲.wav");
+                break;
+ 
+            case 0x08:
+                /* 暂停（语音"关闭空调"复用） */
+                music_start          = 0;
+                status_dev.PlayState = PLAY_STOP;
+                cst.current_page     = 4;
+                Touch_Range(0, 0, 240, 320);
+                Audio_PlaySong((u8 *)"0:/voice/暂停.wav");
+                break;
+ 
+            case 0x0D:
+                /* 下一首歌（语音"降低温度"复用） */
+                status_dev.PlayState = PLAY_NEXT;
+                music_start          = 1;
+                cst.current_page     = 4;
+                Touch_Range(0, 0, 240, 320);
+                Audio_PlaySong((u8 *)"0:/voice/切换下一首歌.wav");
+                break;
+ 
+            default:
+                break;
+        }
+        Device_State_Update();
+    }
 }
 
 

@@ -60,6 +60,7 @@
 .\objects\beep.o: .\HARDWARE\inc\tphmsensor.h
 .\objects\beep.o: .\HARDWARE\inc\infrared_tp.h
 .\objects\beep.o: .\HARDWARE\inc\lcd.h
+.\objects\beep.o: .\HARDWARE\inc\music_ct.h
 .\objects\beep.o: .\USER\inc\rtc.h
 .\objects\beep.o: .\HARDWARE\inc\touch.h
 .\objects\beep.o: .\HARDWARE\inc\sd_driver.h

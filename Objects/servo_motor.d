@@ -60,6 +60,7 @@
 .\objects\servo_motor.o: .\HARDWARE\inc\tphmsensor.h
 .\objects\servo_motor.o: .\HARDWARE\inc\infrared_tp.h
 .\objects\servo_motor.o: .\HARDWARE\inc\lcd.h
+.\objects\servo_motor.o: .\HARDWARE\inc\music_ct.h
 .\objects\servo_motor.o: .\USER\inc\rtc.h
 .\objects\servo_motor.o: .\HARDWARE\inc\touch.h
 .\objects\servo_motor.o: .\HARDWARE\inc\sd_driver.h

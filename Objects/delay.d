@@ -60,6 +60,7 @@
 .\objects\delay.o: .\HARDWARE\inc\tphmsensor.h
 .\objects\delay.o: .\HARDWARE\inc\infrared_tp.h
 .\objects\delay.o: .\HARDWARE\inc\lcd.h
+.\objects\delay.o: .\HARDWARE\inc\music_ct.h
 .\objects\delay.o: .\USER\inc\rtc.h
 .\objects\delay.o: .\HARDWARE\inc\touch.h
 .\objects\delay.o: .\HARDWARE\inc\sd_driver.h

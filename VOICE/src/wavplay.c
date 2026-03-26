@@ -175,11 +175,13 @@ u8 Wav_PlaySong(u8* fname)
 							audiodev.status |= 0X01;
 							status_dev.PlayState = PLAY_CLEAR;
 						}
-						if(status_dev.PlayState==PLAY_PREVIOUS || status_dev.PlayState==PLAY_NEXT)		//下一曲/上一曲
+						// Wav_PlaySong 内层while(1)里加
+						if(status_dev.PlayState == PLAY_PREVIOUS || status_dev.PlayState == PLAY_NEXT)
 						{
-							res = status_dev.PlayState;
-							status_dev.PlayState = PLAY_CLEAR;
-							break; 
+								printf("检测到切歌 PlayState=%d\r\n", status_dev.PlayState);
+								res = status_dev.PlayState;
+								status_dev.PlayState = PLAY_CLEAR;
+								break;
 						}
 						Wav_GetCurtime(audiodev.file, &wavctrl);			//得到总时间和当前播放的时间 
 //						Audio_MsgShow(wavctrl.totsec, wavctrl.cursec);		//显示到屏幕

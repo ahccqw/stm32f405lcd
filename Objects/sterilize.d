@@ -60,6 +60,7 @@
 .\objects\sterilize.o: .\HARDWARE\inc\tphmsensor.h
 .\objects\sterilize.o: .\HARDWARE\inc\infrared_tp.h
 .\objects\sterilize.o: .\HARDWARE\inc\lcd.h
+.\objects\sterilize.o: .\HARDWARE\inc\music_ct.h
 .\objects\sterilize.o: .\USER\inc\rtc.h
 .\objects\sterilize.o: .\HARDWARE\inc\touch.h
 .\objects\sterilize.o: .\HARDWARE\inc\sd_driver.h

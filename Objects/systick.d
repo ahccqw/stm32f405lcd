@@ -60,6 +60,7 @@
 .\objects\systick.o: .\HARDWARE\inc\tphmsensor.h
 .\objects\systick.o: .\HARDWARE\inc\infrared_tp.h
 .\objects\systick.o: .\HARDWARE\inc\lcd.h
+.\objects\systick.o: .\HARDWARE\inc\music_ct.h
 .\objects\systick.o: .\USER\inc\rtc.h
 .\objects\systick.o: .\HARDWARE\inc\touch.h
 .\objects\systick.o: .\HARDWARE\inc\sd_driver.h

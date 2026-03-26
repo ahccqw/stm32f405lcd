@@ -169,8 +169,32 @@ void Audio_MusicPlay(void)
 		if(res!=FR_OK || wavfileinfo.fname[0]==0) break;	//错误了/到末尾了,退出
 		fn = (unsigned char *)(*wavfileinfo.fname?wavfileinfo.fname:wavfileinfo.fname);			 
 		strcpy((char*)pname, "0:/MUSIC/");					//复制路径(目录)
+		
 		strcat((char*)pname, (const char*)fn);  			//将文件名接在后面
-		printf("%s\r\n", fn);								//显示歌曲名字 
+		printf("%s\r\n", fn);								//显示歌曲名字
+		
+		strcpy((char*)pname, "0:/music/");
+		strcat((char*)pname, (const char*)fn);
+		printf("%s\r\n", fn);  // 显示歌曲名字
+
+		// 新增：去掉.wav后缀后显示在屏幕上
+		u8 name_buf[64] = {0};
+		strncpy((char*)name_buf, (const char*)fn, sizeof(name_buf) - 1);
+
+		// 找到.wav并截断
+		char *dot = strstr((char*)name_buf, ".wav");
+		if(dot == NULL) dot = strstr((char*)name_buf, ".WAV");
+		if(dot != NULL) *dot = '\0';
+
+		// 中文字符数 = 字节数 / 2
+		u16 char_count  = strlen((char*)name_buf) / 2;
+		u16 total_width = char_count * 24;
+		u16 start_x     = (240 - total_width) / 2;
+
+		// 先清除该行再显示
+		Lcd_Clear(0, 60, 240, 60 + 24, WHITE);
+		Lcd_Display_Str(start_x, 60, BLACK, WHITE, 24, name_buf);
+		
 		Audio_IndexShow(fn, curindex+1, totwavnum);	//显示歌曲名称、总曲数、当前曲数
 		key = Audio_PlaySong(pname); 			 			//播放这个音频文件
 		if(key == 1)				//上一曲
@@ -191,7 +215,7 @@ void Audio_MusicPlay(void)
 	myfree(SRAMIN, wavfileinfo.fname);		//释放内存			    
 	myfree(SRAMIN, pname);					//释放内存			    
 	myfree(SRAMIN, wavindextbl);			//释放内存	 
-} 
+}
 /*********************************************************************************************************
 * 函 数 名 : Audio_PlaySong
 * 功能说明 : 播放某个音频文件

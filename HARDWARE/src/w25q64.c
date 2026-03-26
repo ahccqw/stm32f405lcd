@@ -1,5 +1,30 @@
 #include "w25q64.h"
 
+
+
+
+
+void W25q64_Init(void)
+{
+	
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC,ENABLE);
+
+	GPIO_InitTypeDef GPIO_InitStruct;
+	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_OUT; 
+	GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;
+	GPIO_InitStruct.GPIO_Speed = GPIO_High_Speed;
+	GPIO_InitStruct.GPIO_Pin = GPIO_Pin_7;
+	GPIO_Init(GPIOC, &GPIO_InitStruct);
+	
+	Spi1_Init();
+	
+	W25Q64_CS_H;
+	
+}
+
+
+
+
 /*************************
 函数名称：w25_Change_By(u8 data)
 函数功能：w25读ID

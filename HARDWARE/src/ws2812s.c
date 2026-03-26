@@ -84,6 +84,15 @@ void Rgb_Control(u8 R,u8 G,u8 B)
 	Rgb_Send_Data(G);
 	Rgb_Send_Data(R);
 	Rgb_Send_Data(B);
+	
+	Rgb_Send_Data(G);
+	Rgb_Send_Data(R);
+	Rgb_Send_Data(B);
+	
+	Rgb_Send_Data(G);
+	Rgb_Send_Data(R);
+	Rgb_Send_Data(B);
+	
 }
 
 /*************************

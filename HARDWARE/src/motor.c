@@ -21,6 +21,9 @@ void Tim3_DcMotor_Init(u16 ccr)
 	GPIO_InitTypeDef GPIO_InitStruct;
 	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_AF;
 	GPIO_InitStruct.GPIO_Pin = GPIO_Pin_8;
+	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_100MHz;  // 新增
+	GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;      // 新增
+	GPIO_InitStruct.GPIO_PuPd  = GPIO_PuPd_NOPULL;  // 新增
 	GPIO_Init(GPIOC,&GPIO_InitStruct);
 
 	//时基单元

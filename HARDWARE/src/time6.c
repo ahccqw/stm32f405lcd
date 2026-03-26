@@ -1,5 +1,7 @@
 #include "time6.h"
 
+u8 tphm_flag;
+u32 cnt1;
 /*************************
 函数名称：Time6_Intrerpute(u16 nms)
 函数功能：TIM6 更新中断配置
@@ -51,5 +53,15 @@ void TIM6_DAC_IRQHandler(void)
 {
 	//清除中断标志位
 	TIM_ClearITPendingBit(TIM6,TIM_IT_Update);
+	
+	cnt1++;
+	if(cnt1 >= 1800)
+	{
+		cnt1 = 0;
+		tphm_flag = 1;
+	}
+	
+	
+	
 
 }

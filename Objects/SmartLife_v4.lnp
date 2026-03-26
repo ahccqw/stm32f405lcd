@@ -26,6 +26,7 @@
 ".\objects\sd_driver.o"
 ".\objects\usart3spre.o"
 ".\objects\usart2wifi.o"
+".\objects\music_ct.o"
 ".\objects\misc.o"
 ".\objects\stm32f4xx_adc.o"
 ".\objects\stm32f4xx_can.o"

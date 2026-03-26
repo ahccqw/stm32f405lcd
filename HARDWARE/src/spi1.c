@@ -33,6 +33,7 @@ void Spi1_Init(void)
 	GPIO_InitStruct.GPIO_Speed = GPIO_High_Speed;
 	GPIO_InitStruct.GPIO_Pin = GPIO_Pin_7;
 	GPIO_Init(GPIOC, &GPIO_InitStruct);
+
 	
 	//SPI1≥ı ºªØ
 	SPI_InitTypeDef SPI_InitStruct;

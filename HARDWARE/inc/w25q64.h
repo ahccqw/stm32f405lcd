@@ -19,7 +19,7 @@ void w25_Wr_Pg(u32 addr,u8 *data,u32 len);//าณะด
 void w25_Re_Pg(u32 addr,u8 *data,u32 len);//าณถม
 void w25_Wr_Ct(u32 addr,u8 *data,u32 len);//ฟ็าณะด
 void Font_Updata(void);
-
+void W25q64_Init(void);
 
 
 #endif
