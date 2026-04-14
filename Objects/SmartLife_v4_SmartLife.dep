@@ -36,8 +36,8 @@ I (.\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_can.h)(0x53DBAFAE)
 I (.\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x53DBAFAE)
 I (.\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x53DBAFAE)
 I (.\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x53DBAFAE)
-F (.\USER\src\main.c)(0x69C4E081)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\CMSIS\Include -I .\USER\inc -I .\HARDWARE\inc -I .\STM32F4xx_StdPeriph_Driver\inc -I .\FATFS\inc -I .\VOICE\inc-I C:\Users\ahccqw\Desktop\SmartLife\RTE-I D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F405xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
-I (.\USER\inc\main.h)(0x69C37F3B)
+F (.\USER\src\main.c)(0x69DDABB4)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\CMSIS\Include -I .\USER\inc -I .\HARDWARE\inc -I .\STM32F4xx_StdPeriph_Driver\inc -I .\FATFS\inc -I .\VOICE\inc-I C:\Users\ahccqw\Desktop\SmartLife\RTE-I D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F405xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (.\USER\inc\main.h)(0x69DDA175)
 I (.\CMSIS\stm32f4xx.h)(0x69A920A5)
 I (.\CMSIS\Include\core_cm4.h)(0x53C7D532)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE42DE)
@@ -82,6 +82,7 @@ I (.\HARDWARE\inc\sterilize.h)(0x69A951B8)
 I (.\HARDWARE\inc\usart1.h)(0x69A93AD6)
 I (.\HARDWARE\inc\usart3spre.h)(0x69BBC997)
 I (.\HARDWARE\inc\usart2wifi.h)(0x69C4E081)
+I (.\USER\inc\can.h)(0x69DDABAD)
 I (.\HARDWARE\inc\spi1.h)(0x69A97B8A)
 I (.\HARDWARE\inc\w25q64.h)(0x69C49673)
 I (.\HARDWARE\inc\motor.h)(0x69AA71D0)
@@ -94,7 +95,7 @@ I (.\HARDWARE\inc\ws2812s.h)(0x69AE66FD)
 I (.\HARDWARE\inc\iic.h)(0x69AEB805)
 I (.\HARDWARE\inc\tphmsensor.h)(0x69B3723C)
 I (.\HARDWARE\inc\infrared_tp.h)(0x69AEB628)
-I (.\HARDWARE\inc\lcd.h)(0x69BDFFAF)
+I (.\HARDWARE\inc\lcd.h)(0x69CA36D6)
 I (.\HARDWARE\inc\music_ct.h)(0x69C4E081)
 I (.\USER\inc\rtc.h)(0x69BA1903)
 I (.\HARDWARE\inc\touch.h)(0x69C4D103)
@@ -115,7 +116,7 @@ I (.\VOICE\inc\revert.h)(0x61C29D7F)
 I (D:\Keil_v5\ARM\ARMCC\include\time.h)(0x56FE42D6)
 F (.\USER\src\delay.c)(0x69AE421E)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\CMSIS\Include -I .\USER\inc -I .\HARDWARE\inc -I .\STM32F4xx_StdPeriph_Driver\inc -I .\FATFS\inc -I .\VOICE\inc-I C:\Users\ahccqw\Desktop\SmartLife\RTE-I D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F405xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o .\objects\delay.o --omf_browse .\objects\delay.crf --depend .\objects\delay.d)
 I (.\USER\inc\delay.h)(0x69AE42AA)
-I (.\USER\inc\main.h)(0x69C37F3B)
+I (.\USER\inc\main.h)(0x69DDA175)
 I (.\CMSIS\stm32f4xx.h)(0x69A920A5)
 I (.\CMSIS\Include\core_cm4.h)(0x53C7D532)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE42DE)
@@ -159,6 +160,7 @@ I (.\HARDWARE\inc\sterilize.h)(0x69A951B8)
 I (.\HARDWARE\inc\usart1.h)(0x69A93AD6)
 I (.\HARDWARE\inc\usart3spre.h)(0x69BBC997)
 I (.\HARDWARE\inc\usart2wifi.h)(0x69C4E081)
+I (.\USER\inc\can.h)(0x69DDABAD)
 I (.\HARDWARE\inc\spi1.h)(0x69A97B8A)
 I (.\HARDWARE\inc\w25q64.h)(0x69C49673)
 I (.\HARDWARE\inc\motor.h)(0x69AA71D0)
@@ -171,7 +173,7 @@ I (.\HARDWARE\inc\ws2812s.h)(0x69AE66FD)
 I (.\HARDWARE\inc\iic.h)(0x69AEB805)
 I (.\HARDWARE\inc\tphmsensor.h)(0x69B3723C)
 I (.\HARDWARE\inc\infrared_tp.h)(0x69AEB628)
-I (.\HARDWARE\inc\lcd.h)(0x69BDFFAF)
+I (.\HARDWARE\inc\lcd.h)(0x69CA36D6)
 I (.\HARDWARE\inc\music_ct.h)(0x69C4E081)
 I (.\USER\inc\rtc.h)(0x69BA1903)
 I (.\HARDWARE\inc\touch.h)(0x69C4D103)
@@ -192,7 +194,7 @@ I (.\VOICE\inc\revert.h)(0x61C29D7F)
 I (D:\Keil_v5\ARM\ARMCC\include\time.h)(0x56FE42D6)
 F (.\USER\src\dma.c)(0x69AE2193)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\CMSIS\Include -I .\USER\inc -I .\HARDWARE\inc -I .\STM32F4xx_StdPeriph_Driver\inc -I .\FATFS\inc -I .\VOICE\inc-I C:\Users\ahccqw\Desktop\SmartLife\RTE-I D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F405xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o .\objects\dma.o --omf_browse .\objects\dma.crf --depend .\objects\dma.d)
 I (.\USER\inc\dma.h)(0x69AAC486)
-I (.\USER\inc\main.h)(0x69C37F3B)
+I (.\USER\inc\main.h)(0x69DDA175)
 I (.\CMSIS\stm32f4xx.h)(0x69A920A5)
 I (.\CMSIS\Include\core_cm4.h)(0x53C7D532)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE42DE)
@@ -237,6 +239,7 @@ I (.\HARDWARE\inc\sterilize.h)(0x69A951B8)
 I (.\HARDWARE\inc\usart1.h)(0x69A93AD6)
 I (.\HARDWARE\inc\usart3spre.h)(0x69BBC997)
 I (.\HARDWARE\inc\usart2wifi.h)(0x69C4E081)
+I (.\USER\inc\can.h)(0x69DDABAD)
 I (.\HARDWARE\inc\spi1.h)(0x69A97B8A)
 I (.\HARDWARE\inc\w25q64.h)(0x69C49673)
 I (.\HARDWARE\inc\motor.h)(0x69AA71D0)
@@ -248,7 +251,7 @@ I (.\HARDWARE\inc\ws2812s.h)(0x69AE66FD)
 I (.\HARDWARE\inc\iic.h)(0x69AEB805)
 I (.\HARDWARE\inc\tphmsensor.h)(0x69B3723C)
 I (.\HARDWARE\inc\infrared_tp.h)(0x69AEB628)
-I (.\HARDWARE\inc\lcd.h)(0x69BDFFAF)
+I (.\HARDWARE\inc\lcd.h)(0x69CA36D6)
 I (.\HARDWARE\inc\music_ct.h)(0x69C4E081)
 I (.\USER\inc\rtc.h)(0x69BA1903)
 I (.\HARDWARE\inc\touch.h)(0x69C4D103)
@@ -269,7 +272,7 @@ I (.\VOICE\inc\revert.h)(0x61C29D7F)
 I (D:\Keil_v5\ARM\ARMCC\include\time.h)(0x56FE42D6)
 F (.\USER\src\systick.c)(0x69C4F2D8)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\CMSIS\Include -I .\USER\inc -I .\HARDWARE\inc -I .\STM32F4xx_StdPeriph_Driver\inc -I .\FATFS\inc -I .\VOICE\inc-I C:\Users\ahccqw\Desktop\SmartLife\RTE-I D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F405xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o .\objects\systick.o --omf_browse .\objects\systick.crf --depend .\objects\systick.d)
 I (.\USER\inc\systick.h)(0x69C4E081)
-I (.\USER\inc\main.h)(0x69C37F3B)
+I (.\USER\inc\main.h)(0x69DDA175)
 I (.\CMSIS\stm32f4xx.h)(0x69A920A5)
 I (.\CMSIS\Include\core_cm4.h)(0x53C7D532)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE42DE)
@@ -314,6 +317,7 @@ I (.\HARDWARE\inc\sterilize.h)(0x69A951B8)
 I (.\HARDWARE\inc\usart1.h)(0x69A93AD6)
 I (.\HARDWARE\inc\usart3spre.h)(0x69BBC997)
 I (.\HARDWARE\inc\usart2wifi.h)(0x69C4E081)
+I (.\USER\inc\can.h)(0x69DDABAD)
 I (.\HARDWARE\inc\spi1.h)(0x69A97B8A)
 I (.\HARDWARE\inc\w25q64.h)(0x69C49673)
 I (.\HARDWARE\inc\motor.h)(0x69AA71D0)
@@ -325,7 +329,7 @@ I (.\HARDWARE\inc\ws2812s.h)(0x69AE66FD)
 I (.\HARDWARE\inc\iic.h)(0x69AEB805)
 I (.\HARDWARE\inc\tphmsensor.h)(0x69B3723C)
 I (.\HARDWARE\inc\infrared_tp.h)(0x69AEB628)
-I (.\HARDWARE\inc\lcd.h)(0x69BDFFAF)
+I (.\HARDWARE\inc\lcd.h)(0x69CA36D6)
 I (.\HARDWARE\inc\music_ct.h)(0x69C4E081)
 I (.\USER\inc\rtc.h)(0x69BA1903)
 I (.\HARDWARE\inc\touch.h)(0x69C4D103)
@@ -344,9 +348,87 @@ I (.\VOICE\inc\i2s.h)(0x60973B83)
 I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x56FE42DC)
 I (.\VOICE\inc\revert.h)(0x61C29D7F)
 I (D:\Keil_v5\ARM\ARMCC\include\time.h)(0x56FE42D6)
-F (.\USER\src\rtc.c)(0x69BB52D5)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\CMSIS\Include -I .\USER\inc -I .\HARDWARE\inc -I .\STM32F4xx_StdPeriph_Driver\inc -I .\FATFS\inc -I .\VOICE\inc-I C:\Users\ahccqw\Desktop\SmartLife\RTE-I D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F405xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o .\objects\rtc.o --omf_browse .\objects\rtc.crf --depend .\objects\rtc.d)
+F (.\USER\src\rtc.c)(0x69CE09BE)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\CMSIS\Include -I .\USER\inc -I .\HARDWARE\inc -I .\STM32F4xx_StdPeriph_Driver\inc -I .\FATFS\inc -I .\VOICE\inc-I C:\Users\ahccqw\Desktop\SmartLife\RTE-I D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F405xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o .\objects\rtc.o --omf_browse .\objects\rtc.crf --depend .\objects\rtc.d)
 I (.\USER\inc\rtc.h)(0x69BA1903)
-I (.\USER\inc\main.h)(0x69C37F3B)
+I (.\USER\inc\main.h)(0x69DDA175)
+I (.\CMSIS\stm32f4xx.h)(0x69A920A5)
+I (.\CMSIS\Include\core_cm4.h)(0x53C7D532)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE42DE)
+I (.\CMSIS\Include\core_cmInstr.h)(0x53C7D532)
+I (.\CMSIS\Include\core_cmFunc.h)(0x53C7D532)
+I (.\CMSIS\Include\core_cm4_simd.h)(0x53C7D532)
+I (.\CMSIS\system_stm32f4xx.h)(0x53DBA49A)
+I (.\CMSIS\stm32f4xx_conf.h)(0x53DBB3CC)
+I (.\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x53DBAFAE)
+I (.\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x53DBAFAE)
+I (.\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x53DBAFAE)
+I (.\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dma.h)(0x53DBAFAE)
+I (.\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_exti.h)(0x53DBAFAE)
+I (.\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_flash.h)(0x53DF9332)
+I (.\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_gpio.h)(0x53DBAFAE)
+I (.\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_i2c.h)(0x53DBAFAE)
+I (.\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_iwdg.h)(0x53DBAFAE)
+I (.\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_pwr.h)(0x53DBAFAE)
+I (.\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rcc.h)(0x53DBAFAE)
+I (.\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rtc.h)(0x53DBAFAE)
+I (.\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_sdio.h)(0x53DBAFAE)
+I (.\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_spi.h)(0x53DBAFAE)
+I (.\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_syscfg.h)(0x53DBAFAE)
+I (.\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_tim.h)(0x53DBAFAE)
+I (.\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_usart.h)(0x53DBAFAE)
+I (.\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_wwdg.h)(0x53DBAFAE)
+I (.\STM32F4xx_StdPeriph_Driver\inc\misc.h)(0x53DBAFAE)
+I (.\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_cryp.h)(0x53DBAFAE)
+I (.\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_hash.h)(0x53DBAFAE)
+I (.\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rng.h)(0x53DBAFAE)
+I (.\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_can.h)(0x53DBAFAE)
+I (.\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x53DBAFAE)
+I (.\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x53DBAFAE)
+I (.\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x53DBAFAE)
+I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x56FE42DE)
+I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x56FE42DE)
+I (.\HARDWARE\inc\led.h)(0x69A951B7)
+I (.\HARDWARE\inc\beep.h)(0x69B7F1BD)
+I (.\USER\inc\delay.h)(0x69AE42AA)
+I (.\HARDWARE\inc\key.h)(0x69A8F4F0)
+I (.\HARDWARE\inc\sterilize.h)(0x69A951B8)
+I (.\HARDWARE\inc\usart1.h)(0x69A93AD6)
+I (.\HARDWARE\inc\usart3spre.h)(0x69BBC997)
+I (.\HARDWARE\inc\usart2wifi.h)(0x69C4E081)
+I (.\USER\inc\can.h)(0x69DDABAD)
+I (.\HARDWARE\inc\spi1.h)(0x69A97B8A)
+I (.\HARDWARE\inc\w25q64.h)(0x69C49673)
+I (.\HARDWARE\inc\motor.h)(0x69AA71D0)
+I (.\HARDWARE\inc\servo_motor.h)(0x69AA70B7)
+I (.\HARDWARE\inc\adc1.h)(0x69AB8A8E)
+I (.\USER\inc\dma.h)(0x69AAC486)
+I (.\USER\inc\systick.h)(0x69C4E081)
+I (.\HARDWARE\inc\time6.h)(0x69C28234)
+I (.\HARDWARE\inc\ws2812s.h)(0x69AE66FD)
+I (.\HARDWARE\inc\iic.h)(0x69AEB805)
+I (.\HARDWARE\inc\tphmsensor.h)(0x69B3723C)
+I (.\HARDWARE\inc\infrared_tp.h)(0x69AEB628)
+I (.\HARDWARE\inc\lcd.h)(0x69CA36D6)
+I (.\HARDWARE\inc\music_ct.h)(0x69C4E081)
+I (.\HARDWARE\inc\touch.h)(0x69C4D103)
+I (.\HARDWARE\inc\sd_driver.h)(0x69BA10F4)
+I (.\FATFS\inc\diskio.h)(0x69BA42F6)
+I (.\FATFS\inc\ff.h)(0x69BB5284)
+I (.\FATFS\inc\ffconf.h)(0x69BA430F)
+I (.\VOICE\inc\wm8978.h)(0x61C19257)
+I (.\USER\inc\io_bit.h)(0x5FD8338C)
+I (.\VOICE\inc\wmiic.h)(0x69BB60FC)
+I (.\VOICE\inc\mymalloc.h)(0x619B4B98)
+I (.\FATFS\inc\exfuns.h)(0x611F0749)
+I (.\VOICE\inc\audioplay.h)(0x68995D0E)
+I (.\VOICE\inc\wavplay.h)(0x61C192EF)
+I (.\VOICE\inc\i2s.h)(0x60973B83)
+I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x56FE42DC)
+I (.\VOICE\inc\revert.h)(0x61C29D7F)
+I (D:\Keil_v5\ARM\ARMCC\include\time.h)(0x56FE42D6)
+F (.\USER\src\can.c)(0x69DDABD5)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\CMSIS\Include -I .\USER\inc -I .\HARDWARE\inc -I .\STM32F4xx_StdPeriph_Driver\inc -I .\FATFS\inc -I .\VOICE\inc-I C:\Users\ahccqw\Desktop\SmartLife\RTE-I D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F405xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o .\objects\can.o --omf_browse .\objects\can.crf --depend .\objects\can.d)
+I (.\USER\inc\can.h)(0x69DDABAD)
+I (.\USER\inc\main.h)(0x69DDA175)
 I (.\CMSIS\stm32f4xx.h)(0x69A920A5)
 I (.\CMSIS\Include\core_cm4.h)(0x53C7D532)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE42DE)
@@ -403,8 +485,9 @@ I (.\HARDWARE\inc\ws2812s.h)(0x69AE66FD)
 I (.\HARDWARE\inc\iic.h)(0x69AEB805)
 I (.\HARDWARE\inc\tphmsensor.h)(0x69B3723C)
 I (.\HARDWARE\inc\infrared_tp.h)(0x69AEB628)
-I (.\HARDWARE\inc\lcd.h)(0x69BDFFAF)
+I (.\HARDWARE\inc\lcd.h)(0x69CA36D6)
 I (.\HARDWARE\inc\music_ct.h)(0x69C4E081)
+I (.\USER\inc\rtc.h)(0x69BA1903)
 I (.\HARDWARE\inc\touch.h)(0x69C4D103)
 I (.\HARDWARE\inc\sd_driver.h)(0x69BA10F4)
 I (.\FATFS\inc\diskio.h)(0x69BA42F6)
@@ -423,7 +506,7 @@ I (.\VOICE\inc\revert.h)(0x61C29D7F)
 I (D:\Keil_v5\ARM\ARMCC\include\time.h)(0x56FE42D6)
 F (.\HARDWARE\src\led.c)(0x69A8E4C8)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\CMSIS\Include -I .\USER\inc -I .\HARDWARE\inc -I .\STM32F4xx_StdPeriph_Driver\inc -I .\FATFS\inc -I .\VOICE\inc-I C:\Users\ahccqw\Desktop\SmartLife\RTE-I D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F405xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o .\objects\led.o --omf_browse .\objects\led.crf --depend .\objects\led.d)
 I (.\HARDWARE\inc\led.h)(0x69A951B7)
-I (.\USER\inc\main.h)(0x69C37F3B)
+I (.\USER\inc\main.h)(0x69DDA175)
 I (.\CMSIS\stm32f4xx.h)(0x69A920A5)
 I (.\CMSIS\Include\core_cm4.h)(0x53C7D532)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE42DE)
@@ -467,6 +550,7 @@ I (.\HARDWARE\inc\sterilize.h)(0x69A951B8)
 I (.\HARDWARE\inc\usart1.h)(0x69A93AD6)
 I (.\HARDWARE\inc\usart3spre.h)(0x69BBC997)
 I (.\HARDWARE\inc\usart2wifi.h)(0x69C4E081)
+I (.\USER\inc\can.h)(0x69DDABAD)
 I (.\HARDWARE\inc\spi1.h)(0x69A97B8A)
 I (.\HARDWARE\inc\w25q64.h)(0x69C49673)
 I (.\HARDWARE\inc\motor.h)(0x69AA71D0)
@@ -479,7 +563,7 @@ I (.\HARDWARE\inc\ws2812s.h)(0x69AE66FD)
 I (.\HARDWARE\inc\iic.h)(0x69AEB805)
 I (.\HARDWARE\inc\tphmsensor.h)(0x69B3723C)
 I (.\HARDWARE\inc\infrared_tp.h)(0x69AEB628)
-I (.\HARDWARE\inc\lcd.h)(0x69BDFFAF)
+I (.\HARDWARE\inc\lcd.h)(0x69CA36D6)
 I (.\HARDWARE\inc\music_ct.h)(0x69C4E081)
 I (.\USER\inc\rtc.h)(0x69BA1903)
 I (.\HARDWARE\inc\touch.h)(0x69C4D103)
@@ -500,7 +584,7 @@ I (.\VOICE\inc\revert.h)(0x61C29D7F)
 I (D:\Keil_v5\ARM\ARMCC\include\time.h)(0x56FE42D6)
 F (.\HARDWARE\src\beep.c)(0x69A7F32E)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\CMSIS\Include -I .\USER\inc -I .\HARDWARE\inc -I .\STM32F4xx_StdPeriph_Driver\inc -I .\FATFS\inc -I .\VOICE\inc-I C:\Users\ahccqw\Desktop\SmartLife\RTE-I D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F405xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o .\objects\beep.o --omf_browse .\objects\beep.crf --depend .\objects\beep.d)
 I (.\HARDWARE\inc\beep.h)(0x69B7F1BD)
-I (.\USER\inc\main.h)(0x69C37F3B)
+I (.\USER\inc\main.h)(0x69DDA175)
 I (.\CMSIS\stm32f4xx.h)(0x69A920A5)
 I (.\CMSIS\Include\core_cm4.h)(0x53C7D532)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE42DE)
@@ -544,6 +628,7 @@ I (.\HARDWARE\inc\sterilize.h)(0x69A951B8)
 I (.\HARDWARE\inc\usart1.h)(0x69A93AD6)
 I (.\HARDWARE\inc\usart3spre.h)(0x69BBC997)
 I (.\HARDWARE\inc\usart2wifi.h)(0x69C4E081)
+I (.\USER\inc\can.h)(0x69DDABAD)
 I (.\HARDWARE\inc\spi1.h)(0x69A97B8A)
 I (.\HARDWARE\inc\w25q64.h)(0x69C49673)
 I (.\HARDWARE\inc\motor.h)(0x69AA71D0)
@@ -556,7 +641,7 @@ I (.\HARDWARE\inc\ws2812s.h)(0x69AE66FD)
 I (.\HARDWARE\inc\iic.h)(0x69AEB805)
 I (.\HARDWARE\inc\tphmsensor.h)(0x69B3723C)
 I (.\HARDWARE\inc\infrared_tp.h)(0x69AEB628)
-I (.\HARDWARE\inc\lcd.h)(0x69BDFFAF)
+I (.\HARDWARE\inc\lcd.h)(0x69CA36D6)
 I (.\HARDWARE\inc\music_ct.h)(0x69C4E081)
 I (.\USER\inc\rtc.h)(0x69BA1903)
 I (.\HARDWARE\inc\touch.h)(0x69C4D103)
@@ -577,7 +662,7 @@ I (.\VOICE\inc\revert.h)(0x61C29D7F)
 I (D:\Keil_v5\ARM\ARMCC\include\time.h)(0x56FE42D6)
 F (.\HARDWARE\src\key.c)(0x69A94EFF)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\CMSIS\Include -I .\USER\inc -I .\HARDWARE\inc -I .\STM32F4xx_StdPeriph_Driver\inc -I .\FATFS\inc -I .\VOICE\inc-I C:\Users\ahccqw\Desktop\SmartLife\RTE-I D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F405xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o .\objects\key.o --omf_browse .\objects\key.crf --depend .\objects\key.d)
 I (.\HARDWARE\inc\key.h)(0x69A8F4F0)
-I (.\USER\inc\main.h)(0x69C37F3B)
+I (.\USER\inc\main.h)(0x69DDA175)
 I (.\CMSIS\stm32f4xx.h)(0x69A920A5)
 I (.\CMSIS\Include\core_cm4.h)(0x53C7D532)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE42DE)
@@ -621,6 +706,7 @@ I (.\HARDWARE\inc\sterilize.h)(0x69A951B8)
 I (.\HARDWARE\inc\usart1.h)(0x69A93AD6)
 I (.\HARDWARE\inc\usart3spre.h)(0x69BBC997)
 I (.\HARDWARE\inc\usart2wifi.h)(0x69C4E081)
+I (.\USER\inc\can.h)(0x69DDABAD)
 I (.\HARDWARE\inc\spi1.h)(0x69A97B8A)
 I (.\HARDWARE\inc\w25q64.h)(0x69C49673)
 I (.\HARDWARE\inc\motor.h)(0x69AA71D0)
@@ -633,7 +719,7 @@ I (.\HARDWARE\inc\ws2812s.h)(0x69AE66FD)
 I (.\HARDWARE\inc\iic.h)(0x69AEB805)
 I (.\HARDWARE\inc\tphmsensor.h)(0x69B3723C)
 I (.\HARDWARE\inc\infrared_tp.h)(0x69AEB628)
-I (.\HARDWARE\inc\lcd.h)(0x69BDFFAF)
+I (.\HARDWARE\inc\lcd.h)(0x69CA36D6)
 I (.\HARDWARE\inc\music_ct.h)(0x69C4E081)
 I (.\USER\inc\rtc.h)(0x69BA1903)
 I (.\HARDWARE\inc\touch.h)(0x69C4D103)
@@ -654,7 +740,7 @@ I (.\VOICE\inc\revert.h)(0x61C29D7F)
 I (D:\Keil_v5\ARM\ARMCC\include\time.h)(0x56FE42D6)
 F (.\HARDWARE\src\sterilize.c)(0x69A7F712)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\CMSIS\Include -I .\USER\inc -I .\HARDWARE\inc -I .\STM32F4xx_StdPeriph_Driver\inc -I .\FATFS\inc -I .\VOICE\inc-I C:\Users\ahccqw\Desktop\SmartLife\RTE-I D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F405xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o .\objects\sterilize.o --omf_browse .\objects\sterilize.crf --depend .\objects\sterilize.d)
 I (.\HARDWARE\inc\sterilize.h)(0x69A951B8)
-I (.\USER\inc\main.h)(0x69C37F3B)
+I (.\USER\inc\main.h)(0x69DDA175)
 I (.\CMSIS\stm32f4xx.h)(0x69A920A5)
 I (.\CMSIS\Include\core_cm4.h)(0x53C7D532)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE42DE)
@@ -698,6 +784,7 @@ I (.\HARDWARE\inc\key.h)(0x69A8F4F0)
 I (.\HARDWARE\inc\usart1.h)(0x69A93AD6)
 I (.\HARDWARE\inc\usart3spre.h)(0x69BBC997)
 I (.\HARDWARE\inc\usart2wifi.h)(0x69C4E081)
+I (.\USER\inc\can.h)(0x69DDABAD)
 I (.\HARDWARE\inc\spi1.h)(0x69A97B8A)
 I (.\HARDWARE\inc\w25q64.h)(0x69C49673)
 I (.\HARDWARE\inc\motor.h)(0x69AA71D0)
@@ -710,7 +797,7 @@ I (.\HARDWARE\inc\ws2812s.h)(0x69AE66FD)
 I (.\HARDWARE\inc\iic.h)(0x69AEB805)
 I (.\HARDWARE\inc\tphmsensor.h)(0x69B3723C)
 I (.\HARDWARE\inc\infrared_tp.h)(0x69AEB628)
-I (.\HARDWARE\inc\lcd.h)(0x69BDFFAF)
+I (.\HARDWARE\inc\lcd.h)(0x69CA36D6)
 I (.\HARDWARE\inc\music_ct.h)(0x69C4E081)
 I (.\USER\inc\rtc.h)(0x69BA1903)
 I (.\HARDWARE\inc\touch.h)(0x69C4D103)
@@ -729,9 +816,9 @@ I (.\VOICE\inc\i2s.h)(0x60973B83)
 I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x56FE42DC)
 I (.\VOICE\inc\revert.h)(0x61C29D7F)
 I (D:\Keil_v5\ARM\ARMCC\include\time.h)(0x56FE42D6)
-F (.\HARDWARE\src\usart1.c)(0x69BCFD3C)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\CMSIS\Include -I .\USER\inc -I .\HARDWARE\inc -I .\STM32F4xx_StdPeriph_Driver\inc -I .\FATFS\inc -I .\VOICE\inc-I C:\Users\ahccqw\Desktop\SmartLife\RTE-I D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F405xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o .\objects\usart1.o --omf_browse .\objects\usart1.crf --depend .\objects\usart1.d)
+F (.\HARDWARE\src\usart1.c)(0x69CA641F)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\CMSIS\Include -I .\USER\inc -I .\HARDWARE\inc -I .\STM32F4xx_StdPeriph_Driver\inc -I .\FATFS\inc -I .\VOICE\inc-I C:\Users\ahccqw\Desktop\SmartLife\RTE-I D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F405xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o .\objects\usart1.o --omf_browse .\objects\usart1.crf --depend .\objects\usart1.d)
 I (.\HARDWARE\inc\usart1.h)(0x69A93AD6)
-I (.\USER\inc\main.h)(0x69C37F3B)
+I (.\USER\inc\main.h)(0x69DDA175)
 I (.\CMSIS\stm32f4xx.h)(0x69A920A5)
 I (.\CMSIS\Include\core_cm4.h)(0x53C7D532)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE42DE)
@@ -775,6 +862,7 @@ I (.\HARDWARE\inc\key.h)(0x69A8F4F0)
 I (.\HARDWARE\inc\sterilize.h)(0x69A951B8)
 I (.\HARDWARE\inc\usart3spre.h)(0x69BBC997)
 I (.\HARDWARE\inc\usart2wifi.h)(0x69C4E081)
+I (.\USER\inc\can.h)(0x69DDABAD)
 I (.\HARDWARE\inc\spi1.h)(0x69A97B8A)
 I (.\HARDWARE\inc\w25q64.h)(0x69C49673)
 I (.\HARDWARE\inc\motor.h)(0x69AA71D0)
@@ -787,7 +875,7 @@ I (.\HARDWARE\inc\ws2812s.h)(0x69AE66FD)
 I (.\HARDWARE\inc\iic.h)(0x69AEB805)
 I (.\HARDWARE\inc\tphmsensor.h)(0x69B3723C)
 I (.\HARDWARE\inc\infrared_tp.h)(0x69AEB628)
-I (.\HARDWARE\inc\lcd.h)(0x69BDFFAF)
+I (.\HARDWARE\inc\lcd.h)(0x69CA36D6)
 I (.\HARDWARE\inc\music_ct.h)(0x69C4E081)
 I (.\USER\inc\rtc.h)(0x69BA1903)
 I (.\HARDWARE\inc\touch.h)(0x69C4D103)
@@ -808,7 +896,7 @@ I (.\VOICE\inc\revert.h)(0x61C29D7F)
 I (D:\Keil_v5\ARM\ARMCC\include\time.h)(0x56FE42D6)
 F (.\HARDWARE\src\spi1.c)(0x69C497CD)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\CMSIS\Include -I .\USER\inc -I .\HARDWARE\inc -I .\STM32F4xx_StdPeriph_Driver\inc -I .\FATFS\inc -I .\VOICE\inc-I C:\Users\ahccqw\Desktop\SmartLife\RTE-I D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F405xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o .\objects\spi1.o --omf_browse .\objects\spi1.crf --depend .\objects\spi1.d)
 I (.\HARDWARE\inc\spi1.h)(0x69A97B8A)
-I (.\USER\inc\main.h)(0x69C37F3B)
+I (.\USER\inc\main.h)(0x69DDA175)
 I (.\CMSIS\stm32f4xx.h)(0x69A920A5)
 I (.\CMSIS\Include\core_cm4.h)(0x53C7D532)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE42DE)
@@ -853,6 +941,7 @@ I (.\HARDWARE\inc\sterilize.h)(0x69A951B8)
 I (.\HARDWARE\inc\usart1.h)(0x69A93AD6)
 I (.\HARDWARE\inc\usart3spre.h)(0x69BBC997)
 I (.\HARDWARE\inc\usart2wifi.h)(0x69C4E081)
+I (.\USER\inc\can.h)(0x69DDABAD)
 I (.\HARDWARE\inc\w25q64.h)(0x69C49673)
 I (.\HARDWARE\inc\motor.h)(0x69AA71D0)
 I (.\HARDWARE\inc\servo_motor.h)(0x69AA70B7)
@@ -864,7 +953,7 @@ I (.\HARDWARE\inc\ws2812s.h)(0x69AE66FD)
 I (.\HARDWARE\inc\iic.h)(0x69AEB805)
 I (.\HARDWARE\inc\tphmsensor.h)(0x69B3723C)
 I (.\HARDWARE\inc\infrared_tp.h)(0x69AEB628)
-I (.\HARDWARE\inc\lcd.h)(0x69BDFFAF)
+I (.\HARDWARE\inc\lcd.h)(0x69CA36D6)
 I (.\HARDWARE\inc\music_ct.h)(0x69C4E081)
 I (.\USER\inc\rtc.h)(0x69BA1903)
 I (.\HARDWARE\inc\touch.h)(0x69C4D103)
@@ -883,9 +972,9 @@ I (.\VOICE\inc\i2s.h)(0x60973B83)
 I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x56FE42DC)
 I (.\VOICE\inc\revert.h)(0x61C29D7F)
 I (D:\Keil_v5\ARM\ARMCC\include\time.h)(0x56FE42D6)
-F (.\HARDWARE\src\w25q64.c)(0x69C49673)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\CMSIS\Include -I .\USER\inc -I .\HARDWARE\inc -I .\STM32F4xx_StdPeriph_Driver\inc -I .\FATFS\inc -I .\VOICE\inc-I C:\Users\ahccqw\Desktop\SmartLife\RTE-I D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F405xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o .\objects\w25q64.o --omf_browse .\objects\w25q64.crf --depend .\objects\w25q64.d)
+F (.\HARDWARE\src\w25q64.c)(0x69CA641E)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\CMSIS\Include -I .\USER\inc -I .\HARDWARE\inc -I .\STM32F4xx_StdPeriph_Driver\inc -I .\FATFS\inc -I .\VOICE\inc-I C:\Users\ahccqw\Desktop\SmartLife\RTE-I D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F405xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o .\objects\w25q64.o --omf_browse .\objects\w25q64.crf --depend .\objects\w25q64.d)
 I (.\HARDWARE\inc\w25q64.h)(0x69C49673)
-I (.\USER\inc\main.h)(0x69C37F3B)
+I (.\USER\inc\main.h)(0x69DDA175)
 I (.\CMSIS\stm32f4xx.h)(0x69A920A5)
 I (.\CMSIS\Include\core_cm4.h)(0x53C7D532)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE42DE)
@@ -930,6 +1019,7 @@ I (.\HARDWARE\inc\sterilize.h)(0x69A951B8)
 I (.\HARDWARE\inc\usart1.h)(0x69A93AD6)
 I (.\HARDWARE\inc\usart3spre.h)(0x69BBC997)
 I (.\HARDWARE\inc\usart2wifi.h)(0x69C4E081)
+I (.\USER\inc\can.h)(0x69DDABAD)
 I (.\HARDWARE\inc\spi1.h)(0x69A97B8A)
 I (.\HARDWARE\inc\motor.h)(0x69AA71D0)
 I (.\HARDWARE\inc\servo_motor.h)(0x69AA70B7)
@@ -941,7 +1031,7 @@ I (.\HARDWARE\inc\ws2812s.h)(0x69AE66FD)
 I (.\HARDWARE\inc\iic.h)(0x69AEB805)
 I (.\HARDWARE\inc\tphmsensor.h)(0x69B3723C)
 I (.\HARDWARE\inc\infrared_tp.h)(0x69AEB628)
-I (.\HARDWARE\inc\lcd.h)(0x69BDFFAF)
+I (.\HARDWARE\inc\lcd.h)(0x69CA36D6)
 I (.\HARDWARE\inc\music_ct.h)(0x69C4E081)
 I (.\USER\inc\rtc.h)(0x69BA1903)
 I (.\HARDWARE\inc\touch.h)(0x69C4D103)
@@ -962,7 +1052,7 @@ I (.\VOICE\inc\revert.h)(0x61C29D7F)
 I (D:\Keil_v5\ARM\ARMCC\include\time.h)(0x56FE42D6)
 F (.\HARDWARE\src\motor.c)(0x69C48F01)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\CMSIS\Include -I .\USER\inc -I .\HARDWARE\inc -I .\STM32F4xx_StdPeriph_Driver\inc -I .\FATFS\inc -I .\VOICE\inc-I C:\Users\ahccqw\Desktop\SmartLife\RTE-I D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F405xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o .\objects\motor.o --omf_browse .\objects\motor.crf --depend .\objects\motor.d)
 I (.\HARDWARE\inc\motor.h)(0x69AA71D0)
-I (.\USER\inc\main.h)(0x69C37F3B)
+I (.\USER\inc\main.h)(0x69DDA175)
 I (.\CMSIS\stm32f4xx.h)(0x69A920A5)
 I (.\CMSIS\Include\core_cm4.h)(0x53C7D532)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE42DE)
@@ -1007,6 +1097,7 @@ I (.\HARDWARE\inc\sterilize.h)(0x69A951B8)
 I (.\HARDWARE\inc\usart1.h)(0x69A93AD6)
 I (.\HARDWARE\inc\usart3spre.h)(0x69BBC997)
 I (.\HARDWARE\inc\usart2wifi.h)(0x69C4E081)
+I (.\USER\inc\can.h)(0x69DDABAD)
 I (.\HARDWARE\inc\spi1.h)(0x69A97B8A)
 I (.\HARDWARE\inc\w25q64.h)(0x69C49673)
 I (.\HARDWARE\inc\servo_motor.h)(0x69AA70B7)
@@ -1018,7 +1109,7 @@ I (.\HARDWARE\inc\ws2812s.h)(0x69AE66FD)
 I (.\HARDWARE\inc\iic.h)(0x69AEB805)
 I (.\HARDWARE\inc\tphmsensor.h)(0x69B3723C)
 I (.\HARDWARE\inc\infrared_tp.h)(0x69AEB628)
-I (.\HARDWARE\inc\lcd.h)(0x69BDFFAF)
+I (.\HARDWARE\inc\lcd.h)(0x69CA36D6)
 I (.\HARDWARE\inc\music_ct.h)(0x69C4E081)
 I (.\USER\inc\rtc.h)(0x69BA1903)
 I (.\HARDWARE\inc\touch.h)(0x69C4D103)
@@ -1039,7 +1130,7 @@ I (.\VOICE\inc\revert.h)(0x61C29D7F)
 I (D:\Keil_v5\ARM\ARMCC\include\time.h)(0x56FE42D6)
 F (.\HARDWARE\src\servo_motor.c)(0x69AA70B7)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\CMSIS\Include -I .\USER\inc -I .\HARDWARE\inc -I .\STM32F4xx_StdPeriph_Driver\inc -I .\FATFS\inc -I .\VOICE\inc-I C:\Users\ahccqw\Desktop\SmartLife\RTE-I D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F405xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o .\objects\servo_motor.o --omf_browse .\objects\servo_motor.crf --depend .\objects\servo_motor.d)
 I (.\HARDWARE\inc\servo_motor.h)(0x69AA70B7)
-I (.\USER\inc\main.h)(0x69C37F3B)
+I (.\USER\inc\main.h)(0x69DDA175)
 I (.\CMSIS\stm32f4xx.h)(0x69A920A5)
 I (.\CMSIS\Include\core_cm4.h)(0x53C7D532)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE42DE)
@@ -1084,6 +1175,7 @@ I (.\HARDWARE\inc\sterilize.h)(0x69A951B8)
 I (.\HARDWARE\inc\usart1.h)(0x69A93AD6)
 I (.\HARDWARE\inc\usart3spre.h)(0x69BBC997)
 I (.\HARDWARE\inc\usart2wifi.h)(0x69C4E081)
+I (.\USER\inc\can.h)(0x69DDABAD)
 I (.\HARDWARE\inc\spi1.h)(0x69A97B8A)
 I (.\HARDWARE\inc\w25q64.h)(0x69C49673)
 I (.\HARDWARE\inc\motor.h)(0x69AA71D0)
@@ -1095,7 +1187,7 @@ I (.\HARDWARE\inc\ws2812s.h)(0x69AE66FD)
 I (.\HARDWARE\inc\iic.h)(0x69AEB805)
 I (.\HARDWARE\inc\tphmsensor.h)(0x69B3723C)
 I (.\HARDWARE\inc\infrared_tp.h)(0x69AEB628)
-I (.\HARDWARE\inc\lcd.h)(0x69BDFFAF)
+I (.\HARDWARE\inc\lcd.h)(0x69CA36D6)
 I (.\HARDWARE\inc\music_ct.h)(0x69C4E081)
 I (.\USER\inc\rtc.h)(0x69BA1903)
 I (.\HARDWARE\inc\touch.h)(0x69C4D103)
@@ -1116,7 +1208,7 @@ I (.\VOICE\inc\revert.h)(0x61C29D7F)
 I (D:\Keil_v5\ARM\ARMCC\include\time.h)(0x56FE42D6)
 F (.\HARDWARE\src\adc1.c)(0x69AE23A5)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\CMSIS\Include -I .\USER\inc -I .\HARDWARE\inc -I .\STM32F4xx_StdPeriph_Driver\inc -I .\FATFS\inc -I .\VOICE\inc-I C:\Users\ahccqw\Desktop\SmartLife\RTE-I D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F405xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o .\objects\adc1.o --omf_browse .\objects\adc1.crf --depend .\objects\adc1.d)
 I (.\HARDWARE\inc\adc1.h)(0x69AB8A8E)
-I (.\USER\inc\main.h)(0x69C37F3B)
+I (.\USER\inc\main.h)(0x69DDA175)
 I (.\CMSIS\stm32f4xx.h)(0x69A920A5)
 I (.\CMSIS\Include\core_cm4.h)(0x53C7D532)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE42DE)
@@ -1161,6 +1253,7 @@ I (.\HARDWARE\inc\sterilize.h)(0x69A951B8)
 I (.\HARDWARE\inc\usart1.h)(0x69A93AD6)
 I (.\HARDWARE\inc\usart3spre.h)(0x69BBC997)
 I (.\HARDWARE\inc\usart2wifi.h)(0x69C4E081)
+I (.\USER\inc\can.h)(0x69DDABAD)
 I (.\HARDWARE\inc\spi1.h)(0x69A97B8A)
 I (.\HARDWARE\inc\w25q64.h)(0x69C49673)
 I (.\HARDWARE\inc\motor.h)(0x69AA71D0)
@@ -1172,7 +1265,7 @@ I (.\HARDWARE\inc\ws2812s.h)(0x69AE66FD)
 I (.\HARDWARE\inc\iic.h)(0x69AEB805)
 I (.\HARDWARE\inc\tphmsensor.h)(0x69B3723C)
 I (.\HARDWARE\inc\infrared_tp.h)(0x69AEB628)
-I (.\HARDWARE\inc\lcd.h)(0x69BDFFAF)
+I (.\HARDWARE\inc\lcd.h)(0x69CA36D6)
 I (.\HARDWARE\inc\music_ct.h)(0x69C4E081)
 I (.\USER\inc\rtc.h)(0x69BA1903)
 I (.\HARDWARE\inc\touch.h)(0x69C4D103)
@@ -1193,7 +1286,7 @@ I (.\VOICE\inc\revert.h)(0x61C29D7F)
 I (D:\Keil_v5\ARM\ARMCC\include\time.h)(0x56FE42D6)
 F (.\HARDWARE\src\time6.c)(0x69C250C7)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\CMSIS\Include -I .\USER\inc -I .\HARDWARE\inc -I .\STM32F4xx_StdPeriph_Driver\inc -I .\FATFS\inc -I .\VOICE\inc-I C:\Users\ahccqw\Desktop\SmartLife\RTE-I D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F405xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o .\objects\time6.o --omf_browse .\objects\time6.crf --depend .\objects\time6.d)
 I (.\HARDWARE\inc\time6.h)(0x69C28234)
-I (.\USER\inc\main.h)(0x69C37F3B)
+I (.\USER\inc\main.h)(0x69DDA175)
 I (.\CMSIS\stm32f4xx.h)(0x69A920A5)
 I (.\CMSIS\Include\core_cm4.h)(0x53C7D532)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE42DE)
@@ -1238,6 +1331,7 @@ I (.\HARDWARE\inc\sterilize.h)(0x69A951B8)
 I (.\HARDWARE\inc\usart1.h)(0x69A93AD6)
 I (.\HARDWARE\inc\usart3spre.h)(0x69BBC997)
 I (.\HARDWARE\inc\usart2wifi.h)(0x69C4E081)
+I (.\USER\inc\can.h)(0x69DDABAD)
 I (.\HARDWARE\inc\spi1.h)(0x69A97B8A)
 I (.\HARDWARE\inc\w25q64.h)(0x69C49673)
 I (.\HARDWARE\inc\motor.h)(0x69AA71D0)
@@ -1249,7 +1343,7 @@ I (.\HARDWARE\inc\ws2812s.h)(0x69AE66FD)
 I (.\HARDWARE\inc\iic.h)(0x69AEB805)
 I (.\HARDWARE\inc\tphmsensor.h)(0x69B3723C)
 I (.\HARDWARE\inc\infrared_tp.h)(0x69AEB628)
-I (.\HARDWARE\inc\lcd.h)(0x69BDFFAF)
+I (.\HARDWARE\inc\lcd.h)(0x69CA36D6)
 I (.\HARDWARE\inc\music_ct.h)(0x69C4E081)
 I (.\USER\inc\rtc.h)(0x69BA1903)
 I (.\HARDWARE\inc\touch.h)(0x69C4D103)
@@ -1268,9 +1362,9 @@ I (.\VOICE\inc\i2s.h)(0x60973B83)
 I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x56FE42DC)
 I (.\VOICE\inc\revert.h)(0x61C29D7F)
 I (D:\Keil_v5\ARM\ARMCC\include\time.h)(0x56FE42D6)
-F (.\HARDWARE\src\ws2812s.c)(0x69C27A81)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\CMSIS\Include -I .\USER\inc -I .\HARDWARE\inc -I .\STM32F4xx_StdPeriph_Driver\inc -I .\FATFS\inc -I .\VOICE\inc-I C:\Users\ahccqw\Desktop\SmartLife\RTE-I D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F405xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o .\objects\ws2812s.o --omf_browse .\objects\ws2812s.crf --depend .\objects\ws2812s.d)
+F (.\HARDWARE\src\ws2812s.c)(0x69D5AEAC)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\CMSIS\Include -I .\USER\inc -I .\HARDWARE\inc -I .\STM32F4xx_StdPeriph_Driver\inc -I .\FATFS\inc -I .\VOICE\inc-I C:\Users\ahccqw\Desktop\SmartLife\RTE-I D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F405xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o .\objects\ws2812s.o --omf_browse .\objects\ws2812s.crf --depend .\objects\ws2812s.d)
 I (.\HARDWARE\inc\ws2812s.h)(0x69AE66FD)
-I (.\USER\inc\main.h)(0x69C37F3B)
+I (.\USER\inc\main.h)(0x69DDA175)
 I (.\CMSIS\stm32f4xx.h)(0x69A920A5)
 I (.\CMSIS\Include\core_cm4.h)(0x53C7D532)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE42DE)
@@ -1315,6 +1409,7 @@ I (.\HARDWARE\inc\sterilize.h)(0x69A951B8)
 I (.\HARDWARE\inc\usart1.h)(0x69A93AD6)
 I (.\HARDWARE\inc\usart3spre.h)(0x69BBC997)
 I (.\HARDWARE\inc\usart2wifi.h)(0x69C4E081)
+I (.\USER\inc\can.h)(0x69DDABAD)
 I (.\HARDWARE\inc\spi1.h)(0x69A97B8A)
 I (.\HARDWARE\inc\w25q64.h)(0x69C49673)
 I (.\HARDWARE\inc\motor.h)(0x69AA71D0)
@@ -1326,7 +1421,7 @@ I (.\HARDWARE\inc\time6.h)(0x69C28234)
 I (.\HARDWARE\inc\iic.h)(0x69AEB805)
 I (.\HARDWARE\inc\tphmsensor.h)(0x69B3723C)
 I (.\HARDWARE\inc\infrared_tp.h)(0x69AEB628)
-I (.\HARDWARE\inc\lcd.h)(0x69BDFFAF)
+I (.\HARDWARE\inc\lcd.h)(0x69CA36D6)
 I (.\HARDWARE\inc\music_ct.h)(0x69C4E081)
 I (.\USER\inc\rtc.h)(0x69BA1903)
 I (.\HARDWARE\inc\touch.h)(0x69C4D103)
@@ -1347,7 +1442,7 @@ I (.\VOICE\inc\revert.h)(0x61C29D7F)
 I (D:\Keil_v5\ARM\ARMCC\include\time.h)(0x56FE42D6)
 F (.\HARDWARE\src\iic.c)(0x69AF76BF)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\CMSIS\Include -I .\USER\inc -I .\HARDWARE\inc -I .\STM32F4xx_StdPeriph_Driver\inc -I .\FATFS\inc -I .\VOICE\inc-I C:\Users\ahccqw\Desktop\SmartLife\RTE-I D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F405xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o .\objects\iic.o --omf_browse .\objects\iic.crf --depend .\objects\iic.d)
 I (.\HARDWARE\inc\iic.h)(0x69AEB805)
-I (.\USER\inc\main.h)(0x69C37F3B)
+I (.\USER\inc\main.h)(0x69DDA175)
 I (.\CMSIS\stm32f4xx.h)(0x69A920A5)
 I (.\CMSIS\Include\core_cm4.h)(0x53C7D532)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE42DE)
@@ -1392,6 +1487,7 @@ I (.\HARDWARE\inc\sterilize.h)(0x69A951B8)
 I (.\HARDWARE\inc\usart1.h)(0x69A93AD6)
 I (.\HARDWARE\inc\usart3spre.h)(0x69BBC997)
 I (.\HARDWARE\inc\usart2wifi.h)(0x69C4E081)
+I (.\USER\inc\can.h)(0x69DDABAD)
 I (.\HARDWARE\inc\spi1.h)(0x69A97B8A)
 I (.\HARDWARE\inc\w25q64.h)(0x69C49673)
 I (.\HARDWARE\inc\motor.h)(0x69AA71D0)
@@ -1403,7 +1499,7 @@ I (.\HARDWARE\inc\time6.h)(0x69C28234)
 I (.\HARDWARE\inc\ws2812s.h)(0x69AE66FD)
 I (.\HARDWARE\inc\tphmsensor.h)(0x69B3723C)
 I (.\HARDWARE\inc\infrared_tp.h)(0x69AEB628)
-I (.\HARDWARE\inc\lcd.h)(0x69BDFFAF)
+I (.\HARDWARE\inc\lcd.h)(0x69CA36D6)
 I (.\HARDWARE\inc\music_ct.h)(0x69C4E081)
 I (.\USER\inc\rtc.h)(0x69BA1903)
 I (.\HARDWARE\inc\touch.h)(0x69C4D103)
@@ -1424,7 +1520,7 @@ I (.\VOICE\inc\revert.h)(0x61C29D7F)
 I (D:\Keil_v5\ARM\ARMCC\include\time.h)(0x56FE42D6)
 F (.\HARDWARE\src\tphmsensor.c)(0x69B3723C)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\CMSIS\Include -I .\USER\inc -I .\HARDWARE\inc -I .\STM32F4xx_StdPeriph_Driver\inc -I .\FATFS\inc -I .\VOICE\inc-I C:\Users\ahccqw\Desktop\SmartLife\RTE-I D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F405xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o .\objects\tphmsensor.o --omf_browse .\objects\tphmsensor.crf --depend .\objects\tphmsensor.d)
 I (.\HARDWARE\inc\tphmsensor.h)(0x69B3723C)
-I (.\USER\inc\main.h)(0x69C37F3B)
+I (.\USER\inc\main.h)(0x69DDA175)
 I (.\CMSIS\stm32f4xx.h)(0x69A920A5)
 I (.\CMSIS\Include\core_cm4.h)(0x53C7D532)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE42DE)
@@ -1469,6 +1565,7 @@ I (.\HARDWARE\inc\sterilize.h)(0x69A951B8)
 I (.\HARDWARE\inc\usart1.h)(0x69A93AD6)
 I (.\HARDWARE\inc\usart3spre.h)(0x69BBC997)
 I (.\HARDWARE\inc\usart2wifi.h)(0x69C4E081)
+I (.\USER\inc\can.h)(0x69DDABAD)
 I (.\HARDWARE\inc\spi1.h)(0x69A97B8A)
 I (.\HARDWARE\inc\w25q64.h)(0x69C49673)
 I (.\HARDWARE\inc\motor.h)(0x69AA71D0)
@@ -1480,7 +1577,7 @@ I (.\HARDWARE\inc\time6.h)(0x69C28234)
 I (.\HARDWARE\inc\ws2812s.h)(0x69AE66FD)
 I (.\HARDWARE\inc\iic.h)(0x69AEB805)
 I (.\HARDWARE\inc\infrared_tp.h)(0x69AEB628)
-I (.\HARDWARE\inc\lcd.h)(0x69BDFFAF)
+I (.\HARDWARE\inc\lcd.h)(0x69CA36D6)
 I (.\HARDWARE\inc\music_ct.h)(0x69C4E081)
 I (.\USER\inc\rtc.h)(0x69BA1903)
 I (.\HARDWARE\inc\touch.h)(0x69C4D103)
@@ -1501,7 +1598,7 @@ I (.\VOICE\inc\revert.h)(0x61C29D7F)
 I (D:\Keil_v5\ARM\ARMCC\include\time.h)(0x56FE42D6)
 F (.\HARDWARE\src\infrared_tp.c)(0x69AF87F6)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\CMSIS\Include -I .\USER\inc -I .\HARDWARE\inc -I .\STM32F4xx_StdPeriph_Driver\inc -I .\FATFS\inc -I .\VOICE\inc-I C:\Users\ahccqw\Desktop\SmartLife\RTE-I D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F405xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o .\objects\infrared_tp.o --omf_browse .\objects\infrared_tp.crf --depend .\objects\infrared_tp.d)
 I (.\HARDWARE\inc\infrared_tp.h)(0x69AEB628)
-I (.\USER\inc\main.h)(0x69C37F3B)
+I (.\USER\inc\main.h)(0x69DDA175)
 I (.\CMSIS\stm32f4xx.h)(0x69A920A5)
 I (.\CMSIS\Include\core_cm4.h)(0x53C7D532)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE42DE)
@@ -1546,6 +1643,7 @@ I (.\HARDWARE\inc\sterilize.h)(0x69A951B8)
 I (.\HARDWARE\inc\usart1.h)(0x69A93AD6)
 I (.\HARDWARE\inc\usart3spre.h)(0x69BBC997)
 I (.\HARDWARE\inc\usart2wifi.h)(0x69C4E081)
+I (.\USER\inc\can.h)(0x69DDABAD)
 I (.\HARDWARE\inc\spi1.h)(0x69A97B8A)
 I (.\HARDWARE\inc\w25q64.h)(0x69C49673)
 I (.\HARDWARE\inc\motor.h)(0x69AA71D0)
@@ -1557,7 +1655,7 @@ I (.\HARDWARE\inc\time6.h)(0x69C28234)
 I (.\HARDWARE\inc\ws2812s.h)(0x69AE66FD)
 I (.\HARDWARE\inc\iic.h)(0x69AEB805)
 I (.\HARDWARE\inc\tphmsensor.h)(0x69B3723C)
-I (.\HARDWARE\inc\lcd.h)(0x69BDFFAF)
+I (.\HARDWARE\inc\lcd.h)(0x69CA36D6)
 I (.\HARDWARE\inc\music_ct.h)(0x69C4E081)
 I (.\USER\inc\rtc.h)(0x69BA1903)
 I (.\HARDWARE\inc\touch.h)(0x69C4D103)
@@ -1577,8 +1675,8 @@ I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x56FE42DC)
 I (.\VOICE\inc\revert.h)(0x61C29D7F)
 I (D:\Keil_v5\ARM\ARMCC\include\time.h)(0x56FE42D6)
 F (.\HARDWARE\src\lcd.c)(0x69B3F563)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\CMSIS\Include -I .\USER\inc -I .\HARDWARE\inc -I .\STM32F4xx_StdPeriph_Driver\inc -I .\FATFS\inc -I .\VOICE\inc-I C:\Users\ahccqw\Desktop\SmartLife\RTE-I D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F405xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o .\objects\lcd.o --omf_browse .\objects\lcd.crf --depend .\objects\lcd.d)
-I (.\HARDWARE\inc\lcd.h)(0x69BDFFAF)
-I (.\USER\inc\main.h)(0x69C37F3B)
+I (.\HARDWARE\inc\lcd.h)(0x69CA36D6)
+I (.\USER\inc\main.h)(0x69DDA175)
 I (.\CMSIS\stm32f4xx.h)(0x69A920A5)
 I (.\CMSIS\Include\core_cm4.h)(0x53C7D532)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE42DE)
@@ -1623,6 +1721,7 @@ I (.\HARDWARE\inc\sterilize.h)(0x69A951B8)
 I (.\HARDWARE\inc\usart1.h)(0x69A93AD6)
 I (.\HARDWARE\inc\usart3spre.h)(0x69BBC997)
 I (.\HARDWARE\inc\usart2wifi.h)(0x69C4E081)
+I (.\USER\inc\can.h)(0x69DDABAD)
 I (.\HARDWARE\inc\spi1.h)(0x69A97B8A)
 I (.\HARDWARE\inc\w25q64.h)(0x69C49673)
 I (.\HARDWARE\inc\motor.h)(0x69AA71D0)
@@ -1657,7 +1756,7 @@ I (.\HARDWARE\inc\pic.h)(0x69BDFFAF)
 I (.\HARDWARE\inc\ikun.h)(0x69B23853)
 F (.\HARDWARE\src\touch.c)(0x69C4D559)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\CMSIS\Include -I .\USER\inc -I .\HARDWARE\inc -I .\STM32F4xx_StdPeriph_Driver\inc -I .\FATFS\inc -I .\VOICE\inc-I C:\Users\ahccqw\Desktop\SmartLife\RTE-I D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F405xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o .\objects\touch.o --omf_browse .\objects\touch.crf --depend .\objects\touch.d)
 I (.\HARDWARE\inc\touch.h)(0x69C4D103)
-I (.\USER\inc\main.h)(0x69C37F3B)
+I (.\USER\inc\main.h)(0x69DDA175)
 I (.\CMSIS\stm32f4xx.h)(0x69A920A5)
 I (.\CMSIS\Include\core_cm4.h)(0x53C7D532)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE42DE)
@@ -1702,6 +1801,7 @@ I (.\HARDWARE\inc\sterilize.h)(0x69A951B8)
 I (.\HARDWARE\inc\usart1.h)(0x69A93AD6)
 I (.\HARDWARE\inc\usart3spre.h)(0x69BBC997)
 I (.\HARDWARE\inc\usart2wifi.h)(0x69C4E081)
+I (.\USER\inc\can.h)(0x69DDABAD)
 I (.\HARDWARE\inc\spi1.h)(0x69A97B8A)
 I (.\HARDWARE\inc\w25q64.h)(0x69C49673)
 I (.\HARDWARE\inc\motor.h)(0x69AA71D0)
@@ -1714,7 +1814,7 @@ I (.\HARDWARE\inc\ws2812s.h)(0x69AE66FD)
 I (.\HARDWARE\inc\iic.h)(0x69AEB805)
 I (.\HARDWARE\inc\tphmsensor.h)(0x69B3723C)
 I (.\HARDWARE\inc\infrared_tp.h)(0x69AEB628)
-I (.\HARDWARE\inc\lcd.h)(0x69BDFFAF)
+I (.\HARDWARE\inc\lcd.h)(0x69CA36D6)
 I (.\HARDWARE\inc\music_ct.h)(0x69C4E081)
 I (.\USER\inc\rtc.h)(0x69BA1903)
 I (.\HARDWARE\inc\sd_driver.h)(0x69BA10F4)
@@ -1734,7 +1834,7 @@ I (.\VOICE\inc\revert.h)(0x61C29D7F)
 I (D:\Keil_v5\ARM\ARMCC\include\time.h)(0x56FE42D6)
 F (.\HARDWARE\src\sd_driver.c)(0x69BA10F4)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\CMSIS\Include -I .\USER\inc -I .\HARDWARE\inc -I .\STM32F4xx_StdPeriph_Driver\inc -I .\FATFS\inc -I .\VOICE\inc-I C:\Users\ahccqw\Desktop\SmartLife\RTE-I D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F405xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o .\objects\sd_driver.o --omf_browse .\objects\sd_driver.crf --depend .\objects\sd_driver.d)
 I (.\HARDWARE\inc\sd_driver.h)(0x69BA10F4)
-I (.\USER\inc\main.h)(0x69C37F3B)
+I (.\USER\inc\main.h)(0x69DDA175)
 I (.\CMSIS\stm32f4xx.h)(0x69A920A5)
 I (.\CMSIS\Include\core_cm4.h)(0x53C7D532)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE42DE)
@@ -1779,6 +1879,7 @@ I (.\HARDWARE\inc\sterilize.h)(0x69A951B8)
 I (.\HARDWARE\inc\usart1.h)(0x69A93AD6)
 I (.\HARDWARE\inc\usart3spre.h)(0x69BBC997)
 I (.\HARDWARE\inc\usart2wifi.h)(0x69C4E081)
+I (.\USER\inc\can.h)(0x69DDABAD)
 I (.\HARDWARE\inc\spi1.h)(0x69A97B8A)
 I (.\HARDWARE\inc\w25q64.h)(0x69C49673)
 I (.\HARDWARE\inc\motor.h)(0x69AA71D0)
@@ -1791,7 +1892,7 @@ I (.\HARDWARE\inc\ws2812s.h)(0x69AE66FD)
 I (.\HARDWARE\inc\iic.h)(0x69AEB805)
 I (.\HARDWARE\inc\tphmsensor.h)(0x69B3723C)
 I (.\HARDWARE\inc\infrared_tp.h)(0x69AEB628)
-I (.\HARDWARE\inc\lcd.h)(0x69BDFFAF)
+I (.\HARDWARE\inc\lcd.h)(0x69CA36D6)
 I (.\HARDWARE\inc\music_ct.h)(0x69C4E081)
 I (.\USER\inc\rtc.h)(0x69BA1903)
 I (.\HARDWARE\inc\touch.h)(0x69C4D103)
@@ -1811,7 +1912,7 @@ I (.\VOICE\inc\revert.h)(0x61C29D7F)
 I (D:\Keil_v5\ARM\ARMCC\include\time.h)(0x56FE42D6)
 F (.\HARDWARE\src\usart3spre.c)(0x69C4E081)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\CMSIS\Include -I .\USER\inc -I .\HARDWARE\inc -I .\STM32F4xx_StdPeriph_Driver\inc -I .\FATFS\inc -I .\VOICE\inc-I C:\Users\ahccqw\Desktop\SmartLife\RTE-I D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F405xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o .\objects\usart3spre.o --omf_browse .\objects\usart3spre.crf --depend .\objects\usart3spre.d)
 I (.\HARDWARE\inc\usart3spre.h)(0x69BBC997)
-I (.\USER\inc\main.h)(0x69C37F3B)
+I (.\USER\inc\main.h)(0x69DDA175)
 I (.\CMSIS\stm32f4xx.h)(0x69A920A5)
 I (.\CMSIS\Include\core_cm4.h)(0x53C7D532)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE42DE)
@@ -1855,6 +1956,7 @@ I (.\HARDWARE\inc\key.h)(0x69A8F4F0)
 I (.\HARDWARE\inc\sterilize.h)(0x69A951B8)
 I (.\HARDWARE\inc\usart1.h)(0x69A93AD6)
 I (.\HARDWARE\inc\usart2wifi.h)(0x69C4E081)
+I (.\USER\inc\can.h)(0x69DDABAD)
 I (.\HARDWARE\inc\spi1.h)(0x69A97B8A)
 I (.\HARDWARE\inc\w25q64.h)(0x69C49673)
 I (.\HARDWARE\inc\motor.h)(0x69AA71D0)
@@ -1867,7 +1969,7 @@ I (.\HARDWARE\inc\ws2812s.h)(0x69AE66FD)
 I (.\HARDWARE\inc\iic.h)(0x69AEB805)
 I (.\HARDWARE\inc\tphmsensor.h)(0x69B3723C)
 I (.\HARDWARE\inc\infrared_tp.h)(0x69AEB628)
-I (.\HARDWARE\inc\lcd.h)(0x69BDFFAF)
+I (.\HARDWARE\inc\lcd.h)(0x69CA36D6)
 I (.\HARDWARE\inc\music_ct.h)(0x69C4E081)
 I (.\USER\inc\rtc.h)(0x69BA1903)
 I (.\HARDWARE\inc\touch.h)(0x69C4D103)
@@ -1886,9 +1988,9 @@ I (.\VOICE\inc\i2s.h)(0x60973B83)
 I (D:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x56FE42DC)
 I (.\VOICE\inc\revert.h)(0x61C29D7F)
 I (D:\Keil_v5\ARM\ARMCC\include\time.h)(0x56FE42D6)
-F (.\HARDWARE\src\usart2wifi.c)(0x69C4F0D2)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\CMSIS\Include -I .\USER\inc -I .\HARDWARE\inc -I .\STM32F4xx_StdPeriph_Driver\inc -I .\FATFS\inc -I .\VOICE\inc-I C:\Users\ahccqw\Desktop\SmartLife\RTE-I D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F405xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o .\objects\usart2wifi.o --omf_browse .\objects\usart2wifi.crf --depend .\objects\usart2wifi.d)
+F (.\HARDWARE\src\usart2wifi.c)(0x69D6517F)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\CMSIS\Include -I .\USER\inc -I .\HARDWARE\inc -I .\STM32F4xx_StdPeriph_Driver\inc -I .\FATFS\inc -I .\VOICE\inc-I C:\Users\ahccqw\Desktop\SmartLife\RTE-I D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F405xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o .\objects\usart2wifi.o --omf_browse .\objects\usart2wifi.crf --depend .\objects\usart2wifi.d)
 I (.\HARDWARE\inc\usart2wifi.h)(0x69C4E081)
-I (.\USER\inc\main.h)(0x69C37F3B)
+I (.\USER\inc\main.h)(0x69DDA175)
 I (.\CMSIS\stm32f4xx.h)(0x69A920A5)
 I (.\CMSIS\Include\core_cm4.h)(0x53C7D532)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE42DE)
@@ -1932,6 +2034,7 @@ I (.\HARDWARE\inc\key.h)(0x69A8F4F0)
 I (.\HARDWARE\inc\sterilize.h)(0x69A951B8)
 I (.\HARDWARE\inc\usart1.h)(0x69A93AD6)
 I (.\HARDWARE\inc\usart3spre.h)(0x69BBC997)
+I (.\USER\inc\can.h)(0x69DDABAD)
 I (.\HARDWARE\inc\spi1.h)(0x69A97B8A)
 I (.\HARDWARE\inc\w25q64.h)(0x69C49673)
 I (.\HARDWARE\inc\motor.h)(0x69AA71D0)
@@ -1944,7 +2047,7 @@ I (.\HARDWARE\inc\ws2812s.h)(0x69AE66FD)
 I (.\HARDWARE\inc\iic.h)(0x69AEB805)
 I (.\HARDWARE\inc\tphmsensor.h)(0x69B3723C)
 I (.\HARDWARE\inc\infrared_tp.h)(0x69AEB628)
-I (.\HARDWARE\inc\lcd.h)(0x69BDFFAF)
+I (.\HARDWARE\inc\lcd.h)(0x69CA36D6)
 I (.\HARDWARE\inc\music_ct.h)(0x69C4E081)
 I (.\USER\inc\rtc.h)(0x69BA1903)
 I (.\HARDWARE\inc\touch.h)(0x69C4D103)
@@ -1965,7 +2068,7 @@ I (.\VOICE\inc\revert.h)(0x61C29D7F)
 I (D:\Keil_v5\ARM\ARMCC\include\time.h)(0x56FE42D6)
 F (.\HARDWARE\src\music_ct.c)(0x69C4E81F)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\CMSIS\Include -I .\USER\inc -I .\HARDWARE\inc -I .\STM32F4xx_StdPeriph_Driver\inc -I .\FATFS\inc -I .\VOICE\inc-I C:\Users\ahccqw\Desktop\SmartLife\RTE-I D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I D:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="520" -DSTM32F405xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o .\objects\music_ct.o --omf_browse .\objects\music_ct.crf --depend .\objects\music_ct.d)
 I (.\HARDWARE\inc\music_ct.h)(0x69C4E081)
-I (.\USER\inc\main.h)(0x69C37F3B)
+I (.\USER\inc\main.h)(0x69DDA175)
 I (.\CMSIS\stm32f4xx.h)(0x69A920A5)
 I (.\CMSIS\Include\core_cm4.h)(0x53C7D532)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE42DE)
@@ -2010,6 +2113,7 @@ I (.\HARDWARE\inc\sterilize.h)(0x69A951B8)
 I (.\HARDWARE\inc\usart1.h)(0x69A93AD6)
 I (.\HARDWARE\inc\usart3spre.h)(0x69BBC997)
 I (.\HARDWARE\inc\usart2wifi.h)(0x69C4E081)
+I (.\USER\inc\can.h)(0x69DDABAD)
 I (.\HARDWARE\inc\spi1.h)(0x69A97B8A)
 I (.\HARDWARE\inc\w25q64.h)(0x69C49673)
 I (.\HARDWARE\inc\motor.h)(0x69AA71D0)
@@ -2022,7 +2126,7 @@ I (.\HARDWARE\inc\ws2812s.h)(0x69AE66FD)
 I (.\HARDWARE\inc\iic.h)(0x69AEB805)
 I (.\HARDWARE\inc\tphmsensor.h)(0x69B3723C)
 I (.\HARDWARE\inc\infrared_tp.h)(0x69AEB628)
-I (.\HARDWARE\inc\lcd.h)(0x69BDFFAF)
+I (.\HARDWARE\inc\lcd.h)(0x69CA36D6)
 I (.\USER\inc\rtc.h)(0x69BA1903)
 I (.\HARDWARE\inc\touch.h)(0x69C4D103)
 I (.\HARDWARE\inc\sd_driver.h)(0x69BA10F4)
@@ -3240,7 +3344,7 @@ I (.\FATFS\inc\ff.h)(0x69BB5284)
 I (.\FATFS\inc\ffconf.h)(0x69BA430F)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE42DE)
 I (.\USER\inc\rtc.h)(0x69BA1903)
-I (.\USER\inc\main.h)(0x69C37F3B)
+I (.\USER\inc\main.h)(0x69DDA175)
 I (.\CMSIS\stm32f4xx.h)(0x69A920A5)
 I (.\CMSIS\Include\core_cm4.h)(0x53C7D532)
 I (.\CMSIS\Include\core_cmInstr.h)(0x53C7D532)
@@ -3284,6 +3388,7 @@ I (.\HARDWARE\inc\sterilize.h)(0x69A951B8)
 I (.\HARDWARE\inc\usart1.h)(0x69A93AD6)
 I (.\HARDWARE\inc\usart3spre.h)(0x69BBC997)
 I (.\HARDWARE\inc\usart2wifi.h)(0x69C4E081)
+I (.\USER\inc\can.h)(0x69DDABAD)
 I (.\HARDWARE\inc\spi1.h)(0x69A97B8A)
 I (.\HARDWARE\inc\w25q64.h)(0x69C49673)
 I (.\HARDWARE\inc\motor.h)(0x69AA71D0)
@@ -3296,7 +3401,7 @@ I (.\HARDWARE\inc\ws2812s.h)(0x69AE66FD)
 I (.\HARDWARE\inc\iic.h)(0x69AEB805)
 I (.\HARDWARE\inc\tphmsensor.h)(0x69B3723C)
 I (.\HARDWARE\inc\infrared_tp.h)(0x69AEB628)
-I (.\HARDWARE\inc\lcd.h)(0x69BDFFAF)
+I (.\HARDWARE\inc\lcd.h)(0x69CA36D6)
 I (.\HARDWARE\inc\music_ct.h)(0x69C4E081)
 I (.\HARDWARE\inc\touch.h)(0x69C4D103)
 I (.\HARDWARE\inc\sd_driver.h)(0x69BA10F4)
@@ -3318,7 +3423,7 @@ I (.\FATFS\inc\ffconf.h)(0x69BA430F)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x56FE42DE)
 I (.\FATFS\inc\diskio.h)(0x69BA42F6)
 I (.\USER\inc\rtc.h)(0x69BA1903)
-I (.\USER\inc\main.h)(0x69C37F3B)
+I (.\USER\inc\main.h)(0x69DDA175)
 I (.\CMSIS\stm32f4xx.h)(0x69A920A5)
 I (.\CMSIS\Include\core_cm4.h)(0x53C7D532)
 I (.\CMSIS\Include\core_cmInstr.h)(0x53C7D532)
@@ -3361,6 +3466,7 @@ I (.\HARDWARE\inc\sterilize.h)(0x69A951B8)
 I (.\HARDWARE\inc\usart1.h)(0x69A93AD6)
 I (.\HARDWARE\inc\usart3spre.h)(0x69BBC997)
 I (.\HARDWARE\inc\usart2wifi.h)(0x69C4E081)
+I (.\USER\inc\can.h)(0x69DDABAD)
 I (.\HARDWARE\inc\spi1.h)(0x69A97B8A)
 I (.\HARDWARE\inc\w25q64.h)(0x69C49673)
 I (.\HARDWARE\inc\motor.h)(0x69AA71D0)
@@ -3373,7 +3479,7 @@ I (.\HARDWARE\inc\ws2812s.h)(0x69AE66FD)
 I (.\HARDWARE\inc\iic.h)(0x69AEB805)
 I (.\HARDWARE\inc\tphmsensor.h)(0x69B3723C)
 I (.\HARDWARE\inc\infrared_tp.h)(0x69AEB628)
-I (.\HARDWARE\inc\lcd.h)(0x69BDFFAF)
+I (.\HARDWARE\inc\lcd.h)(0x69CA36D6)
 I (.\HARDWARE\inc\music_ct.h)(0x69C4E081)
 I (.\HARDWARE\inc\touch.h)(0x69C4D103)
 I (.\HARDWARE\inc\sd_driver.h)(0x69BA10F4)
@@ -3483,7 +3589,7 @@ I (.\FATFS\inc\ffconf.h)(0x69BA430F)
 I (.\VOICE\inc\wavplay.h)(0x61C192EF)
 I (.\FATFS\inc\exfuns.h)(0x611F0749)
 I (.\USER\inc\delay.h)(0x69AE42AA)
-I (.\USER\inc\main.h)(0x69C37F3B)
+I (.\USER\inc\main.h)(0x69DDA175)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x56FE42DE)
 I (.\HARDWARE\inc\led.h)(0x69A951B7)
 I (.\HARDWARE\inc\beep.h)(0x69B7F1BD)
@@ -3492,6 +3598,7 @@ I (.\HARDWARE\inc\sterilize.h)(0x69A951B8)
 I (.\HARDWARE\inc\usart1.h)(0x69A93AD6)
 I (.\HARDWARE\inc\usart3spre.h)(0x69BBC997)
 I (.\HARDWARE\inc\usart2wifi.h)(0x69C4E081)
+I (.\USER\inc\can.h)(0x69DDABAD)
 I (.\HARDWARE\inc\spi1.h)(0x69A97B8A)
 I (.\HARDWARE\inc\w25q64.h)(0x69C49673)
 I (.\HARDWARE\inc\motor.h)(0x69AA71D0)
@@ -3504,7 +3611,7 @@ I (.\HARDWARE\inc\ws2812s.h)(0x69AE66FD)
 I (.\HARDWARE\inc\iic.h)(0x69AEB805)
 I (.\HARDWARE\inc\tphmsensor.h)(0x69B3723C)
 I (.\HARDWARE\inc\infrared_tp.h)(0x69AEB628)
-I (.\HARDWARE\inc\lcd.h)(0x69BDFFAF)
+I (.\HARDWARE\inc\lcd.h)(0x69CA36D6)
 I (.\HARDWARE\inc\music_ct.h)(0x69C4E081)
 I (.\USER\inc\rtc.h)(0x69BA1903)
 I (.\HARDWARE\inc\touch.h)(0x69C4D103)
@@ -3627,7 +3734,7 @@ I (.\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_can.h)(0x53DBAFAE)
 I (.\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x53DBAFAE)
 I (.\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x53DBAFAE)
 I (.\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x53DBAFAE)
-I (.\USER\inc\main.h)(0x69C37F3B)
+I (.\USER\inc\main.h)(0x69DDA175)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x56FE42DE)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x56FE42DE)
 I (.\HARDWARE\inc\led.h)(0x69A951B7)
@@ -3638,6 +3745,7 @@ I (.\HARDWARE\inc\sterilize.h)(0x69A951B8)
 I (.\HARDWARE\inc\usart1.h)(0x69A93AD6)
 I (.\HARDWARE\inc\usart3spre.h)(0x69BBC997)
 I (.\HARDWARE\inc\usart2wifi.h)(0x69C4E081)
+I (.\USER\inc\can.h)(0x69DDABAD)
 I (.\HARDWARE\inc\spi1.h)(0x69A97B8A)
 I (.\HARDWARE\inc\w25q64.h)(0x69C49673)
 I (.\HARDWARE\inc\motor.h)(0x69AA71D0)
@@ -3650,7 +3758,7 @@ I (.\HARDWARE\inc\ws2812s.h)(0x69AE66FD)
 I (.\HARDWARE\inc\iic.h)(0x69AEB805)
 I (.\HARDWARE\inc\tphmsensor.h)(0x69B3723C)
 I (.\HARDWARE\inc\infrared_tp.h)(0x69AEB628)
-I (.\HARDWARE\inc\lcd.h)(0x69BDFFAF)
+I (.\HARDWARE\inc\lcd.h)(0x69CA36D6)
 I (.\HARDWARE\inc\music_ct.h)(0x69C4E081)
 I (.\USER\inc\rtc.h)(0x69BA1903)
 I (.\HARDWARE\inc\touch.h)(0x69C4D103)
@@ -3709,7 +3817,7 @@ I (.\FATFS\inc\ff.h)(0x69BB5284)
 I (.\FATFS\inc\ffconf.h)(0x69BA430F)
 I (.\FATFS\inc\exfuns.h)(0x611F0749)
 I (.\USER\inc\delay.h)(0x69AE42AA)
-I (.\USER\inc\main.h)(0x69C37F3B)
+I (.\USER\inc\main.h)(0x69DDA175)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x56FE42DE)
 I (.\HARDWARE\inc\led.h)(0x69A951B7)
 I (.\HARDWARE\inc\beep.h)(0x69B7F1BD)
@@ -3718,6 +3826,7 @@ I (.\HARDWARE\inc\sterilize.h)(0x69A951B8)
 I (.\HARDWARE\inc\usart1.h)(0x69A93AD6)
 I (.\HARDWARE\inc\usart3spre.h)(0x69BBC997)
 I (.\HARDWARE\inc\usart2wifi.h)(0x69C4E081)
+I (.\USER\inc\can.h)(0x69DDABAD)
 I (.\HARDWARE\inc\spi1.h)(0x69A97B8A)
 I (.\HARDWARE\inc\w25q64.h)(0x69C49673)
 I (.\HARDWARE\inc\motor.h)(0x69AA71D0)
@@ -3730,7 +3839,7 @@ I (.\HARDWARE\inc\ws2812s.h)(0x69AE66FD)
 I (.\HARDWARE\inc\iic.h)(0x69AEB805)
 I (.\HARDWARE\inc\tphmsensor.h)(0x69B3723C)
 I (.\HARDWARE\inc\infrared_tp.h)(0x69AEB628)
-I (.\HARDWARE\inc\lcd.h)(0x69BDFFAF)
+I (.\HARDWARE\inc\lcd.h)(0x69CA36D6)
 I (.\HARDWARE\inc\music_ct.h)(0x69C4E081)
 I (.\USER\inc\rtc.h)(0x69BA1903)
 I (.\HARDWARE\inc\touch.h)(0x69C4D103)
@@ -3783,7 +3892,7 @@ I (.\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x53DBAFAE)
 I (.\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x53DBAFAE)
 I (.\VOICE\inc\wmiic.h)(0x69BB60FC)
 I (.\USER\inc\delay.h)(0x69AE42AA)
-I (.\USER\inc\main.h)(0x69C37F3B)
+I (.\USER\inc\main.h)(0x69DDA175)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x56FE42DE)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x56FE42DE)
 I (.\HARDWARE\inc\led.h)(0x69A951B7)
@@ -3793,6 +3902,7 @@ I (.\HARDWARE\inc\sterilize.h)(0x69A951B8)
 I (.\HARDWARE\inc\usart1.h)(0x69A93AD6)
 I (.\HARDWARE\inc\usart3spre.h)(0x69BBC997)
 I (.\HARDWARE\inc\usart2wifi.h)(0x69C4E081)
+I (.\USER\inc\can.h)(0x69DDABAD)
 I (.\HARDWARE\inc\spi1.h)(0x69A97B8A)
 I (.\HARDWARE\inc\w25q64.h)(0x69C49673)
 I (.\HARDWARE\inc\motor.h)(0x69AA71D0)
@@ -3805,7 +3915,7 @@ I (.\HARDWARE\inc\ws2812s.h)(0x69AE66FD)
 I (.\HARDWARE\inc\iic.h)(0x69AEB805)
 I (.\HARDWARE\inc\tphmsensor.h)(0x69B3723C)
 I (.\HARDWARE\inc\infrared_tp.h)(0x69AEB628)
-I (.\HARDWARE\inc\lcd.h)(0x69BDFFAF)
+I (.\HARDWARE\inc\lcd.h)(0x69CA36D6)
 I (.\HARDWARE\inc\music_ct.h)(0x69C4E081)
 I (.\USER\inc\rtc.h)(0x69BA1903)
 I (.\HARDWARE\inc\touch.h)(0x69C4D103)
@@ -3859,7 +3969,7 @@ I (.\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x53DBAFAE)
 I (.\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x53DBAFAE)
 I (.\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x53DBAFAE)
 I (.\USER\inc\delay.h)(0x69AE42AA)
-I (.\USER\inc\main.h)(0x69C37F3B)
+I (.\USER\inc\main.h)(0x69DDA175)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x56FE42DE)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x56FE42DE)
 I (.\HARDWARE\inc\led.h)(0x69A951B7)
@@ -3869,6 +3979,7 @@ I (.\HARDWARE\inc\sterilize.h)(0x69A951B8)
 I (.\HARDWARE\inc\usart1.h)(0x69A93AD6)
 I (.\HARDWARE\inc\usart3spre.h)(0x69BBC997)
 I (.\HARDWARE\inc\usart2wifi.h)(0x69C4E081)
+I (.\USER\inc\can.h)(0x69DDABAD)
 I (.\HARDWARE\inc\spi1.h)(0x69A97B8A)
 I (.\HARDWARE\inc\w25q64.h)(0x69C49673)
 I (.\HARDWARE\inc\motor.h)(0x69AA71D0)
@@ -3881,7 +3992,7 @@ I (.\HARDWARE\inc\ws2812s.h)(0x69AE66FD)
 I (.\HARDWARE\inc\iic.h)(0x69AEB805)
 I (.\HARDWARE\inc\tphmsensor.h)(0x69B3723C)
 I (.\HARDWARE\inc\infrared_tp.h)(0x69AEB628)
-I (.\HARDWARE\inc\lcd.h)(0x69BDFFAF)
+I (.\HARDWARE\inc\lcd.h)(0x69CA36D6)
 I (.\HARDWARE\inc\music_ct.h)(0x69C4E081)
 I (.\USER\inc\rtc.h)(0x69BA1903)
 I (.\HARDWARE\inc\touch.h)(0x69C4D103)

@@ -52,6 +52,7 @@
 .\objects\wavplay.o: .\HARDWARE\inc\usart1.h
 .\objects\wavplay.o: .\HARDWARE\inc\usart3spre.h
 .\objects\wavplay.o: .\HARDWARE\inc\usart2wifi.h
+.\objects\wavplay.o: .\USER\inc\can.h
 .\objects\wavplay.o: .\HARDWARE\inc\spi1.h
 .\objects\wavplay.o: .\HARDWARE\inc\w25q64.h
 .\objects\wavplay.o: .\HARDWARE\inc\motor.h

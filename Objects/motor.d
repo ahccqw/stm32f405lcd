@@ -47,6 +47,7 @@
 .\objects\motor.o: .\HARDWARE\inc\usart1.h
 .\objects\motor.o: .\HARDWARE\inc\usart3spre.h
 .\objects\motor.o: .\HARDWARE\inc\usart2wifi.h
+.\objects\motor.o: .\USER\inc\can.h
 .\objects\motor.o: .\HARDWARE\inc\spi1.h
 .\objects\motor.o: .\HARDWARE\inc\w25q64.h
 .\objects\motor.o: .\HARDWARE\inc\motor.h

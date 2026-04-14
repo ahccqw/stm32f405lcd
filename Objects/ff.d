@@ -50,6 +50,7 @@
 .\objects\ff.o: .\HARDWARE\inc\usart1.h
 .\objects\ff.o: .\HARDWARE\inc\usart3spre.h
 .\objects\ff.o: .\HARDWARE\inc\usart2wifi.h
+.\objects\ff.o: .\USER\inc\can.h
 .\objects\ff.o: .\HARDWARE\inc\spi1.h
 .\objects\ff.o: .\HARDWARE\inc\w25q64.h
 .\objects\ff.o: .\HARDWARE\inc\motor.h

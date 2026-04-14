@@ -47,6 +47,7 @@
 .\objects\usart2wifi.o: .\HARDWARE\inc\usart1.h
 .\objects\usart2wifi.o: .\HARDWARE\inc\usart3spre.h
 .\objects\usart2wifi.o: .\HARDWARE\inc\usart2wifi.h
+.\objects\usart2wifi.o: .\USER\inc\can.h
 .\objects\usart2wifi.o: .\HARDWARE\inc\spi1.h
 .\objects\usart2wifi.o: .\HARDWARE\inc\w25q64.h
 .\objects\usart2wifi.o: .\HARDWARE\inc\motor.h

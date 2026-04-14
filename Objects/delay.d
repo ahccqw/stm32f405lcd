@@ -47,6 +47,7 @@
 .\objects\delay.o: .\HARDWARE\inc\usart1.h
 .\objects\delay.o: .\HARDWARE\inc\usart3spre.h
 .\objects\delay.o: .\HARDWARE\inc\usart2wifi.h
+.\objects\delay.o: .\USER\inc\can.h
 .\objects\delay.o: .\HARDWARE\inc\spi1.h
 .\objects\delay.o: .\HARDWARE\inc\w25q64.h
 .\objects\delay.o: .\HARDWARE\inc\motor.h

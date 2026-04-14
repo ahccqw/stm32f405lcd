@@ -18,7 +18,8 @@ int main()
 	Tim2_ServoMotor_Init(0);	
 	Tim3_DcMotor_Init(0);
 	Usart3_Init(115200);	
-	Wifi_Tcp_Init();
+	
+	//Wifi_Tcp_Init();
 
 
 
@@ -67,42 +68,91 @@ int main()
 	}
 	SysTick_Intrerput_Init(1);	
 
-	
-	
-	
-	
 
 	
 //	Audio_PlaySong((u8 *)"0:/music/晴天.wav");
 
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	
-
+	u8 key,cnt,Mode,i,time;
+	Can_Config(6,7,Mode,6);
+	u8 send_buff[8];
+	u8 rev_buff[8];
 	
    while(1)
   {
-      Voice_Control();
-      Wifi_Control();
-      Touch_Coordinates();
-      Touch_Range(0, 0, 240, 320);
-      Wifi_Send_Message();
-      Status_Upload();
-      music_ct();   // 放最后，阻塞时中断仍处理触摸
+		//按键一按下是发送信息 ， 按键二是切换模式
+		key = Key_Scan();
+		switch(key)
+		{
+			case 1:
+			{
+				Mode=!Mode;
+				Can_Config(CAN_BS1_7tq,CAN_BS2_6tq,Mode,6);
+				if(Mode==0)
+				{
+					printf("此时为普通模式\r\n");
+				}
+				else
+				{
+					printf("此时为环回模式\r\n");
+				}
+			}
+			;break;
+		
+			case 2:
+			{
+				for(i=0;i<8;i++)
+				{
+					send_buff[i]=cnt+i;
+				}
+				printf("此时发送的数据如下:");
+				for(i=0;i<8;i++)
+				{
+					printf("%d ",send_buff[i]);
+				}
+					printf("\r\n");
+					Can_Send_Message(send_buff,sizeof(send_buff));
+				}
+			;break;	
+				
+			default: ;break;
+		}
+		
+		key = Can_Res_Message(rev_buff);
+		if(key)
+		{
+			printf("此时接收到的数据如下:");
+			for(i=0;i<8;i++)
+			{
+				printf("%d ",rev_buff[i]);
+			}
+			printf("\r\n");
+		}
+		
+			
+		if(time == 50)
+		{
+			time = 0;
+			printf("cnt=%d\r\n",cnt);
+			cnt ++;
+		}
+		
+		time ++;
+		Delay_Ms(10);
+		
+		
+		
+
+		
+//      Voice_Control();
+//      Wifi_Control();
+//      Touch_Coordinates();
+//      Touch_Range(0, 0, 240, 320);
+//      Wifi_Send_Message();
+//      Status_Upload();
+//      music_ct();   // 放最后，阻塞时中断仍处理触摸
+		
+		
   }
  
  

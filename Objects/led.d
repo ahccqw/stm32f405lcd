@@ -47,6 +47,7 @@
 .\objects\led.o: .\HARDWARE\inc\usart1.h
 .\objects\led.o: .\HARDWARE\inc\usart3spre.h
 .\objects\led.o: .\HARDWARE\inc\usart2wifi.h
+.\objects\led.o: .\USER\inc\can.h
 .\objects\led.o: .\HARDWARE\inc\spi1.h
 .\objects\led.o: .\HARDWARE\inc\w25q64.h
 .\objects\led.o: .\HARDWARE\inc\motor.h

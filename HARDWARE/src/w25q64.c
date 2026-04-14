@@ -261,7 +261,6 @@ void Font_Updata(void)
 	
 	while(Re_End_flag);//	Re_End_flag = 0;表示未接收完成，此时卡住
 	printf("接收完成！！！\r\n");
-		
 }
 	
 

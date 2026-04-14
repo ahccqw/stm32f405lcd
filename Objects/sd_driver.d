@@ -47,6 +47,7 @@
 .\objects\sd_driver.o: .\HARDWARE\inc\usart1.h
 .\objects\sd_driver.o: .\HARDWARE\inc\usart3spre.h
 .\objects\sd_driver.o: .\HARDWARE\inc\usart2wifi.h
+.\objects\sd_driver.o: .\USER\inc\can.h
 .\objects\sd_driver.o: .\HARDWARE\inc\spi1.h
 .\objects\sd_driver.o: .\HARDWARE\inc\w25q64.h
 .\objects\sd_driver.o: .\HARDWARE\inc\motor.h

@@ -23,7 +23,7 @@ void Rtc_Init(void)
 	RCC_LSEConfig(RCC_LSE_ON);
 	if(RCC_GetFlagStatus(RCC_FLAG_LSERDY) == SET)
 	{
-			//如LSE标志位为1，则继续完成初始化
+		//如LSE标志位为1，则继续完成初始化
 		RCC_RTCCLKConfig(RCC_RTCCLKSource_LSE);//选择LSE作为RTC时钟源
 		RCC_RTCCLKCmd(ENABLE);//使能RTC时钟
 		

@@ -48,6 +48,7 @@
 .\objects\revert.o: .\HARDWARE\inc\usart1.h
 .\objects\revert.o: .\HARDWARE\inc\usart3spre.h
 .\objects\revert.o: .\HARDWARE\inc\usart2wifi.h
+.\objects\revert.o: .\USER\inc\can.h
 .\objects\revert.o: .\HARDWARE\inc\spi1.h
 .\objects\revert.o: .\HARDWARE\inc\w25q64.h
 .\objects\revert.o: .\HARDWARE\inc\motor.h

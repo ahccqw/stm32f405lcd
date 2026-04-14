@@ -53,6 +53,7 @@
 .\objects\audioplay.o: .\HARDWARE\inc\usart1.h
 .\objects\audioplay.o: .\HARDWARE\inc\usart3spre.h
 .\objects\audioplay.o: .\HARDWARE\inc\usart2wifi.h
+.\objects\audioplay.o: .\USER\inc\can.h
 .\objects\audioplay.o: .\HARDWARE\inc\spi1.h
 .\objects\audioplay.o: .\HARDWARE\inc\w25q64.h
 .\objects\audioplay.o: .\HARDWARE\inc\motor.h

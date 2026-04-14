@@ -6,6 +6,7 @@
 ".\objects\dma.o"
 ".\objects\systick.o"
 ".\objects\rtc.o"
+".\objects\can.o"
 ".\objects\led.o"
 ".\objects\beep.o"
 ".\objects\key.o"

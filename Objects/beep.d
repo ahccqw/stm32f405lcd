@@ -47,6 +47,7 @@
 .\objects\beep.o: .\HARDWARE\inc\usart1.h
 .\objects\beep.o: .\HARDWARE\inc\usart3spre.h
 .\objects\beep.o: .\HARDWARE\inc\usart2wifi.h
+.\objects\beep.o: .\USER\inc\can.h
 .\objects\beep.o: .\HARDWARE\inc\spi1.h
 .\objects\beep.o: .\HARDWARE\inc\w25q64.h
 .\objects\beep.o: .\HARDWARE\inc\motor.h

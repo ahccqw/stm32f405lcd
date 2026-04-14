@@ -16,6 +16,7 @@
 #include "usart1.h"
 #include "usart3spre.h"
 #include "usart2wifi.h"
+#include "can.h"
 
 #include "spi1.h"
 #include "w25q64.h"
