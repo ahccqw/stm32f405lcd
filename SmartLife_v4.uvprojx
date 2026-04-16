@@ -422,6 +422,16 @@
               <FileType>1</FileType>
               <FilePath>.\USER\src\can.c</FilePath>
             </File>
+            <File>
+              <FileName>crc_table.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\USER\src\crc_table.c</FilePath>
+            </File>
+            <File>
+              <FileName>tim7_7ms.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\USER\src\tim7_7ms.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -531,6 +541,16 @@
               <FileName>music_ct.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\HARDWARE\src\music_ct.c</FilePath>
+            </File>
+            <File>
+              <FileName>rs485_modbus_master.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\HARDWARE\src\rs485_modbus_master.c</FilePath>
+            </File>
+            <File>
+              <FileName>modbus_slve.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\HARDWARE\src\modbus_slve.c</FilePath>
             </File>
           </Files>
         </Group>

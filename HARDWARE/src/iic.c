@@ -52,7 +52,6 @@ void IIc_Start(void)
 	IIC_SDA_L;
 	Delay_Us(us);
 	
-	
 }
 
 /*************************

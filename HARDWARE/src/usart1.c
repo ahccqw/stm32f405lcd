@@ -63,7 +63,7 @@ void Usart1_Init(u32 baud)
 void USART1_IRQHandler(void)
 {
 //	u8 data = 0;
-	static u32 addr = 0;
+//	static u32 addr = 0;
 	if(USART_GetITStatus(USART1, USART_IT_RXNE))//如果接收到了数据	0中断未触发 1触发
 	{
 		USART_ClearITPendingBit(USART1,USART_IT_RXNE);//清除接收中断标志位
