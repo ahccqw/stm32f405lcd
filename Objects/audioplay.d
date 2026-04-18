@@ -60,6 +60,7 @@
 .\objects\audioplay.o: .\HARDWARE\inc\tphmsensor.h
 .\objects\audioplay.o: .\HARDWARE\inc\infrared_tp.h
 .\objects\audioplay.o: .\HARDWARE\inc\touch.h
+.\objects\audioplay.o: .\HARDWARE\inc\sterilize.h
 .\objects\audioplay.o: .\HARDWARE\inc\motor.h
 .\objects\audioplay.o: .\HARDWARE\inc\servo_motor.h
 .\objects\audioplay.o: .\HARDWARE\inc\time6.h
@@ -76,8 +77,8 @@
 .\objects\audioplay.o: .\USER\inc\dma.h
 .\objects\audioplay.o: .\USER\inc\crc_table.h
 .\objects\audioplay.o: .\VOICE\inc\mymalloc.h
-.\objects\audioplay.o: .\HARDWARE\inc\sterilize.h
 .\objects\audioplay.o: .\HARDWARE\inc\rs485_modbus_master.h
+.\objects\audioplay.o: .\HARDWARE\inc\modbus_slve.h
 .\objects\audioplay.o: .\USER\inc\tim7_7ms.h
 .\objects\audioplay.o: .\VOICE\inc\i2s.h
 .\objects\audioplay.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h

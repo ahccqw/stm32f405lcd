@@ -54,6 +54,7 @@
 .\objects\music_ct.o: .\HARDWARE\inc\tphmsensor.h
 .\objects\music_ct.o: .\HARDWARE\inc\infrared_tp.h
 .\objects\music_ct.o: .\HARDWARE\inc\touch.h
+.\objects\music_ct.o: .\HARDWARE\inc\sterilize.h
 .\objects\music_ct.o: .\HARDWARE\inc\motor.h
 .\objects\music_ct.o: .\HARDWARE\inc\servo_motor.h
 .\objects\music_ct.o: .\HARDWARE\inc\time6.h
@@ -80,6 +81,6 @@
 .\objects\music_ct.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\time.h
 .\objects\music_ct.o: .\USER\inc\dma.h
 .\objects\music_ct.o: .\USER\inc\crc_table.h
-.\objects\music_ct.o: .\HARDWARE\inc\sterilize.h
 .\objects\music_ct.o: .\HARDWARE\inc\rs485_modbus_master.h
+.\objects\music_ct.o: .\HARDWARE\inc\modbus_slve.h
 .\objects\music_ct.o: .\USER\inc\tim7_7ms.h

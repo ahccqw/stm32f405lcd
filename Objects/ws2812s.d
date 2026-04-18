@@ -54,6 +54,7 @@
 .\objects\ws2812s.o: .\HARDWARE\inc\tphmsensor.h
 .\objects\ws2812s.o: .\HARDWARE\inc\infrared_tp.h
 .\objects\ws2812s.o: .\HARDWARE\inc\touch.h
+.\objects\ws2812s.o: .\HARDWARE\inc\sterilize.h
 .\objects\ws2812s.o: .\HARDWARE\inc\motor.h
 .\objects\ws2812s.o: .\HARDWARE\inc\servo_motor.h
 .\objects\ws2812s.o: .\HARDWARE\inc\time6.h
@@ -80,6 +81,6 @@
 .\objects\ws2812s.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\time.h
 .\objects\ws2812s.o: .\USER\inc\dma.h
 .\objects\ws2812s.o: .\USER\inc\crc_table.h
-.\objects\ws2812s.o: .\HARDWARE\inc\sterilize.h
 .\objects\ws2812s.o: .\HARDWARE\inc\rs485_modbus_master.h
+.\objects\ws2812s.o: .\HARDWARE\inc\modbus_slve.h
 .\objects\ws2812s.o: .\USER\inc\tim7_7ms.h

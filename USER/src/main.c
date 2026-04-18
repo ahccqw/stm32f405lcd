@@ -1,5 +1,6 @@
 #include "main.h"
-
+// 在 main.c 定义
+WorkMode current_mode = MODE_SLAVE; // 默认主机
 
 int main()
 {
@@ -72,14 +73,105 @@ int main()
 	
 //	Audio_PlaySong((u8 *)"0:/music/晴天.wav");
 
-	
+	//串口测试：
 	u8 key,cnt,Mode,i,time;
 	Can_Config(6,7,Mode,6);
 	u8 send_buff[8];
 	u8 rev_buff[8];
 	
+	
+	//modbus  串口初始化
+	if (current_mode == MODE_MASTER)
+	{
+		U4_Modbus_Init();
+	}
+	else if(current_mode == MODE_SLAVE)
+	{
+		U4_Modbus_Slave_Init();
+	}
+
+	modbus_master.rxcount = 0;
+	modbus_master.rxover = 0;
+	modbus_slve.rxcount = 0;
+	modbus_slve.rxover = 0;
+	
+  	TIM7_7ms_Config();        // Modbus 断帧定时器 (必须保留，用于判断一帧结束)
+	
    while(1)
   {
+		
+		
+		// ================= 主机模式 =================
+        if (current_mode == MODE_MASTER)
+        {
+            // --- 步骤 1: 发送请求 ---
+            printf("主机发送请求...\r\n");
+            ModbusMaster_Transmit();
+            
+            // --- 步骤 2: 等待从机回复 (阻塞延时) ---
+            // 既然没有系统心跳，我们直接卡在这里等 100ms
+            // 这段时间内，串口中断依然在后台工作，会把数据收进缓冲区
+            Delay_Ms(100); 
+            
+            // --- 步骤 3: 检查是否收到数据 ---
+            if (modbus_master.rxover == 1)
+            {
+                printf("主机收到回复!\r\n");
+                ModbusMaster_Receive(); // 解析数据
+                modbus_master.rxover = 0; // 清除标志
+            }
+            else
+            {
+                // 没收到数据，可能是从机没响应或接线错误
+                printf("超时：未收到回复\r\n");
+            }
+
+            // --- 步骤 4: 等待下一次发送 (阻塞延时) ---
+            // 这里卡住 2000ms (2秒)，实现循环发送的间隔
+            Delay_Ms(2000);
+        }
+        
+        // ================= 从机模式 =================
+        else if (current_mode == MODE_SLAVE)
+        {
+            // 从机时刻监听总线
+            if (modbus_slve.rxover == 1)
+            {
+
+								printf("收到数据开始解析\r\n");
+
+								get_Value();
+                // 收到数据，解析并回复
+                modbus_slave_analy(); 
+                
+                // 清除标志
+                modbus_slve.rxover = 0;
+                modbus_slve.rxcount = 0;
+            }
+            
+            // 从机循环里尽量少加延时，防止漏掉主机指令
+            // 如果必须要加，只能加非常短的时间，比如 Delay_Us(100);
+        }    
+        
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		/*
 		//按键一按下是发送信息 ， 按键二是切换模式
 		key = Key_Scan();
 		switch(key)
@@ -139,7 +231,7 @@ int main()
 		
 		time ++;
 		Delay_Ms(10);
-		
+		*/
 		
 		
 

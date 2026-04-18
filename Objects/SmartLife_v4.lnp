@@ -31,6 +31,7 @@
 ".\objects\usart2wifi.o"
 ".\objects\music_ct.o"
 ".\objects\rs485_modbus_master.o"
+".\objects\modbus_slve.o"
 ".\objects\misc.o"
 ".\objects\stm32f4xx_adc.o"
 ".\objects\stm32f4xx_can.o"

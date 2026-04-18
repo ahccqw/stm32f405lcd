@@ -55,6 +55,7 @@
 .\objects\revert.o: .\HARDWARE\inc\tphmsensor.h
 .\objects\revert.o: .\HARDWARE\inc\infrared_tp.h
 .\objects\revert.o: .\HARDWARE\inc\touch.h
+.\objects\revert.o: .\HARDWARE\inc\sterilize.h
 .\objects\revert.o: .\HARDWARE\inc\motor.h
 .\objects\revert.o: .\HARDWARE\inc\servo_motor.h
 .\objects\revert.o: .\HARDWARE\inc\time6.h
@@ -80,6 +81,6 @@
 .\objects\revert.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\time.h
 .\objects\revert.o: .\USER\inc\dma.h
 .\objects\revert.o: .\USER\inc\crc_table.h
-.\objects\revert.o: .\HARDWARE\inc\sterilize.h
 .\objects\revert.o: .\HARDWARE\inc\rs485_modbus_master.h
+.\objects\revert.o: .\HARDWARE\inc\modbus_slve.h
 .\objects\revert.o: .\USER\inc\tim7_7ms.h

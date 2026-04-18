@@ -24,16 +24,14 @@ typedef struct
 typedef struct
 {
 	//接受到从机的缓存
-	u16 buff;
+	u16 buff[5];
 	
+}Modebus_val;
 
 
-}Slave;
-
-
-extern Slave modbus_slave;
+extern Modebus_val modbus_val;
 extern Modebus modbus_master;
-void U4_Modbus_Init(u32 baud);
+void U4_Modbus_Init(void);
 
 void ModbusMaster_Transmit(void);
 void ModbusMaster_Receive(void);

@@ -54,6 +54,7 @@
 .\objects\sd_driver.o: .\HARDWARE\inc\tphmsensor.h
 .\objects\sd_driver.o: .\HARDWARE\inc\infrared_tp.h
 .\objects\sd_driver.o: .\HARDWARE\inc\touch.h
+.\objects\sd_driver.o: .\HARDWARE\inc\sterilize.h
 .\objects\sd_driver.o: .\HARDWARE\inc\motor.h
 .\objects\sd_driver.o: .\HARDWARE\inc\servo_motor.h
 .\objects\sd_driver.o: .\HARDWARE\inc\time6.h
@@ -80,6 +81,6 @@
 .\objects\sd_driver.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\time.h
 .\objects\sd_driver.o: .\USER\inc\dma.h
 .\objects\sd_driver.o: .\USER\inc\crc_table.h
-.\objects\sd_driver.o: .\HARDWARE\inc\sterilize.h
 .\objects\sd_driver.o: .\HARDWARE\inc\rs485_modbus_master.h
+.\objects\sd_driver.o: .\HARDWARE\inc\modbus_slve.h
 .\objects\sd_driver.o: .\USER\inc\tim7_7ms.h

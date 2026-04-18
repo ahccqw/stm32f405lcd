@@ -1,6 +1,6 @@
 #include "rs485_modbus_master.h"
 
-Slave modbus_slave;
+Modebus_val modbus_val;
 Modebus modbus_master;
 /*************************
 函数名称：U4_Modbus_Init(u32 baud)
@@ -11,10 +11,9 @@ Modebus modbus_master;
 版本：1.0 
 		U4 RX - PC11		U4	TX - PC10		APB2 42Mhz
 *************************/
-void U4_Modbus_Init(u32 baud)
+void U4_Modbus_Init(void)
 {
     // 1. 打开时钟
-    // STM32F4系列 USART4 在 APB1
     RCC_APB1PeriphClockCmd(RCC_APB1Periph_UART4, ENABLE); 
     RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE);
 		RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOE, ENABLE);
@@ -43,7 +42,7 @@ void U4_Modbus_Init(u32 baud)
     
     // 4. 初始化 USART 控制器
     USART_InitTypeDef USART_InitStruct;
-    USART_InitStruct.USART_BaudRate = baud;
+    USART_InitStruct.USART_BaudRate = 9600;
     USART_InitStruct.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
     USART_InitStruct.USART_Parity = USART_Parity_No;    // 无校验
     USART_InitStruct.USART_StopBits = USART_StopBits_1;
@@ -71,15 +70,41 @@ void UART4_IRQHandler(void)
 {
 	if(USART_GetITStatus(UART4,USART_IT_RXNE)==SET)
 	{
-		USART_ClearITPendingBit(UART4,USART_FLAG_RXNE);
+
 		
-		//接收数据		进来一次 长度+1
-		modbus_master.rxbuff[modbus_master.rxcount++] = USART_ReceiveData(UART4);
-		
-		//只要开始接收数据就 启动tim7定时器 及 重置计数器 ， 相当于给TIM7喂狗的作用
-		if(modbus_master.rxcount == 1)
+		// 2. 读取数据 (硬件自动清除RXNE标志，软件读取DR寄存器即可)
+        // 注意：USART_ReceiveData 会自动读 DR 寄存器
+		u8 data = USART_ReceiveData(UART4);
+
+		printf("rx:%02X\r\n", data);
+		// 3. 【核心分流逻辑】根据当前工作模式，存入不同的缓冲区
+		if (current_mode == MODE_MASTER)
 		{
-			TIM_Cmd(TIM7, ENABLE);
+				// --- 主机模式：存入主机缓冲区 ---
+				// 防止缓冲区溢出 (假设缓冲区大小是256)
+				if(modbus_master.rxcount < 255)
+				{
+						modbus_master.rxbuff[modbus_master.rxcount++] = data;
+				}
+
+				if(modbus_master.rxcount == 1)
+				{
+					TIM_Cmd(TIM7, ENABLE);
+				}
+		}
+		else
+		{
+				// --- 从机模式：存入从机缓冲区 ---
+				// 防止缓冲区溢出
+				if(modbus_slve.rxcount < 255)
+				{
+						modbus_slve.rxbuff[modbus_slve.rxcount++] = data;
+				}
+
+				if(modbus_slve.rxcount == 1)
+				{
+					TIM_Cmd(TIM7, ENABLE);
+				}
 		}
 		
 		//只要收到数据就一直重置计速器
@@ -96,12 +121,16 @@ void RS485_SendData(u8 *ptx,u8 lenth)
 	RS485_SEND;
 	
 	//逐字节发送数据
-		for(i=0;i<lenth;i++)
+	for(i=0;i<lenth;i++)
 	{
+		//等待发送寄存器空
+		while(USART_GetFlagStatus(UART4, USART_FLAG_TXE) == RESET);
 		USART_SendData(UART4,ptx[i]);
 	}
 	while(USART_GetFlagStatus(UART4,USART_FLAG_TC) == RESET);//RESET为发送完成
 	
+	//虽然 TC 理论上表示发完了，但在高速通信或总线电容较大时，信号在物理线路上传输还需要一点时间（传播延迟）
+	Delay_Ms(1);
 	//切回接收模式
 	RS485_RESE;
 }
@@ -109,24 +138,28 @@ void RS485_SendData(u8 *ptx,u8 lenth)
 //与从机通信发送对应的功能码 来 获取到对应的信息
 void ModbusMaster_Transmit(void)
 {
-	u8 i=0;
-	u16 crc=0;
-	//构建数据帧
-	modbus_master.rxbuff[i++] = MODBUS_ID;//设备地址
-	modbus_master.rxbuff[i++] = 0x03;//功能码
-	modbus_master.rxbuff[i++] = 0x00;//开始地址 高8位
-	modbus_master.rxbuff[i++] = 0x01;//开始地址 低8位
-	modbus_master.rxbuff[i++] = 0x00;//寄存器数量 高8位
-	modbus_master.rxbuff[i++] = 0x05;//寄存器数量 低8位
-	
-	//计算前面组装好的六个字节的数据计算crc校验值	
-	crc = crc16_modbus(modbus_master.rxbuff, i);
-	modbus_master.rxbuff[i++] = (crc >> 8) & 0xff;//低位先发的 所以需要低位移到最右
-	modbus_master.rxbuff[i++] = crc & 0xff;
-	modbus_master.txcount = i;
-	
-	//发送数据及校验值 校验值先发低八位再发高八位
-	RS485_SendData(modbus_master.rxbuff, modbus_master.txcount);
+    u8 i = 0;
+    u16 crc = 0;
+    
+    // 【关键修正】数据要写入 txbuff (发送缓冲区)，不要占用 rxbuff
+    modbus_master.txbuff[i++] = MODBUS_ID;    // 设备地址
+    modbus_master.txbuff[i++] = 0x03;         // 功能码
+    modbus_master.txbuff[i++] = 0x00;         // 开始地址 高8位
+    modbus_master.txbuff[i++] = 0x01;         // 开始地址 低8位
+    modbus_master.txbuff[i++] = 0x00;         // 寄存器数量 高8位
+    modbus_master.txbuff[i++] = 0x05;         // 寄存器数量 低8位
+    
+    // 计算 CRC (注意：只计算前 i 个字节)
+    crc = crc16_modbus(modbus_master.txbuff, i);
+    
+    // Modbus RTU 规定：CRC 低位先发，高位后发
+    modbus_master.txbuff[i++] = crc & 0xFF;       // 先发低位
+    modbus_master.txbuff[i++] = (crc >> 8) & 0xFF;// 后发高位
+    
+    modbus_master.txcount = i;
+    
+    // 发送 txbuff 里的数据
+    RS485_SendData(modbus_master.txbuff, modbus_master.txcount);
 }
 
 //数据接收及处理
@@ -159,8 +192,8 @@ void ModbusMaster_Receive(void)
 	//对当前数据进行crc校验，并保存对应的校验码方便后续比较，这里-2是为了取消掉后两位的校验
 	crc_curent = crc16_modbus(modbus_master.rxbuff,modbus_master.rxcount-2);
 	
-	//获取到发来的校验码与生成的校验码进行比较
-	crc_recevice = (modbus_master.rxbuff[modbus_master.rxcount-2] << 8)  |	(modbus_master.rxbuff[modbus_master.rxcount-1]);
+	//获取到发来的校验码与生成的校验码进行比较	这里的下标为 6 , 7 ,但是	count 计数为8 ， 所以需要	-1 -2
+	crc_recevice = modbus_master.rxbuff[modbus_master.rxcount-2] | (modbus_master.rxbuff[modbus_master.rxcount-1] << 8);
 	
 	if(crc_curent != crc_recevice)	goto MODBUS_ERROR;
 	printf("crc校验成功！");
@@ -170,12 +203,15 @@ void ModbusMaster_Receive(void)
 		case 0x03:
 			if(MODBUS_ID == modbus_master.rxbuff[0])//判断ID是否相同
 			{
-				
-				modbus_slave.buff = modbus_master.rxbuff[3] << 8 | modbus_master.rxbuff[4];
-					
+				//接收到的数据  rxbuff定义的为 8位 但是要一个数据有16位则需要组合,
+				modbus_val.buff[0] = modbus_master.rxbuff[3] << 8 | modbus_master.rxbuff[4];			
+				modbus_val.buff[1] = modbus_master.rxbuff[5] << 8 | modbus_master.rxbuff[6];
+				modbus_val.buff[2] = modbus_master.rxbuff[7] << 8 | modbus_master.rxbuff[8];	
+				modbus_val.buff[3] = modbus_master.rxbuff[9] << 8 | modbus_master.rxbuff[10];	
+				modbus_val.buff[4] = modbus_master.rxbuff[11] << 8 | modbus_master.rxbuff[12];	
 			}
 	}
-	
+
 	//清理状态：错误状态 以及 该函数运行到此步骤的时候 执行以下代码 清空接收数据及接收状态重新接收
 MODBUS_ERROR:
 	modbus_master.rxcount = 0;

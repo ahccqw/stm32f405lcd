@@ -57,6 +57,7 @@
 .\objects\ff.o: .\HARDWARE\inc\tphmsensor.h
 .\objects\ff.o: .\HARDWARE\inc\infrared_tp.h
 .\objects\ff.o: .\HARDWARE\inc\touch.h
+.\objects\ff.o: .\HARDWARE\inc\sterilize.h
 .\objects\ff.o: .\HARDWARE\inc\motor.h
 .\objects\ff.o: .\HARDWARE\inc\servo_motor.h
 .\objects\ff.o: .\HARDWARE\inc\time6.h
@@ -81,6 +82,6 @@
 .\objects\ff.o: .\USER\inc\dma.h
 .\objects\ff.o: .\USER\inc\rtc.h
 .\objects\ff.o: .\USER\inc\crc_table.h
-.\objects\ff.o: .\HARDWARE\inc\sterilize.h
 .\objects\ff.o: .\HARDWARE\inc\rs485_modbus_master.h
+.\objects\ff.o: .\HARDWARE\inc\modbus_slve.h
 .\objects\ff.o: .\USER\inc\tim7_7ms.h

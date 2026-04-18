@@ -54,6 +54,7 @@
 .\objects\servo_motor.o: .\HARDWARE\inc\tphmsensor.h
 .\objects\servo_motor.o: .\HARDWARE\inc\infrared_tp.h
 .\objects\servo_motor.o: .\HARDWARE\inc\touch.h
+.\objects\servo_motor.o: .\HARDWARE\inc\sterilize.h
 .\objects\servo_motor.o: .\HARDWARE\inc\motor.h
 .\objects\servo_motor.o: .\HARDWARE\inc\servo_motor.h
 .\objects\servo_motor.o: .\HARDWARE\inc\time6.h
@@ -80,6 +81,6 @@
 .\objects\servo_motor.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\time.h
 .\objects\servo_motor.o: .\USER\inc\dma.h
 .\objects\servo_motor.o: .\USER\inc\crc_table.h
-.\objects\servo_motor.o: .\HARDWARE\inc\sterilize.h
 .\objects\servo_motor.o: .\HARDWARE\inc\rs485_modbus_master.h
+.\objects\servo_motor.o: .\HARDWARE\inc\modbus_slve.h
 .\objects\servo_motor.o: .\USER\inc\tim7_7ms.h

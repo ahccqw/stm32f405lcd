@@ -54,6 +54,7 @@
 .\objects\can.o: .\HARDWARE\inc\tphmsensor.h
 .\objects\can.o: .\HARDWARE\inc\infrared_tp.h
 .\objects\can.o: .\HARDWARE\inc\touch.h
+.\objects\can.o: .\HARDWARE\inc\sterilize.h
 .\objects\can.o: .\HARDWARE\inc\motor.h
 .\objects\can.o: .\HARDWARE\inc\servo_motor.h
 .\objects\can.o: .\HARDWARE\inc\time6.h
@@ -80,6 +81,6 @@
 .\objects\can.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\time.h
 .\objects\can.o: .\USER\inc\dma.h
 .\objects\can.o: .\USER\inc\crc_table.h
-.\objects\can.o: .\HARDWARE\inc\sterilize.h
 .\objects\can.o: .\HARDWARE\inc\rs485_modbus_master.h
+.\objects\can.o: .\HARDWARE\inc\modbus_slve.h
 .\objects\can.o: .\USER\inc\tim7_7ms.h

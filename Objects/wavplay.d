@@ -59,6 +59,7 @@
 .\objects\wavplay.o: .\HARDWARE\inc\tphmsensor.h
 .\objects\wavplay.o: .\HARDWARE\inc\infrared_tp.h
 .\objects\wavplay.o: .\HARDWARE\inc\touch.h
+.\objects\wavplay.o: .\HARDWARE\inc\sterilize.h
 .\objects\wavplay.o: .\HARDWARE\inc\motor.h
 .\objects\wavplay.o: .\HARDWARE\inc\servo_motor.h
 .\objects\wavplay.o: .\HARDWARE\inc\time6.h
@@ -79,7 +80,7 @@
 .\objects\wavplay.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\time.h
 .\objects\wavplay.o: .\USER\inc\dma.h
 .\objects\wavplay.o: .\USER\inc\crc_table.h
-.\objects\wavplay.o: .\HARDWARE\inc\sterilize.h
 .\objects\wavplay.o: .\HARDWARE\inc\rs485_modbus_master.h
+.\objects\wavplay.o: .\HARDWARE\inc\modbus_slve.h
 .\objects\wavplay.o: .\USER\inc\tim7_7ms.h
 .\objects\wavplay.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h

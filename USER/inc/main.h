@@ -1,6 +1,14 @@
 #ifndef _MAIN_H
 #define _MAIN_H
 
+typedef enum 
+{ 
+	MODE_MASTER, 
+	MODE_SLAVE 
+} WorkMode;
+
+extern WorkMode current_mode;
+
 /* ================= 核心库与标准库 ================= */
 #include "stm32f4xx.h"    // STM32F4 系列标准外设库头文件
 #include "stdio.h"        // 标准输入输出库 (用于 printf 等)
@@ -29,6 +37,7 @@
 #include "tphmsensor.h"   // 温湿度传感器 (可能是 SHT30/DHT11 等)
 #include "infrared_tp.h"  // 红外触摸屏/红外传感器
 #include "touch.h"        // 电容触摸屏驱动
+#include "sterilize.h"    // 消毒功能
 
 /* ================= 电机与控制 ================= */
 #include "motor.h"        // 直流电机/步进电机驱动
@@ -56,8 +65,8 @@
 #include "exfuns.h"       // 扩展功能函数 (通常是文件系统或系统辅助函数)
 
 /* ================= 项目特定业务逻辑 ================= */
-#include "sterilize.h"    // 消毒功能逻辑 (项目特有业务)
 #include "rs485_modbus_master.h" // Modbus RTU 协议栈 (主/从机逻辑)
+#include "modbus_slve.h"
 #include "tim7_7ms.h"     // TIM7 定时器 (用于 Modbus 3.5ms 超时判断)
 
 #endif

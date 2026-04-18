@@ -54,6 +54,7 @@
 .\objects\lcd.o: .\HARDWARE\inc\tphmsensor.h
 .\objects\lcd.o: .\HARDWARE\inc\infrared_tp.h
 .\objects\lcd.o: .\HARDWARE\inc\touch.h
+.\objects\lcd.o: .\HARDWARE\inc\sterilize.h
 .\objects\lcd.o: .\HARDWARE\inc\motor.h
 .\objects\lcd.o: .\HARDWARE\inc\servo_motor.h
 .\objects\lcd.o: .\HARDWARE\inc\time6.h
@@ -80,8 +81,8 @@
 .\objects\lcd.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\time.h
 .\objects\lcd.o: .\USER\inc\dma.h
 .\objects\lcd.o: .\USER\inc\crc_table.h
-.\objects\lcd.o: .\HARDWARE\inc\sterilize.h
 .\objects\lcd.o: .\HARDWARE\inc\rs485_modbus_master.h
+.\objects\lcd.o: .\HARDWARE\inc\modbus_slve.h
 .\objects\lcd.o: .\USER\inc\tim7_7ms.h
 .\objects\lcd.o: .\HARDWARE\inc\pic.h
 .\objects\lcd.o: .\HARDWARE\inc\ikun.h

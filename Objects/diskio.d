@@ -57,6 +57,7 @@
 .\objects\diskio.o: .\HARDWARE\inc\tphmsensor.h
 .\objects\diskio.o: .\HARDWARE\inc\infrared_tp.h
 .\objects\diskio.o: .\HARDWARE\inc\touch.h
+.\objects\diskio.o: .\HARDWARE\inc\sterilize.h
 .\objects\diskio.o: .\HARDWARE\inc\motor.h
 .\objects\diskio.o: .\HARDWARE\inc\servo_motor.h
 .\objects\diskio.o: .\HARDWARE\inc\time6.h
@@ -81,6 +82,6 @@
 .\objects\diskio.o: .\USER\inc\dma.h
 .\objects\diskio.o: .\USER\inc\rtc.h
 .\objects\diskio.o: .\USER\inc\crc_table.h
-.\objects\diskio.o: .\HARDWARE\inc\sterilize.h
 .\objects\diskio.o: .\HARDWARE\inc\rs485_modbus_master.h
+.\objects\diskio.o: .\HARDWARE\inc\modbus_slve.h
 .\objects\diskio.o: .\USER\inc\tim7_7ms.h
